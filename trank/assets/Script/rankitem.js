@@ -78,7 +78,7 @@ cc.Class({
                     texture.initWithElement(image);
                     texture.handleLoadedTexture();
                     tsp.spriteFrame = new cc.SpriteFrame(texture);
-                     console.log(avatarUrl + " ni/ "+sprite.node.width + " == "+texture.width +" " + sprite.node.y)
+                    // console.log(avatarUrl + " ni/ "+sprite.node.width + " == "+texture.width +" " + sprite.node.y)
                 } catch (e) {
                     cc.log("图片加载失败");
                 }

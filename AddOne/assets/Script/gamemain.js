@@ -595,14 +595,12 @@ var gamemain = cc.Class({
     */
     backFirstPage:function(){
        if(tywx.Util.getItemFromLocalStorage("maxscore", 0) < this.score){
-            console.log("当前的分数 = "+this.score)
             tywx.Util.setItemToLocalStorage("maxscore",this.score); 
        }
-       var score = this.score;
        if(tywx.publicwx){
             wx.postMessage({
                 method: 4,
-                score:score,
+                score:this.score,
             });
        }
        cc.director.loadScene("gamestart", this.destroyFinish);

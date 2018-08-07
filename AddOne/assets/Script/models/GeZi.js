@@ -143,8 +143,8 @@ module.exports = function(id,parent){
         ctx.roundRect(this.block.posx,this.block.posy,config.gezi_size,config.gezi_size,8);
         ctx.fill();
         lable.string = this.block.num;
-        lable.node.x = this.block.posx-360+config.gezi_size/2;
-        lable.node.y = this.block.posy-640+config.gezi_size/2;
+        lable.node.x = this.block.posx-360+config.gezi_size / 2;
+        lable.node.y = this.block.posy-640+config.gezi_size / 2;
     }
 }
 
