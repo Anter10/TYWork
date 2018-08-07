@@ -2,8 +2,6 @@
  * Created by xiaochuntian on 2018/5/2.
  */
 tywx = {};
-//是否发布微信小游戏
-tywx.publicwx = true;
 //基础状态信息
 tywx.StateInfo = {
     networkConnected: true,   //网络状态
@@ -21,7 +19,7 @@ tywx.SystemInfo = {
     loginUrl : 'https://openrich.nalrer.cn/',
     shareManagerUrl : 'https://market.touch4.me/',
     deviceId: 'wechatGame',
-    wxAppId: 'wxb3967d06430bf885',
+    wxAppId: 'wxbfebdafc2fc60b54',
     appId: 9999,
     gameId: 6,
     hall_version: "hall37",
