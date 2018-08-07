@@ -9,7 +9,7 @@ var config = {
 	    // 每个格子+间隙的大小 
 	    gezi_pitch:140,
 	    // 格子移动一个的时间
-	    move_time:0.35,
+	    move_time:0.3,
 	    // 玩家最大体力
 	    maxphy_value:5,
 	    // 公共格子数量 5 * 5

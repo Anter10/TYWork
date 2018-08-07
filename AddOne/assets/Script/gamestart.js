@@ -189,7 +189,7 @@ var gamestart = cc.Class({
         思路: 游戏需要
     */
     loadFinishCallBack:function(){
-        // this.node.destroy();
+         this.node.destroy();
     },
    
      /*

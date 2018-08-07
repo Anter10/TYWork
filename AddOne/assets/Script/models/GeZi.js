@@ -89,7 +89,7 @@ module.exports = function(id,parent){
         ]
         思路: 逻辑需要
     */
-    this.getAllmask= function(){
+    this.ßß= function(){
         return this.parent.getAllmask();
     }
     

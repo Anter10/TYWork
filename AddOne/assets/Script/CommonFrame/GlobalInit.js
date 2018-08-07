@@ -3,7 +3,7 @@
  */
 tywx = {};
 //是否发布微信小游戏
-tywx.publicwx = true;
+tywx.publicwx = false;
 //基础状态信息
 tywx.StateInfo = {
     networkConnected: true,   //网络状态
