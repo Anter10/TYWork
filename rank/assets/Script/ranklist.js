@@ -169,6 +169,7 @@ cc.Class({
 
     // 得到玩家微信群组的数据
     getGroupFriendData: function(tshareTicket) {
+        var self = this;
         var shareTicket = tshareTicket;
         if (CC_WECHATGAME) {
             wx.getUserInfo({
@@ -196,6 +197,16 @@ cc.Class({
                                 }
                                 return b.KVDataList[0].value - a.KVDataList[0].value;
                             });
+                            this.showloading.node.active = false;
+                            self.gameranklist.content.removeAllChildren();
+                            for (let i = 0; i < data.length; i++) {
+                                var playerInfo = data[i];
+                                playerInfo.pm = i;
+                                var item = cc.instantiate(this.rankItem);
+                                item.getComponent('rankitem').updateData(playerInfo);
+                                item.setPosition(0, -90 * i - 30);
+                                this.gameranklist.content.addChild(item,122);
+                            }
                            
                         },
                         fail: res => {
