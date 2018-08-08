@@ -138,6 +138,7 @@ var gamestart = cc.Class({
     */
 
     showPlayMethod:function(){
+        // tywx.AdManager.showAd(cc.p(333,160))
         if(tywx.publicwx){
             var image = wx.createImage();
             var self = this

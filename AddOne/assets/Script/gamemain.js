@@ -112,6 +112,7 @@ var gamemain = cc.Class({
         this.node.parent.addChild(effect);
         effect.x = 140;
         effect.y = 90;
+       
     },
 
     /*
@@ -380,7 +381,7 @@ var gamemain = cc.Class({
         for(var i = 0;i< this.point; i++){
             let color = config.showphy_pros.colors[i];
             ctx.fillColor = cc.color(color[0],color[1],color[2]);
-            var x = (config.swidth - (config.showphy_pros.phy_num * config.gezi_pitch)) / 2 + (config.showphy_pros.width + 10) * i;
+            var x = (config.swidth - ((config.showphy_pros.phy_num - (config.maxphy_value - this.point)) * config.gezi_pitch)) / 2 + (config.showphy_pros.width + 10) * i;
             var y = 980;
             var w = config.showphy_pros.width;
             var h = config.showphy_pros.height;
