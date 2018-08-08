@@ -222,4 +222,17 @@ var gamestart = cc.Class({
        cc.director.loadScene("gamemain", this.loadFinishCallBack);
        
     },
+
+    /*
+
+    */
+    shareApp: function(){
+       if(tywx.IsWechatPlatform()){
+            wx.shareAppMessage({
+                title:"赶紧加入我们，一起愉快的玩耍吧...",
+                imageUrl:"https://gss0.bdstatic.com/7Ls0a8Sm1A5BphGlnYG/sys/portrait/item/d68bced2b5c4b7dcb6b73838383d02.jpg?20180808115403",
+            });
+       }
+    }
+
 });

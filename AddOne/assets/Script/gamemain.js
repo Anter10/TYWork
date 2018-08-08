@@ -377,11 +377,10 @@ var gamemain = cc.Class({
     drawPhyPoint:function(){
         var ctx = this.bg.getComponent(cc.Graphics);
         ctx.clear();
-        let color = config.showphy_pros.colors[0];
-
-        ctx.fillColor = cc.color(color.r,color.g,color.b,color.c);
-        for(var i=0;i<this.point;i++){
-            var x = 20 + (config.showphy_pros.width + 10) * i;
+        for(var i = 0;i< this.point; i++){
+            let color = config.showphy_pros.colors[i];
+            ctx.fillColor = cc.color(color[0],color[1],color[2]);
+            var x = (config.swidth - (config.showphy_pros.phy_num * config.gezi_pitch)) / 2 + (config.showphy_pros.width + 10) * i;
             var y = 980;
             var w = config.showphy_pros.width;
             var h = config.showphy_pros.height;
