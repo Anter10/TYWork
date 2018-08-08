@@ -208,13 +208,13 @@ module.exports = (function(parent){
                 spr0.node.x = this.posx + config.gezi_size / 2;
                 spr0.node.y = this.posy + config.gezi_size / 2;
                 spr0.node.setRotation(this.effecttime * 720) ;
-                if(spr0.node.active == false)
+                if(spr0.node.active == false){
                     spr0.node.active = true;
+                }
             }
             else if(this.effectid==1){
                 spr1.node.x = this.posx + config.gezi_size / 2;
                 spr1.node.y = this.posy + config.gezi_size / 2;
-
                 spr1.node.setScale(1 - this.effecttime);
                 if(spr1.node.active == false){
                     spr1.node.active = true;

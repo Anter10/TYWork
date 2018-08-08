@@ -19,7 +19,7 @@ module.exports = function(id,parent){
     // 格子的容器
     this.parent = parent;
     // 格子的x坐标
-    this.posx = (config.swidth - (5 * config.gezi_pitch)) / 2 + (id % 5) * (config.gezi_pitch);
+    this.posx = 20 + (id % 5) * (config.gezi_pitch);
     // 格子的Y坐标
     this.posy = 180 + parseInt(id / 5) * (config.gezi_pitch);
     // 格子的数据层
@@ -89,7 +89,7 @@ module.exports = function(id,parent){
         ]
         思路: 逻辑需要
     */
-    this.getAllmask= function(){
+    this.ßß= function(){
         return this.parent.getAllmask();
     }
     
@@ -143,8 +143,8 @@ module.exports = function(id,parent){
         ctx.roundRect(this.block.posx,this.block.posy,config.gezi_size,config.gezi_size,8);
         ctx.fill();
         lable.string = this.block.num;
-        lable.node.x = this.block.posx-360+config.gezi_size/2;
-        lable.node.y = this.block.posy-640+config.gezi_size/2;
+        lable.node.x = this.block.posx-360+config.gezi_size / 2;
+        lable.node.y = this.block.posy-640+config.gezi_size / 2;
     }
 }
 
