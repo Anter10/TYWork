@@ -14,6 +14,9 @@
   "design-resolution-height": 640,
   "design-resolution-width": 960,
   "excluded-modules": [
+    "Mask",
+    "CCSpriteDistortion",
+    "LabelOutline",
     "ParticleSystem",
     "TiledMap",
     "Spine Skeleton",
@@ -37,7 +40,9 @@
     "DragonBones",
     "Physics",
     "StudioComponent",
+    "RenderTexture",
     "Chipmunk",
+    "Camera",
     "Intersection",
     "Native NetWork"
   ],
