@@ -409,11 +409,14 @@
     "meta": 1533731720182,
     "relativePath": "Scene/gamemain.fire"
   },
+<<<<<<< HEAD
   "f7c31388-ffbc-4518-af26-710e63573c5a": {
     "asset": 1533730949566,
     "meta": 1533731720185,
     "relativePath": "Scene/gamestart.fire"
   },
+=======
+>>>>>>> 6a5c637da20ccc17233af61e4fa06f2e2001ee50
   "7c2db254-7626-4b98-8cda-a93f8f06287f": {
     "asset": 1533715745589,
     "meta": 1533731721291,
@@ -449,6 +452,7 @@
     "meta": 1533731720847,
     "relativePath": "Script/CommonFrame/GlobalInit.js"
   },
+<<<<<<< HEAD
   "2fadaffc-7cf0-4745-9cc3-eae5a6600724": {
     "asset": 1533730949567,
     "meta": 1533731721383,
@@ -457,6 +461,21 @@
   "8ba150c4-f5df-4e2b-9fdf-42db1ce3754d": {
     "asset": 1533730949566,
     "meta": 1533731721277,
+=======
+  "8ba150c4-f5df-4e2b-9fdf-42db1ce3754d": {
+    "asset": 1533729576793,
+    "meta": 1533729583544,
+>>>>>>> 6a5c637da20ccc17233af61e4fa06f2e2001ee50
     "relativePath": "Script/gamestart.js"
+  },
+  "f7c31388-ffbc-4518-af26-710e63573c5a": {
+    "asset": 1533729576792,
+    "meta": 1533729583563,
+    "relativePath": "Scene/gamestart.fire"
+  },
+  "2fadaffc-7cf0-4745-9cc3-eae5a6600724": {
+    "asset": 1533729576793,
+    "meta": 1533729583574,
+    "relativePath": "Script/models/ShareButton.js"
   }
 }
