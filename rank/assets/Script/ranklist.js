@@ -168,8 +168,6 @@ cc.Class({
 
     // 得到玩家微信群组的数据
     getGroupFriendData: function(shareTicket) {
-        
-         
         if (CC_WECHATGAME) {
             wx.getUserInfo({
                 openIdList: ['selfOpenId'],
@@ -177,47 +175,32 @@ cc.Class({
                     console.log('success', userRes.data)
                     let userData = userRes.data[0];
                     //取出所有好友数据
-                    // wx.getGroupCloudStorage({
-                    //     shareTicket: shareTicket,
-                    //     keyList: [MAIN_MENU_NUM],
-                    //     success: res => {
-                    //         console.log("wx.getGroupCloudStorage success", res);
-                    //         this.loadingLabel.active = false;
-                    //         let data = res.data;
-                    //         data.sort((a, b) => {
-                    //             if (a.KVDataList.length == 0 && b.KVDataList.length == 0) {
-                    //                 return 0;
-                    //             }
-                    //             if (a.KVDataList.length == 0) {
-                    //                 return 1;
-                    //             }
-                    //             if (b.KVDataList.length == 0) {
-                    //                 return -1;
-                    //             }
-                    //             return b.KVDataList[0].value - a.KVDataList[0].value;
-                    //         });
-                    //         for (let i = 0; i < data.length; i++) {
-                    //             var playerInfo = data[i];
-                    //             var item = cc.instantiate(this.prefabRankItem);
-                    //             item.getComponent('RankItem').init(i, playerInfo);
-                    //             this.scrollViewContent.addChild(item);
-                    //             if (data[i].avatarUrl == userData.avatarUrl) {
-                    //                 let userItem = cc.instantiate(this.prefabRankItem);
-                    //                 userItem.getComponent('RankItem').init(i, playerInfo);
-                    //                 userItem.y = -354;
-                    //                 this.node.addChild(userItem, 1, 1000);
-                    //             }
-                    //         }
-                    //         if (data.length <= 8) {
-                    //             let layout = this.scrollViewContent.getComponent(cc.Layout);
-                    //             layout.resizeMode = cc.Layout.ResizeMode.NONE;
-                    //         }
-                    //     },
-                    //     fail: res => {
-                    //         console.log("wx.getFriendCloudStorage fail", res);
-                    //         this.loadingLabel.getComponent(cc.Label).string = "数据加载失败，请检测网络，谢谢。";
-                    //     },
-                    // });
+                    wx.getGroupCloudStorage({
+                    shareTicket: shareTicket,
+                    keyList: [MAIN_MENU_NUM],
+                        success: res => {
+                            console.log("wx.getGroupCloudStorage success", res);
+                            this.loadingLabel.active = false;
+                            let data = res.data;
+                            data.sort((a, b) => {
+                                if (a.KVDataList.length == 0 && b.KVDataList.length == 0) {
+                                    return 0;
+                                }
+                                if (a.KVDataList.length == 0) {
+                                    return 1;
+                                }
+                                if (b.KVDataList.length == 0) {
+                                    return -1;
+                                }
+                                return b.KVDataList[0].value - a.KVDataList[0].value;
+                            });
+                           
+                        },
+                        fail: res => {
+                            console.log("wx.getFriendCloudStorage fail", res);
+                            this.loadingLabel.getComponent(cc.Label).string = "数据加载失败，请检测网络，谢谢。";
+                        },
+                    });
                 },
                 fail: (res) => {
                     // this.loadingLabel.getComponent(cc.Label).string = "数据加载失败，请检测网络，谢谢。";
