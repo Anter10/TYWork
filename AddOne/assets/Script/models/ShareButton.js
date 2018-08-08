@@ -82,7 +82,22 @@ cc.Class({
         思路: 逻辑需要
     */
     setErrorCall: function(errorCall){
-        this.successCallBack = errorCall;
+        this.errorCallBack = errorCall;
+    },
+
+    /*
+        调用: 使用此model分享功能的时候 
+        功能: 手动设置分享失败后的回调函数
+        参数: [
+            errorCall: 分享失败后的回调方法 类型Function
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
+    setShareGroupCall: function(sgroupCall){
+        this.shareGroupCallBack = sgroupCall;
     },
     
 
@@ -113,18 +128,19 @@ cc.Class({
                     (res) => {
                         console.log("分享成功后的数据"+JSON.stringify(res));
                         if (res.shareTickets != undefined && res.shareTickets.length > 0) {
-                            // window.wx.postMessage({
-                            //     method: 2,
-                            //     MAIN_MENU_NUM: "x1",
-                            //     shareTicket: res.shareTickets[0]
-                            // });
-                            if(self.successCall){
-                                self.successCall(res);
+                            if(self.shareGroupCallBack){
+                               self.shareGroupCallBack(res);
                             }
+                        }
+                        if(self.successCallBack){
+                            self.successCallBack(res);
                         }
                     },null,
                     function(data){
                         console.log("分享成功后的数2据"+JSON.stringify(data));
+                        if(this.errorCallBack){
+                            this.errorCallBack(data);
+                        }
                     }
                 );
            }
