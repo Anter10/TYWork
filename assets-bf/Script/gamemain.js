@@ -312,12 +312,12 @@ var gamemain = cc.Class({
             this.resetAllMask();
             var sc =this.getAllgz()[j].num;
             this.checkmaskbyid(j, 0);
-            if (this.g_mask_samecnt >= 3) {
+            if (this.g_mask_samecnt >= config.minCanRemoveNumber) {
                 this.gamestate = config.gameState.domove;
                 this.gamestatetime = config.move_time;
                 this.lianjiNumber ++;
                 this.score += config.baseScore * sc * (this.g_mask_samecnt - 1);
-                for(var i = 0; i < 25; i++){
+                for(var i = 0; i < config.geziNumber; i++){
                     if(this.getAllmask()[i].step != 999 && this.getAllmask()[i].step != 0){
                        this.getAllgz()[i].block.speed_keep = config.gezi_pitch * this.getAllmask()[i].step/config.move_time;
                        this.getAllgz()[i].block.actiontime_keep = config.move_time / this.getAllmask()[i].step;
@@ -361,7 +361,7 @@ var gamemain = cc.Class({
                  
            } 
     },
-
+    
 
     /*
         调用: 1: 游戏初始的时候调用，2: 每次点击的时候没有连接的时候调用，3: 重新开始游戏的时候调用。
@@ -380,7 +380,7 @@ var gamemain = cc.Class({
         let color = config.showphy_pros.colors[0];
 
         ctx.fillColor = cc.color(color.r,color.g,color.b,color.c);
-        for(var i=0;i<this.point;i++){
+        for(var i = 0;i < this.point; i++){
             var x = 20 + (config.showphy_pros.width + 10) * i;
             var y = 980;
             var w = config.showphy_pros.width;
@@ -453,7 +453,7 @@ var gamemain = cc.Class({
             for (var i = 0; i < config.geziNumber; i++) {
                 this.resetAllMask();
                 this.checkmaskbyid(i, 0);
-                if (this.g_mask_samecnt >= 3) {
+                if (this.g_mask_samecnt >= config.minCanRemoveNumber) {
                     this.changenumbymask();
                     needcheck = true;
                 }
@@ -483,7 +483,7 @@ var gamemain = cc.Class({
     },
     
     
-     /*
+    /*
         调用: 1: 处理游戏点击的时候调用 2:游戏格子连接的时候调用
         功能: 递归寻找给定ID的格子 并在mask数组里面进行标记
         参数: [
@@ -539,7 +539,7 @@ var gamemain = cc.Class({
         this.checkmaskbyid(id + add, step + 1, bj, add)
     },
 
-
+   
      /*
         调用: 游戏初始的时候调用
         功能: 改变格子的数字 通过mask
@@ -574,11 +574,41 @@ var gamemain = cc.Class({
     */
     getrandomnum:function(){
         var tnum = this.maxnum - 2;
-        if(tnum<5)
+        if(tnum < 5)
             tnum = 5;
-
+        Math.seed = tnum;
         var num = parseInt(Math.random() * 10000) % tnum + 1;
+        
         return num;
+    },
+
+     /*
+        调用: 点击返回首页的时候会调用
+        功能: 返回首页
+        参数: [
+           无
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
+    backFirstPage:function(){
+       if(tywx.Util.getItemFromLocalStorage("maxscore", 0) < this.score){
+            tywx.Util.setItemToLocalStorage("maxscore",this.score); 
+       }
+       if(tywx.publicwx){
+            wx.postMessage({
+                method: 4,
+                score:this.score,
+            });
+       }
+       cc.director.loadScene("gamestart", this.destroyFinish);
+    },
+
+    destroyFinish:function(){
+        
+        
     },
     
     /*
@@ -636,33 +666,7 @@ var gamemain = cc.Class({
                 }
             }
         }
-    },
-    /*
-        调用: 点击返回首页的时候会调用
-        功能: 返回首页
-        参数: [
-           无
-        ]
-        返回值:[
-           无
-        ]
-        思路: 游戏逻辑需要
-    */
-    backFirstPage:function(){
-        if(tywx.Util.getItemFromLocalStorage("maxscore", 0) < this.score){
-           tywx.Util.setItemToLocalStorage("maxscore",this.score); 
-        }
-        if(tywx.publicwx){
-            wx.postMessage({
-                method: 4,
-                score:this.score,
-            });
-        }
-        cc.director.loadScene("gamestart", this.destroyFinish);
-    },
-
-    destroyFinish:function(){
-    },
+    }
 });
 
 

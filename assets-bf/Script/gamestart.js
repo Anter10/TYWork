@@ -108,7 +108,8 @@ var gamestart = cc.Class({
             });
        }
        var score = tywx.Util.getItemFromLocalStorage("maxscore",0); 
-       if(score){
+    //    console.log("score = "+score)
+        if(score){
             console.log("score = "+score)
             this.gameScore.string = score;
         }else{
