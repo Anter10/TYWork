@@ -2,8 +2,7 @@
  * Created by xiaochuntian on 2018/5/2.
  */
 tywx = {};
-//是否发布微信版本
-tywx.publicwx = true;
+
 //基础状态信息
 tywx.StateInfo = {
     networkConnected: true,   //网络状态

@@ -47,6 +47,8 @@ var gamestart = cc.Class({
          
     },
     start () {
+        //是否发布微信版本
+        tywx.publicwx = true;
         if(tywx.publicwx){
             this.tex = new cc.Texture2D();
             window.sharedCanvas.width = 650;
@@ -106,6 +108,11 @@ var gamestart = cc.Class({
             window.wx.postMessage({
                 method: 3,
             });
+            var msg = tywx.ShareInterface.getRandomOnShareAppMessageInfo();
+            if(msg){
+                tywx.ShareInterface.setOnShareAppMessageInfo(msg.title, msg.imageUrl, msg.sharePointId, msg.shareSchemeId);
+                console.log("当前获得的分享信息 = "+JSON.stringify(msg))
+            }
        }
        var score = tywx.Util.getItemFromLocalStorage("maxscore",0); 
        if(score){
@@ -114,6 +121,7 @@ var gamestart = cc.Class({
         }else{
             console.log("当前分数不存在")
         }
+        
        
     },
 

@@ -25,17 +25,31 @@ cc.Class({
 
     },
 
-    setShareData:function(data){
+    setShareData:function(){
         this.data = data;
     },
 
     shareMiniApp:function(){
         if(tywx.IsWechatPlatform()){
-            wx.shareAppMessage({
-                title: this.data.title != null ? this.data.title: "赶紧加入我们，一起愉快的玩耍吧...",
-                imageUrl: this.data.imageUrl != null?this.data.imageUrl: "https://gss0.bdstatic.com/7Ls0a8Sm1A5BphGlnYG/sys/portrait/item/d68bced2b5c4b7dcb6b73838383d02.jpg?20180808115403",
-            });
+            window.wx.showShareMenu({withShareTicket: true});
+            var msg = tywx.ShareInterface.getRandomOnShareAppMessageInfo();
+            console.log("msg = "+JSON.stringify(msg));
+            if(msg){
+                tywx.ShareInterface.share(
+                    msg.title,
+                    msg.imageUrl,
+                    msg.sharePointId,
+                    msg.shareSchemeId,
+                    (res) => {
+                        console.log("分享成功后的数据"+JSON.stringify(res));
+                    },null,
+                    function(data){
+                        console.log("分享成功后的数2据"+JSON.stringify(data));
+                    }
+                );
+           }
        }
+       
     }
 
     // update (dt) {},
