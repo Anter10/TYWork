@@ -3,7 +3,7 @@
  */
 tywx = {};
 //是否发布微信版本
-tywx.publicwx = false;
+tywx.publicwx = true;
 //基础状态信息
 tywx.StateInfo = {
     networkConnected: true,   //网络状态

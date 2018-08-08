@@ -33,7 +33,7 @@ var gamemain = cc.Class({
             default:null,
             type:cc.Sprite,
         },
-
+       
         // 游戏的背景
         bg:cc.Node, 
         // 点击+1的动画sprite        
@@ -104,10 +104,10 @@ var gamemain = cc.Class({
             var mpos = event.touch.getLocation();
             self.touchEndCallback(mpos.x,mpos.y);
         });
-       
+        this.prerandomnumber = 0;
         // 初始游戏
         this.initgame();
-
+       
         var effect = cc.instantiate(this.effect);
         this.node.parent.addChild(effect);
         effect.x = 140;
@@ -578,6 +578,11 @@ var gamemain = cc.Class({
             tnum = 5;
 
         var num = parseInt(Math.random() * 10000) % tnum + 1;
+        if(this.prerandomnumber == num){
+            return this.getrandomnum();
+        }else{
+            this.prerandomnumber = num;
+        }
         return num;
     },
     
@@ -614,7 +619,9 @@ var gamemain = cc.Class({
                     this.getAllgz()[i].block.speed_keep  = (dis * config.gezi_pitch) / config.move_time;
                     this.getAllgz()[i].block.adjustdrop();
                     this.getAllgz()[topid].step = 888;
-                    this.getAllgz()[i].setnum(this.getAllgz()[topid].num);
+                    var num = this.getrandomnum();
+                    // this.getAllgz()[i].setnum(this.getAllgz()[topid].num);
+                    this.getAllgz()[i].setnum(num);
                     this.getAllgz()[i].settoblockvalue();
 
                     this.getAllgz()[i].block.effectid       =  this.getAllgz()[topid].block.effectid;
