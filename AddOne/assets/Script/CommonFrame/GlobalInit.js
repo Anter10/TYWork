@@ -20,7 +20,7 @@ tywx.SystemInfo = {
     loginUrl : 'https://openrich.nalrer.cn/',
     shareManagerUrl : 'https://market.touch4.me/',
     deviceId: 'wechatGame',
-    wxAppId: 'wxbfebdafc2fc60b54',
+    wxAppId: 'wxb3967d06430bf885',
     appId: 9999,
     gameId: 6,
     hall_version: "hall37",
