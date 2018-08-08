@@ -429,11 +429,6 @@
     "meta": 1533701448201,
     "relativePath": "Scene/sharebuttton.prefab"
   },
-  "2fadaffc-7cf0-4745-9cc3-eae5a6600724": {
-    "asset": 1533710634590,
-    "meta": 1533710645269,
-    "relativePath": "Script/models/ShareButton.js"
-  },
   "3c75d2aa-a18a-4758-aec7-5576d65c6795": {
     "asset": 1533711224277,
     "meta": 1533711769631,
@@ -449,14 +444,19 @@
     "meta": 1533715292677,
     "relativePath": "Script/gamemain.js"
   },
+  "12b5f3d7-1181-4b54-a8f6-91850ec4e76f": {
+    "asset": 1533719753801,
+    "meta": 1533719756101,
+    "relativePath": "Script/CommonFrame/GlobalInit.js"
+  },
   "8ba150c4-f5df-4e2b-9fdf-42db1ce3754d": {
-    "asset": 1533715291610,
-    "meta": 1533715292679,
+    "asset": 1533720361967,
+    "meta": 1533720444597,
     "relativePath": "Script/gamestart.js"
   },
-  "12b5f3d7-1181-4b54-a8f6-91850ec4e76f": {
-    "asset": 1533715866575,
-    "meta": 1533716245997,
-    "relativePath": "Script/CommonFrame/GlobalInit.js"
+  "2fadaffc-7cf0-4745-9cc3-eae5a6600724": {
+    "asset": 1533720549718,
+    "meta": 1533720551359,
+    "relativePath": "Script/models/ShareButton.js"
   }
 }
