@@ -44,7 +44,7 @@ cc.Class({
              if(data.method == PTypes.friends){
                self.getFriendData();  
              }else if(data.method == PTypes.group){
-               self.getGroupFriendData()
+               self.getGroupFriendData(data.shareTicket);
              }else if(data.method == PTypes.userinfo){
                 self.getUserInfoData();
              }else if(data.method == PTypes.submitscore){
@@ -53,7 +53,7 @@ cc.Class({
         });
     },
     
-    
+     
     //提交得分
     submitScore: function(score) {
         var self = this;
@@ -63,6 +63,7 @@ cc.Class({
                 keyList: [MAIN_MENU_NUM],
                 
                 success: function (getres) {
+                    console.log('setUserCloudStorage', 'success', getres)
                     self.showloading.node.active = false;
                     if (getres.KVDataList.length != 0) {
                         if (getres.KVDataList[0].value > score) {
@@ -123,7 +124,7 @@ cc.Class({
                 openIdList: ['selfOpenId'],
                 success: (userRes) => {
                     this.showloading.node.active = false;
-                    console.log('success', userRes.data)
+                    console.log('success'+userRes.data)
                     let userData = userRes.data[0];
                     //取出所有好友数据
                     wx.getFriendCloudStorage({
@@ -179,8 +180,8 @@ cc.Class({
                     shareTicket: shareTicket,
                     keyList: [MAIN_MENU_NUM],
                         success: res => {
-                            console.log("wx.getGroupCloudStorage success", res);
-                            this.loadingLabel.active = false;
+                            console.log("wx.getGroupCloudStorage success"+ res);
+                            // this.loadingLabel.active = false;
                             let data = res.data;
                             data.sort((a, b) => {
                                 if (a.KVDataList.length == 0 && b.KVDataList.length == 0) {
@@ -198,7 +199,7 @@ cc.Class({
                         },
                         fail: res => {
                             console.log("wx.getFriendCloudStorage fail", res);
-                            this.loadingLabel.getComponent(cc.Label).string = "数据加载失败，请检测网络，谢谢。";
+                            // this.loadingLabel.getComponent(cc.Label).string = "数据加载失败，请检测网络，谢谢。";
                         },
                     });
                 },
