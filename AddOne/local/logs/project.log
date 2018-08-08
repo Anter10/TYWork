@@ -3276,3 +3276,515 @@ Missing uuid: "ace5ce5d-0e4f-4f2e-885f-d22a7ee878b2"
 
 2018-08-08T08:17:28.055Z - normal: open IDE success
 
+2018-08-08T09:12:54.456Z - warn: Should not specify class name node for Component which defines in project.
+2018-08-08T09:12:54.459Z - warn: Can not instantiate CCClass 'node' with arguments.
+2018-08-08T09:12:54.705Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/tugame/Desktop/TYWork/AddOne/build",
+  "debug": false,
+  "dest": "/Users/tugame/Desktop/TYWork/AddOne/build/wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "f7c31388-ffbc-4518-af26-710e63573c5a",
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "f7c31388-ffbc-4518-af26-710e63573c5a",
+  "template": "link",
+  "title": "addone",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxb3967d06430bf885",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "rank"
+  },
+  "xxteaKey": "b552544a-ae1d-4d",
+  "zipCompressJs": true,
+  "project": "/Users/tugame/Desktop/TYWork/AddOne",
+  "projectName": "addone",
+  "debugBuildWorker": false
+}
+2018-08-08T09:12:54.710Z - normal: Building /Users/tugame/Desktop/TYWork/AddOne
+2018-08-08T09:12:54.710Z - normal: Destination /Users/tugame/Desktop/TYWork/AddOne/build/wechatgame
+2018-08-08T09:12:54.714Z - normal: Delete /Users/tugame/Desktop/TYWork/AddOne/build/wechatgame/**/*
+2018-08-08T09:12:59.216Z - normal: Start building assets
+2018-08-08T09:12:59.216Z - normal: Start spawn build-worker
+2018-08-08T09:13:00.293Z - normal: Finish spawn build-worker
+2018-08-08T09:13:00.293Z - normal: Start init build-worker
+2018-08-08T09:13:04.005Z - normal: Finish init build-worker
+2018-08-08T09:13:04.005Z - normal: Start build-assets in worker
+2018-08-08T09:13:04.418Z - normal: Finish build-assets in worker
+2018-08-08T09:13:04.422Z - normal: Finish building assets
+2018-08-08T09:13:04.432Z - normal: Start building plugin scripts
+2018-08-08T09:13:04.956Z - normal: Finish building plugin scripts
+2018-08-08T09:13:04.968Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-08-08T09:13:06.237Z - normal: Built to "/Users/tugame/Desktop/TYWork/AddOne/build/wechatgame" successfully
+2018-08-08T09:15:56.511Z - warn: Should not specify class name node for Component which defines in project.
+2018-08-08T09:15:56.516Z - warn: Can not instantiate CCClass 'node' with arguments.
+2018-08-08T09:15:56.798Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/tugame/Desktop/TYWork/AddOne/build",
+  "debug": false,
+  "dest": "/Users/tugame/Desktop/TYWork/AddOne/build/wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "f7c31388-ffbc-4518-af26-710e63573c5a",
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "f7c31388-ffbc-4518-af26-710e63573c5a",
+  "template": "link",
+  "title": "addone",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxb3967d06430bf885",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "rank"
+  },
+  "xxteaKey": "b552544a-ae1d-4d",
+  "zipCompressJs": true,
+  "project": "/Users/tugame/Desktop/TYWork/AddOne",
+  "projectName": "addone",
+  "debugBuildWorker": false
+}
+2018-08-08T09:15:56.803Z - normal: Building /Users/tugame/Desktop/TYWork/AddOne
+2018-08-08T09:15:56.803Z - normal: Destination /Users/tugame/Desktop/TYWork/AddOne/build/wechatgame
+2018-08-08T09:15:56.806Z - normal: Delete /Users/tugame/Desktop/TYWork/AddOne/build/wechatgame/**/*
+2018-08-08T09:16:00.982Z - normal: Start building assets
+2018-08-08T09:16:00.982Z - normal: Start spawn build-worker
+2018-08-08T09:16:01.644Z - normal: Finish spawn build-worker
+2018-08-08T09:16:01.644Z - normal: Start init build-worker
+2018-08-08T09:16:05.208Z - normal: Finish init build-worker
+2018-08-08T09:16:05.208Z - normal: Start build-assets in worker
+2018-08-08T09:16:05.485Z - normal: Finish build-assets in worker
+2018-08-08T09:16:05.488Z - normal: Finish building assets
+2018-08-08T09:16:05.496Z - normal: Start building plugin scripts
+2018-08-08T09:16:05.937Z - normal: Finish building plugin scripts
+2018-08-08T09:16:05.942Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-08-08T09:16:07.369Z - normal: Built to "/Users/tugame/Desktop/TYWork/AddOne/build/wechatgame" successfully
+2018-08-08T09:16:43.106Z - normal: Initializing...
+
+2018-08-08T09:16:43.113Z - normal: idePortFile: /Users/tugame/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-08-08T09:16:43.138Z - normal: IDE server has started, listening on http://127.0.0.1:63657
+
+2018-08-08T09:16:43.139Z - normal: initialization finished
+
+2018-08-08T09:16:43.392Z - normal: open IDE success
+
+2018-08-08T09:16:48.227Z - normal: Initializing...
+
+2018-08-08T09:16:48.232Z - normal: idePortFile: /Users/tugame/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-08-08T09:16:48.250Z - normal: IDE server has started, listening on http://127.0.0.1:63657
+
+2018-08-08T09:16:48.250Z - normal: initialization finished
+
+2018-08-08T09:16:48.433Z - normal: open IDE success
+
+2018-08-08T09:17:14.498Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/tugame/Desktop/TYWork/AddOne/build",
+  "debug": false,
+  "dest": "/Users/tugame/Desktop/TYWork/AddOne/build/wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "f7c31388-ffbc-4518-af26-710e63573c5a",
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "f7c31388-ffbc-4518-af26-710e63573c5a",
+  "template": "link",
+  "title": "addone",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxb3967d06430bf885",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "rank"
+  },
+  "xxteaKey": "b552544a-ae1d-4d",
+  "zipCompressJs": true,
+  "project": "/Users/tugame/Desktop/TYWork/AddOne",
+  "projectName": "addone",
+  "debugBuildWorker": false
+}
+2018-08-08T09:17:14.500Z - normal: Building /Users/tugame/Desktop/TYWork/AddOne
+2018-08-08T09:17:14.501Z - normal: Destination /Users/tugame/Desktop/TYWork/AddOne/build/wechatgame
+2018-08-08T09:17:14.503Z - normal: Delete /Users/tugame/Desktop/TYWork/AddOne/build/wechatgame/**/*
+2018-08-08T09:17:18.208Z - normal: Start building assets
+2018-08-08T09:17:18.208Z - normal: Start spawn build-worker
+2018-08-08T09:17:18.890Z - normal: Finish spawn build-worker
+2018-08-08T09:17:18.890Z - normal: Start init build-worker
+2018-08-08T09:17:21.789Z - normal: Finish init build-worker
+2018-08-08T09:17:21.790Z - normal: Start build-assets in worker
+2018-08-08T09:17:22.172Z - normal: Finish build-assets in worker
+2018-08-08T09:17:22.176Z - normal: Finish building assets
+2018-08-08T09:17:22.185Z - normal: Start building plugin scripts
+2018-08-08T09:17:22.609Z - normal: Finish building plugin scripts
+2018-08-08T09:17:22.614Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-08-08T09:17:23.819Z - normal: Built to "/Users/tugame/Desktop/TYWork/AddOne/build/wechatgame" successfully
+2018-08-08T09:17:26.477Z - normal: Initializing...
+
+2018-08-08T09:17:26.482Z - normal: idePortFile: /Users/tugame/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-08-08T09:17:26.503Z - normal: IDE server has started, listening on http://127.0.0.1:63657
+
+2018-08-08T09:17:26.503Z - normal: initialization finished
+
+2018-08-08T09:17:26.697Z - normal: open IDE success
+
+2018-08-08T09:23:11.074Z - normal: Initializing...
+
+2018-08-08T09:23:11.079Z - normal: idePortFile: /Users/tugame/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-08-08T09:23:11.095Z - normal: starting ide...
+
+2018-08-08T09:23:14.978Z - normal: IDE server has started, listening on http://127.0.0.1:43397
+
+2018-08-08T09:23:14.983Z - normal: initialization finished
+
+2018-08-08T09:23:15.358Z - normal: open IDE success
+
+2018-08-08T09:27:24.973Z - warn: Should not specify class name node for Component which defines in project.
+2018-08-08T09:27:24.977Z - warn: Can not instantiate CCClass 'node' with arguments.
+2018-08-08T09:27:25.118Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/tugame/Desktop/TYWork/AddOne/build",
+  "debug": false,
+  "dest": "/Users/tugame/Desktop/TYWork/AddOne/build/wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "f7c31388-ffbc-4518-af26-710e63573c5a",
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "f7c31388-ffbc-4518-af26-710e63573c5a",
+  "template": "link",
+  "title": "addone",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxb3967d06430bf885",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "rank"
+  },
+  "xxteaKey": "b552544a-ae1d-4d",
+  "zipCompressJs": true,
+  "project": "/Users/tugame/Desktop/TYWork/AddOne",
+  "projectName": "addone",
+  "debugBuildWorker": false
+}
+2018-08-08T09:27:25.121Z - normal: Building /Users/tugame/Desktop/TYWork/AddOne
+2018-08-08T09:27:25.122Z - normal: Destination /Users/tugame/Desktop/TYWork/AddOne/build/wechatgame
+2018-08-08T09:27:25.123Z - normal: Delete /Users/tugame/Desktop/TYWork/AddOne/build/wechatgame/**/*
+2018-08-08T09:27:29.325Z - normal: Start building assets
+2018-08-08T09:27:29.325Z - normal: Start spawn build-worker
+2018-08-08T09:27:29.979Z - normal: Finish spawn build-worker
+2018-08-08T09:27:29.979Z - normal: Start init build-worker
+2018-08-08T09:27:32.830Z - normal: Finish init build-worker
+2018-08-08T09:27:32.830Z - normal: Start build-assets in worker
+2018-08-08T09:27:33.151Z - normal: Finish build-assets in worker
+2018-08-08T09:27:33.154Z - normal: Finish building assets
+2018-08-08T09:27:33.164Z - normal: Start building plugin scripts
+2018-08-08T09:27:33.579Z - normal: Finish building plugin scripts
+2018-08-08T09:27:33.591Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-08-08T09:27:34.786Z - normal: Built to "/Users/tugame/Desktop/TYWork/AddOne/build/wechatgame" successfully
+2018-08-08T09:29:11.947Z - warn: Should not specify class name node for Component which defines in project.
+2018-08-08T09:29:11.951Z - warn: Can not instantiate CCClass 'node' with arguments.
+2018-08-08T09:29:12.113Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/tugame/Desktop/TYWork/AddOne/build",
+  "debug": false,
+  "dest": "/Users/tugame/Desktop/TYWork/AddOne/build/wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "f7c31388-ffbc-4518-af26-710e63573c5a",
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "f7c31388-ffbc-4518-af26-710e63573c5a",
+  "template": "link",
+  "title": "addone",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxb3967d06430bf885",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "rank"
+  },
+  "xxteaKey": "b552544a-ae1d-4d",
+  "zipCompressJs": true,
+  "project": "/Users/tugame/Desktop/TYWork/AddOne",
+  "projectName": "addone",
+  "debugBuildWorker": false
+}
+2018-08-08T09:29:12.117Z - normal: Building /Users/tugame/Desktop/TYWork/AddOne
+2018-08-08T09:29:12.118Z - normal: Destination /Users/tugame/Desktop/TYWork/AddOne/build/wechatgame
+2018-08-08T09:29:12.119Z - normal: Delete /Users/tugame/Desktop/TYWork/AddOne/build/wechatgame/**/*
+2018-08-08T09:29:16.174Z - normal: Start building assets
+2018-08-08T09:29:16.174Z - normal: Start spawn build-worker
+2018-08-08T09:29:16.828Z - normal: Finish spawn build-worker
+2018-08-08T09:29:16.828Z - normal: Start init build-worker
+2018-08-08T09:29:19.645Z - normal: Finish init build-worker
+2018-08-08T09:29:19.645Z - normal: Start build-assets in worker
+2018-08-08T09:29:19.960Z - normal: Finish build-assets in worker
+2018-08-08T09:29:19.964Z - normal: Finish building assets
+2018-08-08T09:29:19.973Z - normal: Start building plugin scripts
+2018-08-08T09:29:20.372Z - normal: Finish building plugin scripts
+2018-08-08T09:29:20.376Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-08-08T09:29:21.471Z - normal: Built to "/Users/tugame/Desktop/TYWork/AddOne/build/wechatgame" successfully
+2018-08-08T09:31:04.677Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/tugame/Desktop/TYWork/AddOne/build",
+  "debug": false,
+  "dest": "/Users/tugame/Desktop/TYWork/AddOne/build/wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "f7c31388-ffbc-4518-af26-710e63573c5a",
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "f7c31388-ffbc-4518-af26-710e63573c5a",
+  "template": "link",
+  "title": "addone",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxb3967d06430bf885",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "rank"
+  },
+  "xxteaKey": "b552544a-ae1d-4d",
+  "zipCompressJs": true,
+  "project": "/Users/tugame/Desktop/TYWork/AddOne",
+  "projectName": "addone",
+  "debugBuildWorker": false
+}
+2018-08-08T09:31:04.677Z - normal: Building /Users/tugame/Desktop/TYWork/AddOne
+2018-08-08T09:31:04.677Z - normal: Destination /Users/tugame/Desktop/TYWork/AddOne/build/wechatgame
+2018-08-08T09:31:04.679Z - normal: Delete /Users/tugame/Desktop/TYWork/AddOne/build/wechatgame/**/*
+2018-08-08T09:31:08.465Z - normal: Start building assets
+2018-08-08T09:31:08.465Z - normal: Start spawn build-worker
+2018-08-08T09:31:09.168Z - normal: Finish spawn build-worker
+2018-08-08T09:31:09.168Z - normal: Start init build-worker
+2018-08-08T09:31:12.085Z - normal: Finish init build-worker
+2018-08-08T09:31:12.085Z - normal: Start build-assets in worker
+2018-08-08T09:31:12.447Z - normal: Finish build-assets in worker
+2018-08-08T09:31:12.454Z - normal: Finish building assets
+2018-08-08T09:31:12.463Z - normal: Start building plugin scripts
+2018-08-08T09:31:12.909Z - normal: Finish building plugin scripts
+2018-08-08T09:31:12.914Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-08-08T09:31:14.075Z - normal: Built to "/Users/tugame/Desktop/TYWork/AddOne/build/wechatgame" successfully

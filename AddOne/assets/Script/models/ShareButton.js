@@ -42,6 +42,13 @@ cc.Class({
                     msg.shareSchemeId,
                     (res) => {
                         console.log("分享成功后的数据"+JSON.stringify(res));
+                        if (res.shareTickets != undefined && res.shareTickets.length > 0) {
+                            window.wx.postMessage({
+                                method: 2,
+                                MAIN_MENU_NUM: "x1",
+                                shareTicket: res.shareTickets[0]
+                            });
+                        }
                     },null,
                     function(data){
                         console.log("分享成功后的数2据"+JSON.stringify(data));
