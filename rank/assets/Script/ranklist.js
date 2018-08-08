@@ -168,7 +168,8 @@ cc.Class({
     },
 
     // 得到玩家微信群组的数据
-    getGroupFriendData: function(shareTicket) {
+    getGroupFriendData: function(tshareTicket) {
+        var shareTicket = tshareTicket;
         if (CC_WECHATGAME) {
             wx.getUserInfo({
                 openIdList: ['selfOpenId'],
@@ -180,8 +181,8 @@ cc.Class({
                     shareTicket: shareTicket,
                     keyList: [MAIN_MENU_NUM],
                         success: res => {
-                            console.log("wx.getGroupCloudStorage success"+ res);
-                            // this.loadingLabel.active = false;
+                            console.log("群组数据 = ", res);
+                            
                             let data = res.data;
                             data.sort((a, b) => {
                                 if (a.KVDataList.length == 0 && b.KVDataList.length == 0) {
@@ -198,7 +199,7 @@ cc.Class({
                            
                         },
                         fail: res => {
-                            console.log("wx.getFriendCloudStorage fail", res);
+                            console.log("得到群组数据失败", res);
                             // this.loadingLabel.getComponent(cc.Label).string = "数据加载失败，请检测网络，谢谢。";
                         },
                     });
