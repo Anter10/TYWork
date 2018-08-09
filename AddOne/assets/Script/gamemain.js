@@ -104,6 +104,7 @@ var gamemain = cc.Class({
             var mpos = event.touch.getLocation();
             self.touchEndCallback(mpos.x,mpos.y);
         });
+        // 前一个产生的随机数
         this.prerandomnumber = 0;
         // 初始游戏
         this.initgame();
@@ -292,10 +293,27 @@ var gamemain = cc.Class({
          this.getAllgz()[this.g_clickid].block.effecttime = 0.5;
          if(num > this.maxnum){
              this.maxnum = num;
+             this.maxScoreShow();
          }
          this.refreshbymask();
     },
 
+
+    /*
+        调用: 产生最大数字的时候调用
+        功能: 产生最大数字的逻辑处理
+        参数: [
+            无
+        ]
+        返回值: [
+            无
+        ]
+        思路: 逻辑需要
+    */
+    maxScoreShow: function(){
+
+    },
+   
      /*
         调用: 游戏处于掉落状态的时候调用
         功能: 掉落状态的逻辑处理
@@ -623,7 +641,6 @@ var gamemain = cc.Class({
                     // this.getAllgz()[i].setnum(this.getAllgz()[topid].num);
                     this.getAllgz()[i].setnum(num);
                     this.getAllgz()[i].settoblockvalue();
-
                     this.getAllgz()[i].block.effectid       =  this.getAllgz()[topid].block.effectid;
                     this.getAllgz()[i].block.effecttime     =  this.getAllgz()[topid].block.effecttime;
                     this.getAllgz()[topid].block.effectid   =- 1;
@@ -636,7 +653,6 @@ var gamemain = cc.Class({
                     this.getAllgz()[i].block.id_dest = i;
                     this.getAllgz()[i].block.speed_keep = (dis * config.gezi_pitch) / config.move_time;
                     this.getAllgz()[i].block.adjustdrop();
-
                     var num = this.getrandomnum();
                     this.getAllgz()[i].setnum(num);
                     this.getAllgz()[i].settoblockvalue();
@@ -668,7 +684,21 @@ var gamemain = cc.Class({
         cc.director.loadScene("gamestart", this.destroyFinish);
     },
 
+    /*
+        调用: 点击返回首页的时候会调用
+        功能: 清除当前的节点
+        参数: [
+           无
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
     destroyFinish:function(){
+        if(this.node){
+           this.node.destroy();
+        }
     },
 });
 

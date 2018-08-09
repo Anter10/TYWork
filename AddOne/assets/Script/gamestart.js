@@ -250,7 +250,9 @@ var gamestart = cc.Class({
         思路: 游戏需要
     */
     loadFinishCallBack:function(){
-         this.node.destroy();
+         if(this.node){
+            this.node.destroy();
+         }
     },
    
      /*
@@ -269,6 +271,7 @@ var gamestart = cc.Class({
            this.gameScore.string = Math.abs(score);
         }
     },
+    
     /*
         调用: 点击开始游戏的时候调用
         功能: 进入游戏界面
@@ -282,7 +285,6 @@ var gamestart = cc.Class({
     */
     startGame:function(){
        cc.director.loadScene("gamemain", this.loadFinishCallBack);
-       
     },
 
     /*

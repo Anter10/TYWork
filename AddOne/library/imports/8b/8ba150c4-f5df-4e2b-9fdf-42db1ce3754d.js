@@ -178,7 +178,9 @@ var gamestart = cc.Class((_cc$Class = {
         });
     }
 }), _defineProperty(_cc$Class, "loadFinishCallBack", function loadFinishCallBack() {
-    this.node.destroy();
+    if (this.node) {
+        this.node.destroy();
+    }
 }), _defineProperty(_cc$Class, "setScore", function setScore(score) {
     if (score != null) {
         this.gameScore.string = Math.abs(score);

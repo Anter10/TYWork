@@ -5,15 +5,9 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-<<<<<<< HEAD
-      "x": 1544,
-      "y": 573,
+      "x": 242,
+      "y": 90,
       "width": 1614,
-=======
-      "x": 856,
-      "y": 375,
-      "width": 1440,
->>>>>>> 005632e30d745e03ac7940c7b4dce0733005065c
       "height": 828,
       "layout": {
         "children": [
@@ -51,23 +45,23 @@
                     "children": [
                       "scene"
                     ],
-                    "height": 468,
+                    "height": 467.984375,
                     "type": "panel",
-                    "width": 394.390625
+                    "width": 602
                   },
                   {
                     "active": 0,
                     "children": [
                       "node-library"
                     ],
-                    "height": 468,
+                    "height": 467.984375,
                     "type": "panel",
-                    "width": 439.921875
+                    "width": 351
                   }
                 ],
-                "height": 468,
+                "height": 467.984375,
                 "type": "dock-h",
-                "width": 837.3125
+                "width": 956
               },
               {
                 "active": 0,
@@ -77,12 +71,12 @@
                 ],
                 "height": 266,
                 "type": "panel",
-                "width": 837.3125
+                "width": 956
               }
             ],
             "height": 737,
             "type": "dock-v",
-            "width": 837.3125
+            "width": 956
           },
           {
             "active": 0,
@@ -91,7 +85,7 @@
             ],
             "height": 737,
             "type": "panel",
-            "width": 386.6875
+            "width": 442
           }
         ],
         "type": "dock-h"
@@ -106,21 +100,13 @@
         "scene"
       ]
     },
-<<<<<<< HEAD
-    "window-1533695944482": {}
+    "window-1533780935884": {},
+    "worker": {}
   },
   "panels": {
     "builder": {
-      "x": 890,
-      "y": 406,
-=======
-    "window-1533731752119": {}
-  },
-  "panels": {
-    "builder": {
-      "x": 383,
-      "y": 164,
->>>>>>> 005632e30d745e03ac7940c7b4dce0733005065c
+      "x": 744,
+      "y": 108,
       "width": 439,
       "height": 610
     },
