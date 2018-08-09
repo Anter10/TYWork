@@ -26,11 +26,23 @@ var gamemain = cc.Class({
             default: [],
             type: cc.Label
         },
+        stopView: {
+            default: null,
+            type: cc.Node
+        },
+        stopButton: {
+            default: null,
+            type: cc.Node
+        },
         GameOver: {
             default: null,
             type: cc.Label
         },
         effect: {
+            default: null,
+            type: cc.Prefab
+        },
+        djitem: {
             default: null,
             type: cc.Prefab
         },
@@ -66,7 +78,12 @@ var gamemain = cc.Class({
         // 存放每个格子的数组
         g_gezi: [],
         // 存放每个mask的数组
-        g_mask: []
+        g_mask: [],
+        // 玩家当前道具
+        allitems: [],
+        // 此时距离上次点击屏幕有多长时间
+        curtimeawaypre: 10
+
     },
 
     /*
@@ -117,6 +134,79 @@ var gamemain = cc.Class({
         this.node.parent.addChild(effect);
         effect.x = 140;
         effect.y = 90;
+    },
+
+    /*
+        调用: 一段时间没有点击屏幕后调用
+        功能: 提示玩家点击某个方块可以消除
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
+    showTouchEveryTime: function showTouchEveryTime() {},
+
+    /*
+        调用: 点击的时候调用
+        功能: 点击方块产生特效
+        参数: [
+            touchpos: 当前触摸点的位置 type:{}
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
+    showTouchEffect: function showTouchEffect(touchpos) {},
+
+    /*
+        调用: 点击停止按钮的时候调用
+        功能: 显示停止按钮控制的菜单
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
+    showStopView: function showStopView() {
+        this.stopView.node.active = !this.stopView.node.active ? true : false;
+    },
+
+    /*
+        调用: 道具变化和游戏初始化的时候调用
+        功能: 刷新道具显示
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
+    dealAllItems: function dealAllItems() {
+        var allitems = JSON.parse(ywx.Util.getItemFromLocalStorage("allitems", "[]"));
+        tywx.LOGD("道具数据 = ", allitems);
+    },
+
+    /*
+        调用: 使用满血道具 或者分享游戏的时候调用
+        功能: 复活游戏
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
+    recorverGame: function recorverGame() {
+        this.point = config.maxphy_value;
+        this.gamestate = config.gameState.waitclick;
     },
 
     /*
@@ -191,6 +281,8 @@ var gamemain = cc.Class({
                     // 记录下当前点击的格子 和切换当前的游戏状态为检查点击状态
                     this.g_clickid = i;
                     this.gamestate = config.gameState.checkclick;
+                    // 在方块上产生点击特效
+                    this.showTouchEffect(mpos);
                     // 终止此次点击的循环处理
                     break;
                 }
@@ -310,18 +402,20 @@ var gamemain = cc.Class({
         ]
         思路: 逻辑需要
     */
-    maxScoreShow: function maxScoreShow() {},
+    maxScoreShow: function maxScoreShow() {
+        tywx.LOGD("产生最大数字", this.maxnum);
+    },
 
     /*
-       调用: 游戏处于掉落状态的时候调用
-       功能: 掉落状态的逻辑处理
-       参数: [
-           无
-       ]
-       返回值: [
-           无
-       ]
-       思路: 游戏和玩家的交互的表现
+        调用: 游戏处于掉落状态的时候调用
+        功能: 掉落状态的逻辑处理
+        参数: [
+            无
+        ]
+        返回值: [
+            无
+        ]
+        思路: 游戏和玩家的交互的表现
     */
     dealLianJiLogic: function dealLianJiLogic() {
         var bfound = false;
@@ -370,6 +464,24 @@ var gamemain = cc.Class({
     */
     dealLianJiNumber: function dealLianJiNumber() {
         if (this.lianjiNumber > config.lianjiEffects.sgood && this.lianjiNumber < config.lianjiEffects.cgood) {} else if (this.lianjiNumber > config.lianjiEffects.cgood && this.lianjiNumber < config.lianjiEffects.hhgood) {} else if (this.lianjiNumber > config.lianjiEffects.hhgood && this.lianjiNumber < config.lianjiEffects.maxgood) {}
+        this.storeAllItem();
+    },
+
+    /*
+            调用: 当宝箱数据有更新的时候存储
+            功能: 存储宝箱数据到本地
+            参数: [
+                无
+            ]
+            返回值:[
+                无
+            ]
+            思路: 游戏需求
+     */
+    storeAllItem: function storeAllItem() {
+        if (this.allitems) {
+            tywx.Util.setItemToLocalStorage("allitems", this.allitems);
+        }
     },
 
     /*
@@ -582,11 +694,11 @@ var gamemain = cc.Class({
         if (tnum < 5) tnum = 5;
 
         var num = parseInt(Math.random() * 10000) % tnum + 1;
-        if (this.prerandomnumber == num) {
-            return this.getrandomnum();
-        } else {
-            this.prerandomnumber = num;
-        }
+        // if(this.prerandomnumber == num){
+        //     return this.getrandomnum();
+        // }else{
+        //     this.prerandomnumber = num;
+        // }
         return num;
     },
 

@@ -1,11 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
-V 49
-/newsvn/tywx/!svn/ver/35/script/resources/prefabs
+V 67
+/newsvn/wx-addone/!svn/ver/2/AddOne/assets/Script/resources/prefabs
 END
 adNode.prefab
 K 25
 svn:wc:ra_dav:version-url
-V 63
-/newsvn/tywx/!svn/ver/35/script/resources/prefabs/adNode.prefab
+V 81
+/newsvn/wx-addone/!svn/ver/2/AddOne/assets/Script/resources/prefabs/adNode.prefab
+END
+adNode.prefab.meta
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/newsvn/wx-addone/!svn/ver/2/AddOne/assets/Script/resources/prefabs/adNode.prefab.meta
 END

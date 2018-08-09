@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/newsvn/wx-addone/!svn/ver/3/AddOne/local
+END
+node-library.json
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/newsvn/wx-addone/!svn/ver/2/AddOne/local/node-library.json
+END
+local.json
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/newsvn/wx-addone/!svn/ver/2/AddOne/local/local.json
+END
+scene.json
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/newsvn/wx-addone/!svn/ver/2/AddOne/local/scene.json
+END
+hierarchy.json
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/newsvn/wx-addone/!svn/ver/2/AddOne/local/hierarchy.json
+END
+settings.json
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/newsvn/wx-addone/!svn/ver/2/AddOne/local/settings.json
+END
+assets.json
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/newsvn/wx-addone/!svn/ver/2/AddOne/local/assets.json
+END
+console.json
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/newsvn/wx-addone/!svn/ver/2/AddOne/local/console.json
+END
+builder.json
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/newsvn/wx-addone/!svn/ver/2/AddOne/local/builder.json
+END
+layout.windows.json
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/newsvn/wx-addone/!svn/ver/6/AddOne/local/layout.windows.json
+END
