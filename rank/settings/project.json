@@ -47,7 +47,7 @@
     "Native NetWork"
   ],
   "fit-height": true,
-  "fit-width": false,
+  "fit-width": true,
   "group-list": [
     "default"
   ],

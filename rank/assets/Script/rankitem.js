@@ -3,7 +3,6 @@
     created by gyc on 2018-08-06.
     final changed by gyc on 2018-08-06;
 */
-
 cc.Class({
     extends: cc.Component,
 

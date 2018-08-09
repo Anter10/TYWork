@@ -1,98 +1,57 @@
-2018-08-08T12:35:16.642Z - normal: Load ~/.CocosCreator/settings.json
-2018-08-08T12:35:16.646Z - normal: checking language setting...
-2018-08-08T12:35:16.646Z - normal: Language: zh
-2018-08-08T12:35:17.160Z - success: protocol editor-framework registered
-2018-08-08T12:35:17.160Z - success: protocol app registered
-2018-08-08T12:35:17.161Z - success: protocol theme registered
-2018-08-08T12:35:17.161Z - success: protocol packages registered
-2018-08-08T12:35:17.161Z - success: protocol unpack registerred
-2018-08-08T12:35:17.161Z - success: protocol disable-commonjs registerred
-2018-08-08T12:35:17.258Z - normal: connected!
-2018-08-08T12:35:17.260Z - normal: Check project /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne
-2018-08-08T12:35:17.264Z - normal: Initializing project /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne
-2018-08-08T12:35:17.266Z - normal: Initializing Cocos2d
-2018-08-08T12:35:17.944Z - normal: Initializing Asset Database
-2018-08-08T12:35:17.993Z - success: protocol uuid registerred
-2018-08-08T12:35:17.993Z - success: protocol db registerred
-2018-08-08T12:35:17.993Z - success: protocol thumbnail registerred
-2018-08-08T12:35:17.994Z - normal: Loading editor/builtin packages
-2018-08-08T12:35:18.143Z - success: assets loaded
-2018-08-08T12:35:18.147Z - success: builder loaded
-2018-08-08T12:35:18.149Z - success: cocos-analytics loaded
-2018-08-08T12:35:18.154Z - success: console loaded
-2018-08-08T12:35:18.186Z - success: fb-instant-games loaded
-2018-08-08T12:35:18.193Z - success: hierarchy loaded
-2018-08-08T12:35:18.197Z - success: inspector loaded
-2018-08-08T12:35:18.199Z - success: keystore loaded
-2018-08-08T12:35:18.204Z - success: node-library loaded
-2018-08-08T12:35:18.206Z - success: package-asset loaded
-2018-08-08T12:35:18.207Z - success: preferences loaded
-2018-08-08T12:35:18.211Z - success: project-exporter loaded
-2018-08-08T12:35:18.227Z - success: project-importer loaded
-2018-08-08T12:35:18.230Z - success: project-settings loaded
-2018-08-08T12:35:18.234Z - success: ui-kit loaded
-2018-08-08T12:35:18.239Z - success: scene loaded
-2018-08-08T12:35:18.241Z - success: sprite-editor loaded
-2018-08-08T12:35:18.245Z - success: store loaded
-2018-08-08T12:35:18.250Z - success: timeline loaded
-2018-08-08T12:35:18.251Z - normal: Loading builtin packages
-2018-08-08T12:35:18.259Z - success: asset-db-debugger loaded
-2018-08-08T12:35:18.260Z - success: color-picker loaded
-2018-08-08T12:35:18.261Z - success: jsb-adapter loaded
-2018-08-08T12:35:18.265Z - success: package-manager loaded
-2018-08-08T12:35:18.266Z - success: qqplay-adapter loaded
-2018-08-08T12:35:18.273Z - success: sdkbox loaded
-2018-08-08T12:35:18.278Z - success: tester loaded
-2018-08-08T12:35:18.284Z - success: ui-grid loaded
-2018-08-08T12:35:18.288Z - success: ui-kit-preview-extra loaded
-2018-08-08T12:35:18.291Z - success: ui-kit-preview loaded
-2018-08-08T12:35:18.295Z - success: ui-tree loaded
-2018-08-08T12:35:18.296Z - success: weapp-adapter loaded
-2018-08-08T12:35:19.271Z - normal: Loading packages
-2018-08-08T12:35:19.278Z - normal: Watching packages
-2018-08-08T12:35:19.336Z - normal: Run Application
-2018-08-08T12:35:21.851Z - success: preview server running at http://localhost:7456
-2018-08-08T12:35:27.813Z - warn: Should not specify class name node for Component which defines in project.
-2018-08-08T12:35:27.814Z - warn: Can not instantiate CCClass 'node' with arguments.
-2018-08-08T12:36:22.840Z - normal: Initializing...
-
-2018-08-08T12:36:22.846Z - normal: idePortFile: /Users/guoyouchao/Library/Application Support/微信web开发者工具/Default/.ide
-
-2018-08-08T12:36:22.865Z - normal: IDE server has started, listening on http://127.0.0.1:44254
-
-2018-08-08T12:36:22.866Z - normal: initialization finished
-
-2018-08-08T12:36:22.938Z - error: StatusCodeError: 400 - "{\"code\":40000,\"error\":\"错误 需要重新登录\"}"
-
-    at Socket.<anonymous> (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/editor/core/wechat-game.js:1:900)
-    at emitOne (events.js:96:13)
-    at Socket.emit (events.js:191:7)
-    at readableAddChunk (_stream_readable.js:178:18)
-    at Socket.Readable.push (_stream_readable.js:136:10)
-    at Pipe.onread (net.js:560:20)
-2018-08-08T12:36:44.369Z - normal: Initializing...
-
-2018-08-08T12:36:44.376Z - normal: idePortFile: /Users/guoyouchao/Library/Application Support/微信web开发者工具/Default/.ide
-
-2018-08-08T12:36:44.393Z - normal: IDE server has started, listening on http://127.0.0.1:44254
-
-2018-08-08T12:36:44.393Z - normal: initialization finished
-
-2018-08-08T12:36:44.588Z - error: StatusCodeError: 400 - "{\"code\":40000,\"error\":\"错误 {\\\"code\\\":400003,\\\"error\\\":\\\"已存在相同 AppID 和 projectname 的项目（路径），请修改后重试\\\"}\"}"
-
-    at Socket.<anonymous> (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/editor/core/wechat-game.js:1:900)
-    at emitOne (events.js:96:13)
-    at Socket.emit (events.js:191:7)
-    at readableAddChunk (_stream_readable.js:178:18)
-    at Socket.Readable.push (_stream_readable.js:136:10)
-    at Pipe.onread (net.js:560:20)
-2018-08-08T12:37:19.845Z - normal: Initializing...
-
-2018-08-08T12:37:19.852Z - normal: idePortFile: /Users/guoyouchao/Library/Application Support/微信web开发者工具/Default/.ide
-
-2018-08-08T12:37:19.868Z - normal: IDE server has started, listening on http://127.0.0.1:44254
-
-2018-08-08T12:37:19.869Z - normal: initialization finished
-
-2018-08-08T12:37:20.402Z - normal: open IDE success
-
+2018-08-09T15:12:54.231Z - normal: Load ~/.CocosCreator/settings.json
+2018-08-09T15:12:54.237Z - normal: checking language setting...
+2018-08-09T15:12:54.237Z - normal: Language: zh
+2018-08-09T15:12:54.996Z - success: protocol editor-framework registered
+2018-08-09T15:12:54.997Z - success: protocol app registered
+2018-08-09T15:12:54.997Z - success: protocol theme registered
+2018-08-09T15:12:54.997Z - success: protocol packages registered
+2018-08-09T15:12:54.997Z - success: protocol unpack registerred
+2018-08-09T15:12:54.998Z - success: protocol disable-commonjs registerred
+2018-08-09T15:12:57.989Z - normal: failed to connect login server due to request timeout
+2018-08-09T15:12:57.990Z - normal: Check project /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne
+2018-08-09T15:12:57.993Z - normal: Initializing project /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne
+2018-08-09T15:12:57.998Z - normal: Initializing Cocos2d
+2018-08-09T15:12:58.916Z - normal: Initializing Asset Database
+2018-08-09T15:12:58.976Z - warn: Failed to parse /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/library/uuid-to-mtime.json: Unexpected token < in JSON at position 12315.
+2018-08-09T15:12:58.977Z - success: protocol uuid registerred
+2018-08-09T15:12:58.977Z - success: protocol db registerred
+2018-08-09T15:12:58.977Z - success: protocol thumbnail registerred
+2018-08-09T15:12:58.977Z - normal: Loading editor/builtin packages
+2018-08-09T15:12:59.198Z - success: assets loaded
+2018-08-09T15:12:59.205Z - success: builder loaded
+2018-08-09T15:12:59.208Z - success: cocos-analytics loaded
+2018-08-09T15:12:59.215Z - success: console loaded
+2018-08-09T15:12:59.264Z - success: fb-instant-games loaded
+2018-08-09T15:12:59.271Z - success: hierarchy loaded
+2018-08-09T15:12:59.277Z - success: inspector loaded
+2018-08-09T15:12:59.279Z - success: keystore loaded
+2018-08-09T15:12:59.286Z - success: node-library loaded
+2018-08-09T15:12:59.288Z - success: package-asset loaded
+2018-08-09T15:12:59.290Z - success: preferences loaded
+2018-08-09T15:12:59.294Z - success: project-exporter loaded
+2018-08-09T15:12:59.314Z - success: project-importer loaded
+2018-08-09T15:12:59.318Z - success: project-settings loaded
+2018-08-09T15:12:59.325Z - success: ui-kit loaded
+2018-08-09T15:12:59.330Z - success: scene loaded
+2018-08-09T15:12:59.332Z - success: sprite-editor loaded
+2018-08-09T15:12:59.338Z - success: store loaded
+2018-08-09T15:12:59.344Z - success: timeline loaded
+2018-08-09T15:12:59.345Z - normal: Loading builtin packages
+2018-08-09T15:12:59.355Z - success: asset-db-debugger loaded
+2018-08-09T15:12:59.356Z - success: color-picker loaded
+2018-08-09T15:12:59.357Z - success: jsb-adapter loaded
+2018-08-09T15:12:59.362Z - success: package-manager loaded
+2018-08-09T15:12:59.363Z - success: qqplay-adapter loaded
+2018-08-09T15:12:59.372Z - success: sdkbox loaded
+2018-08-09T15:12:59.379Z - success: tester loaded
+2018-08-09T15:12:59.386Z - success: ui-grid loaded
+2018-08-09T15:12:59.392Z - success: ui-kit-preview-extra loaded
+2018-08-09T15:12:59.396Z - success: ui-kit-preview loaded
+2018-08-09T15:12:59.401Z - success: ui-tree loaded
+2018-08-09T15:12:59.402Z - success: weapp-adapter loaded
+2018-08-09T15:13:00.943Z - normal: Loading packages
+2018-08-09T15:13:00.951Z - normal: Watching packages
+2018-08-09T15:13:01.063Z - normal: Run Application
+2018-08-09T15:13:05.787Z - success: preview server running at http://localhost:7457
+2018-08-09T15:13:17.032Z - warn: Should not specify class name node for Component which defines in project.
+2018-08-09T15:13:17.033Z - warn: Can not instantiate CCClass 'node' with arguments.
