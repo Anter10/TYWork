@@ -444,11 +444,6 @@
     "meta": 1533719756101,
     "relativePath": "Script/CommonFrame/GlobalInit.js"
   },
-  "8ba150c4-f5df-4e2b-9fdf-42db1ce3754d": {
-    "asset": 1533729576793,
-    "meta": 1533729583544,
-    "relativePath": "Script/gamestart.js"
-  },
   "f7c31388-ffbc-4518-af26-710e63573c5a": {
     "asset": 1533729576792,
     "meta": 1533729583563,
@@ -458,5 +453,10 @@
     "asset": 1533729576793,
     "meta": 1533729583574,
     "relativePath": "Script/models/ShareButton.js"
+  },
+  "8ba150c4-f5df-4e2b-9fdf-42db1ce3754d": {
+    "asset": 1533731687009,
+    "meta": 1533732177717,
+    "relativePath": "Script/gamestart.js"
   }
 }
