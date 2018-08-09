@@ -1,19 +1,15 @@
 10
 
 dir
-85
-http://guoyouchao@192.168.10.65/newsvn/tywx/script/CommonFrame
-http://guoyouchao@192.168.10.65/newsvn/tywx
+5
+http://guoyouchao@192.168.10.65/newsvn/wx-addone/AddOne/assets/Script/CommonFrame
+http://guoyouchao@192.168.10.65/newsvn/wx-addone
 
 
 
-2018-08-01T02:59:13.540030Z
-83
-liwenliang
-
-
-
-
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -24,19 +20,23 @@ liwenliang
 
 
 
-3498efdd-34be-450f-a56a-e1b60c77eb29
+
+
+
+
+fea7a96e-6c7b-48c9-801e-75bda35ea2d9
 
-GlobalInit.js
+AdManager.js.meta
 file
 
 
 
 
-2018-08-01T10:16:24.000000Z
-74aec979496b8aa57e39a0249affafce
-2018-06-27T10:16:23.378194Z
-44
-xiaochuntian
+2018-08-09T02:15:01.000000Z
+68ef460879900b741a820d1a6913912e
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -58,19 +58,19 @@ xiaochuntian
 
 
 
-11283
+197
 
-TCPClient.js
+Timer.js.meta
 file
 
 
 
 
-2018-08-01T10:16:24.000000Z
-b1a07b7c90f5c897033d783348683d5d
-2018-07-31T09:09:06.464075Z
-82
-xiaochuntian
+2018-08-08T01:46:18.000000Z
+046b4fceaf30686b8f67a21889e13f67
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -92,19 +92,19 @@ xiaochuntian
 
 
 
-7511
+197
 
-NotificationCenter.js
+TuyooSDK.js.meta
 file
 
 
 
 
-2018-08-01T10:16:24.000000Z
-4b03534414e3f840f424633d44ccc2e9
-2018-05-25T09:31:53.532706Z
-21
-xiaochuntian
+2018-08-08T01:46:18.000000Z
+fe07d5cc02dd197ba74aee2834b9c0fe
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -126,19 +126,19 @@ xiaochuntian
 
 
 
-1688
+196
 
-BiStatLog.js
+ShareInterface.js.meta
 file
 
 
 
 
-2018-08-01T10:16:24.000000Z
-099769e4e36808121f0193cc5f5e2213
-2018-06-12T06:10:15.989667Z
-36
-xiaochuntian
+2018-08-08T07:02:49.000000Z
+541f83a56612b3c09e49a98c85f34ff5
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -160,19 +160,19 @@ xiaochuntian
 
 
 
-3431
+197
 
-Bilog.js
+EventType.js.meta
 file
 
 
 
 
-2018-08-01T10:16:24.000000Z
-de7a8fea408b2ffc4d7411d0dfae730f
-2018-07-24T08:36:28.993428Z
-61
-liwenliang
+2018-08-08T01:46:18.000000Z
+5ff8713cdd8a5bd9cbee337caf9f4c9f
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -194,7 +194,109 @@ liwenliang
 
 
 
-6539
+197
+
+GlobalInit.js.meta
+file
+
+
+
+
+2018-08-08T09:15:56.000000Z
+69dd2ee6a151ddbfb807585f47b2611e
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+195
+
+TCPClient.js.meta
+file
+
+
+
+
+2018-08-08T01:46:18.000000Z
+08133bfc95bcfc6f6d55e7981f60c0ec
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+197
+
+NotificationCenter.js.meta
+file
+
+
+
+
+2018-08-08T01:46:18.000000Z
+d240a594f76337f723aecb9a84f77faa
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+197
 
 HttpUtil.js
 file
@@ -202,11 +304,11 @@ file
 
 
 
-2018-08-01T10:16:24.000000Z
+2018-08-08T01:44:07.000000Z
 7a13fae00d0c4752037960c2c1cc5cbb
-2018-07-31T09:09:06.464075Z
-82
-xiaochuntian
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -236,11 +338,11 @@ file
 
 
 
-2018-08-01T10:16:24.000000Z
+2018-08-08T01:44:07.000000Z
 1cb48f94e0b427b2135198b7d4ea41d1
-2018-07-25T08:37:15.083085Z
-64
-xiaochuntian
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -264,17 +366,51 @@ xiaochuntian
 
 2213
 
+BiStatLog.js.meta
+file
+
+
+
+
+2018-08-08T01:46:18.000000Z
+c506cc0bf66402812366ebb8f6dfd40d
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+197
+
 AdManager.js
 file
 
 
 
 
-2018-08-01T10:16:24.000000Z
-4f95da7a0d6f67e1eeea519efe1b367f
-2018-07-31T09:09:06.464075Z
-82
-xiaochuntian
+2018-08-09T01:39:18.000000Z
+4084bccfdb136def7d7bef133d15047b
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -296,7 +432,7 @@ xiaochuntian
 
 
 
-21498
+21643
 
 Timer.js
 file
@@ -304,11 +440,11 @@ file
 
 
 
-2018-08-01T10:16:24.000000Z
+2018-08-08T01:44:07.000000Z
 4c0b496277ab64136160a6b50f265b45
-2018-05-21T11:05:41.502838Z
-14
-xiaochuntian
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -332,17 +468,17 @@ xiaochuntian
 
 2036
 
-EncodeDecode.js
+Bilog.js.meta
 file
 
 
 
 
-2018-08-01T10:16:24.000000Z
-672281026ad636118a66718678ead990
-2018-05-21T11:05:41.502838Z
-14
-xiaochuntian
+2018-08-08T01:46:18.000000Z
+12fd59fe8a8044f5fa9700ad8ece7a43
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -364,7 +500,7 @@ xiaochuntian
 
 
 
-3490
+197
 
 TuyooSDK.js
 file
@@ -372,11 +508,11 @@ file
 
 
 
-2018-08-01T10:16:24.000000Z
+2018-08-08T01:44:07.000000Z
 d553f81ef6a1e8b6dcfae4d9b24d0caf
-2018-08-01T02:59:13.540030Z
-83
-liwenliang
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -400,17 +536,51 @@ liwenliang
 
 28499
 
+ShareInterface.js
+file
+
+
+
+
+2018-08-08T06:53:44.000000Z
+5c1602b0b5818e3bd608f9f62334c01a
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5207
+
 EventType.js
 file
 
 
 
 
-2018-08-01T10:16:24.000000Z
+2018-08-08T01:44:07.000000Z
 7d0bd7fbbf0597f2d61efe8d984f1f8b
-2018-05-29T05:41:23.874331Z
-23
-xiaochuntian
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -434,17 +604,357 @@ xiaochuntian
 
 1170
 
+GlobalInit.js
+file
+
+
+
+
+2018-08-08T09:15:53.000000Z
+0819db99c950ae8d14f61e9311c7f8e5
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11290
+
+TCPClient.js
+file
+
+
+
+
+2018-08-08T01:44:07.000000Z
+b1a07b7c90f5c897033d783348683d5d
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7511
+
+EncodeDecode.js.meta
+file
+
+
+
+
+2018-08-08T01:46:18.000000Z
+6b5c9f61d5955e8a5a00953c9ceef257
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+197
+
+NotificationCenter.js
+file
+
+
+
+
+2018-08-08T01:44:07.000000Z
+4b03534414e3f840f424633d44ccc2e9
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1688
+
+BiStatLog.js
+file
+
+
+
+
+2018-08-08T01:44:07.000000Z
+099769e4e36808121f0193cc5f5e2213
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3431
+
+PropagateInterface.js.meta
+file
+
+
+
+
+2018-08-08T01:46:18.000000Z
+3b316cff6fa42b075190bdd17acdb8e0
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+197
+
+Bilog.js
+file
+
+
+
+
+2018-08-08T01:44:07.000000Z
+de7a8fea408b2ffc4d7411d0dfae730f
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6539
+
+EncodeDecode.js
+file
+
+
+
+
+2018-08-08T01:44:07.000000Z
+672281026ad636118a66718678ead990
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3490
+
+HttpUtil.js.meta
+file
+
+
+
+
+2018-08-08T01:46:18.000000Z
+a63e7199b08da6d82d76906fd0a986d9
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+197
+
+Util.js.meta
+file
+
+
+
+
+2018-08-08T01:46:19.000000Z
+95aa9d1cd2c7ce786c1f41f5329ce297
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+197
+
 PropagateInterface.js
 file
 
 
 
 
-2018-08-01T10:16:24.000000Z
+2018-08-08T01:44:07.000000Z
 ecd1d048c75e3f36525a53c20f2bfea8
-2018-07-05T13:32:40.693075Z
-49
-xiaochuntian
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -467,38 +977,4 @@ xiaochuntian
 
 
 7585
-
-ShareInterface.js
-file
-
-
-
-
-2018-08-01T10:16:24.000000Z
-5c1602b0b5818e3bd608f9f62334c01a
-2018-07-31T09:09:06.464075Z
-82
-xiaochuntian
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5207
 

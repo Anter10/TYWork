@@ -115,7 +115,6 @@ var gamestart = cc.Class((_cc$Class = {
         var groupBtnComponent = this.groupBtn.getComponent("ShareButton");
         var self = this;
         if (groupBtnComponent) {
-
             groupBtnComponent.setShareGroupCall(function (data) {
                 console.log("群组成功后处理的回调函数 ", data);
                 console.log("群组成功后处理的回调函数 self ", self);
@@ -145,6 +144,15 @@ var gamestart = cc.Class((_cc$Class = {
     } else {
         console.log("当前分数不存在");
     }
+
+    // cc.loader.downloader.loadSubpackage("subone",function(error){
+    //     if(error){
+    //         console.log("下载分包失败");
+    //         return;
+    //     }
+    //     console.log("下载分包成功");
+    // });
+
 }), _defineProperty(_cc$Class, "showPlayMethod", function showPlayMethod() {
     // tywx.AdManager.showAd(cc.p(333,160))
     if (tywx.publicwx) {
@@ -178,7 +186,9 @@ var gamestart = cc.Class((_cc$Class = {
         });
     }
 }), _defineProperty(_cc$Class, "loadFinishCallBack", function loadFinishCallBack() {
-    this.node.destroy();
+    if (this.node) {
+        this.node.destroy();
+    }
 }), _defineProperty(_cc$Class, "setScore", function setScore(score) {
     if (score != null) {
         this.gameScore.string = Math.abs(score);

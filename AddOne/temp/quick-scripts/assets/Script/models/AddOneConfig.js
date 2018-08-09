@@ -63,6 +63,34 @@ var config = {
 		dodrop: 3, // 各自处于掉落状态
 		waitclick: 4, // 等待点击状态
 		gameover: 5 // 游戏结束状态
+	},
+
+	// 游戏中用到的道具
+	allitem: {
+		item1: {
+			id: "",
+			name: "",
+			png: "",
+			value: ""
+		},
+		item2: {
+			id: "",
+			name: "",
+			png: "",
+			value: ""
+		},
+		item3: {
+			id: "",
+			name: "",
+			png: "",
+			value: ""
+		},
+		item4: {
+			id: "",
+			name: "",
+			png: "",
+			value: ""
+		}
 	}
 
 };

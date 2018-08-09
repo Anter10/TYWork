@@ -1,0 +1,83 @@
+10
+
+dir
+5
+http://guoyouchao@192.168.10.65/newsvn/wx-addone
+http://guoyouchao@192.168.10.65/newsvn/wx-addone
+
+
+
+2018-08-09T08:13:03.994881Z
+5
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fea7a96e-6c7b-48c9-801e-75bda35ea2d9
+
+.git
+dir
+
+trunk
+dir
+
+.gitattributes
+file
+
+
+
+
+2018-08-07T09:36:34.000000Z
+05bdb783ee6514c8c072e47680af8ff7
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+66
+
+AddOne
+dir
+
+rankbuild
+dir
+
+rank
+dir
+
+tag
+dir
+
+branch
+dir
+

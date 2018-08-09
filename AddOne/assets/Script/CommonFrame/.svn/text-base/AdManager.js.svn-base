@@ -53,7 +53,7 @@ tywx.AdManager = {
         createAdNode : function (pos) {
 
             this.genRandomFirstAdInfo();
-
+            console.log(this.currentAdInfo+"当前的广告ID = "+JSON.stringify(pos)) 
             if(!this.currentAdInfo){
                 return;
             }
@@ -490,7 +490,7 @@ tywx.AdManager = {
             paramStrList.push('sign=' + signStr);
             var finalUrl = tywx.SystemInfo.shareManagerUrl + '?' + paramStrList.join('&');
             var that = this;
-
+            console.log("广告信息地址 = "+finalUrl);
             wx.request({
                 url : finalUrl,
                 method : 'GET',

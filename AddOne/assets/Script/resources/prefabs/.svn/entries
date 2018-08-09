@@ -1,19 +1,15 @@
 10
 
 dir
-85
-http://guoyouchao@192.168.10.65/newsvn/tywx/script/resources/prefabs
-http://guoyouchao@192.168.10.65/newsvn/tywx
+5
+http://guoyouchao@192.168.10.65/newsvn/wx-addone/AddOne/assets/Script/resources/prefabs
+http://guoyouchao@192.168.10.65/newsvn/wx-addone
 
 
 
-2018-06-12T02:29:25.763154Z
-35
-liwenliang
-
-
-
-
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -24,7 +20,11 @@ liwenliang
 
 
 
-3498efdd-34be-450f-a56a-e1b60c77eb29
+
+
+
+
+fea7a96e-6c7b-48c9-801e-75bda35ea2d9
 
 adNode.prefab
 file
@@ -32,11 +32,11 @@ file
 
 
 
-2018-08-01T10:16:24.000000Z
+2018-08-08T01:44:07.000000Z
 98fe2934ee5427a7bb29f7ac11bc2569
-2018-06-12T02:29:25.763154Z
-35
-liwenliang
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
 
 
 
@@ -59,4 +59,38 @@ liwenliang
 
 
 5599
+
+adNode.prefab.meta
+file
+
+
+
+
+2018-08-08T01:46:19.000000Z
+8b0082f779c2f93d5cfc72914e832fc5
+2018-08-09T05:06:44.522393Z
+2
+guoyouchao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+148
 
