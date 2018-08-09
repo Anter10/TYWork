@@ -55,3 +55,4 @@
 2018-08-09T15:13:05.787Z - success: preview server running at http://localhost:7457
 2018-08-09T15:13:17.032Z - warn: Should not specify class name node for Component which defines in project.
 2018-08-09T15:13:17.033Z - warn: Can not instantiate CCClass 'node' with arguments.
+2018-08-09T15:14:27.149Z - info: shutdown preview server
