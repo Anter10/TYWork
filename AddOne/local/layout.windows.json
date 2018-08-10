@@ -5,8 +5,13 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
+<<<<<<< HEAD
       "x": 726,
       "y": 23,
+=======
+      "x": 873,
+      "y": 35,
+>>>>>>> parent of 4a53442... 子域功能完善
       "width": 1280,
       "height": 801,
       "layout": {
@@ -18,7 +23,11 @@
                 "children": [
                   "hierarchy"
                 ],
+<<<<<<< HEAD
                 "height": 300,
+=======
+                "height": 393,
+>>>>>>> parent of 4a53442... 子域功能完善
                 "type": "panel",
                 "width": 306
               },
@@ -27,12 +36,16 @@
                 "children": [
                   "assets"
                 ],
+<<<<<<< HEAD
                 "height": 407,
+=======
+                "height": 233,
+>>>>>>> parent of 4a53442... 子域功能完善
                 "type": "panel",
                 "width": 306
               }
             ],
-            "height": 710,
+            "height": 629,
             "type": "dock-v",
             "width": 306
           },
@@ -74,16 +87,22 @@
                 "width": 658
               }
             ],
+<<<<<<< HEAD
             "height": 710,
             "type": "dock-v",
             "width": 658
+=======
+            "height": 629,
+            "type": "panel",
+            "width": 631
+>>>>>>> parent of 4a53442... 子域功能完善
           },
           {
             "active": 0,
             "children": [
               "inspector"
             ],
-            "height": 710,
+            "height": 629,
             "type": "panel",
             "width": 304
           }
@@ -103,7 +122,11 @@
   },
   "panels": {
     "builder": {
+<<<<<<< HEAD
       "x": 645,
+=======
+      "x": 1198,
+>>>>>>> parent of 4a53442... 子域功能完善
       "y": 23,
       "width": 500,
       "height": 722

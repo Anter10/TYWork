@@ -254,6 +254,44 @@
     "meta": 1533652181754,
     "relativePath": "Scene"
   },
+<<<<<<< HEAD
+=======
+  "3e0befc6-ec69-48b4-962b-13dec257519a": {
+    "asset": 1533652181755,
+    "meta": 1533827779185,
+    "relativePath": "Scene/audio.prefab"
+  },
+  "5976894f-82af-4073-91bf-25012cff81dc": {
+    "asset": 1533827715161,
+    "meta": 1533827779187,
+    "relativePath": "Scene/djitem.prefab"
+  },
+  "f0117848-9909-42ab-98b8-556e69a75bdc": {
+    "asset": 1533652181755,
+    "meta": 1533827779189,
+    "relativePath": "Scene/effect.prefab"
+  },
+  "2d2f792f-a40c-49bb-a189-ed176a246e49": {
+    "asset": 1533827715162,
+    "meta": 1533827779194,
+    "relativePath": "Scene/gamemain.fire"
+  },
+  "f7c31388-ffbc-4518-af26-710e63573c5a": {
+    "asset": 1533831897082,
+    "meta": 1533831897091,
+    "relativePath": "Scene/gamestart.fire"
+  },
+  "5f67ee51-10ec-4d8a-8c17-ccf9c5f2c71a": {
+    "asset": 1533715745586,
+    "meta": 1533827779201,
+    "relativePath": "Scene/sharebuttton.prefab"
+  },
+  "8949adb7-1a30-4514-a1ba-c3936d26d16f": {
+    "asset": 1533827715165,
+    "meta": 1533827779203,
+    "relativePath": "Scene/stopshow.prefab"
+  },
+>>>>>>> parent of 4a53442... 子域功能完善
   "fccbdb12-b0ee-453e-8159-76d94eb2e2c5": {
     "asset": 1533652181781,
     "meta": 1533827779204,
@@ -339,10 +377,20 @@
     "meta": 1533827780647,
     "relativePath": "Script/CommonFrame/Util.js"
   },
+  "280c3aec-6492-4a9d-9f51-a9b00b570b4a": {
+    "asset": 1533827715177,
+    "meta": 1533827780723,
+    "relativePath": "Script/gamemain.js"
+  },
   "a2ae1837-2c5c-42fc-aa69-a629e06ce14f": {
     "asset": 1533827715184,
     "meta": 1533652181767,
     "relativePath": "Script/models"
+  },
+  "8ba150c4-f5df-4e2b-9fdf-42db1ce3754d": {
+    "asset": 1533827715177,
+    "meta": 1533827780759,
+    "relativePath": "Script/gamestart.js"
   },
   "7c2db254-7626-4b98-8cda-a93f8f06287f": {
     "asset": 1533827715184,
@@ -429,10 +477,43 @@
     "meta": 1533827780997,
     "relativePath": "Texture/switch-mask.png"
   },
+<<<<<<< HEAD
+=======
+  "6f2e912f-0568-456d-b5ee-5c812639d0cd": {
+    "asset": 1533827862654,
+    "meta": 1533827862735,
+    "relativePath": "Texture/开始游戏@3x.png"
+  },
+  "aaffb7e8-3c08-4f70-9a01-3b78d4387b58": {
+    "asset": 1533828047654,
+    "meta": 1533828047703,
+    "relativePath": "Texture/开始游戏.png"
+  },
+  "f6a0800c-f4d5-4662-abb0-accf1f63cf9f": {
+    "asset": 1533828148584,
+    "meta": 1533828148647,
+    "relativePath": "Texture/圆角矩形 140@3x.png"
+  },
+  "0aec0c7b-82f2-4d19-83e7-84718fc9d0f3": {
+    "asset": 1533828455008,
+    "meta": 1533828455114,
+    "relativePath": "Texture/圆角矩形 2@3x.png"
+  },
+>>>>>>> parent of 4a53442... 子域功能完善
   "ccb3ad51-9275-48b8-8039-964914e0433c": {
     "asset": 1533828706368,
     "meta": 1533828706425,
     "relativePath": "Texture/帮助@3x.png"
+  },
+  "8291f1fb-6571-4777-83db-60e74095f154": {
+    "asset": 1533829241867,
+    "meta": 1533829241935,
+    "relativePath": "Texture/logo 拷贝@2x.png"
+  },
+  "5f1055f8-a56f-4149-8c65-cbbab3de0dcf": {
+    "asset": 1533829572740,
+    "meta": 1533829572835,
+    "relativePath": "Texture/椭圆 18 拷贝@3x.png"
   },
   "79fcf846-790c-4406-8c14-7aec36d85fb8": {
     "asset": 1533829661358,
@@ -444,15 +525,31 @@
     "meta": 1533829716615,
     "relativePath": "Texture/椭圆 21 拷贝@2x.png"
   },
+  "e3040e63-54a2-445b-b933-ae687c4427f8": {
+    "asset": 1533829834692,
+    "meta": 1533829834762,
+    "relativePath": "Texture/组 359236@2x.png"
+  },
   "56a7561e-f436-4382-97cc-542e28533136": {
     "asset": 1533829982464,
     "meta": 1533829982525,
     "relativePath": "Texture/帮助@2x.png"
   },
+  "d9c5393f-82ee-4587-965c-86e0e1c1580c": {
+    "asset": 1533830315456,
+    "meta": 1533830315520,
+    "relativePath": "Texture/组 359236@3x.png"
+  },
+  "081bb839-cf1e-4c3c-ac60-5c1bf345ec28": {
+    "asset": 1533831031145,
+    "meta": 1533831031245,
+    "relativePath": "Texture/logo 拷贝@3x.png"
+  },
   "85c8e03e-c9f6-4551-a026-890ca64c6ba7": {
     "asset": 1533831704326,
     "meta": 1533831704388,
     "relativePath": "Texture/组 1 拷贝@2x.png"
+<<<<<<< HEAD
   },
   "e3040e63-54a2-445b-b933-ae687c4427f8": {
     "asset": 1533867521938,
@@ -518,5 +615,7 @@
     "asset": 1533886704669,
     "meta": 1533884696454,
     "relativePath": "Scene/gamestart.fire"
+=======
+>>>>>>> parent of 4a53442... 子域功能完善
   }
 }

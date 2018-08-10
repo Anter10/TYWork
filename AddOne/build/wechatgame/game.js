@@ -4,9 +4,15 @@ window.DOMParser = Parser.DOMParser;
 require('libs/wx-downloader.js');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 require('src/settings.f119e');
 var settings = window._CCSettings;
 require('main.13ce0');
+=======
+require('src/settings.22deb');
+var settings = window._CCSettings;
+require('main.84c75');
+>>>>>>> parent of 4a53442... 子域功能完善
 =======
 require('src/settings.22deb');
 var settings = window._CCSettings;
