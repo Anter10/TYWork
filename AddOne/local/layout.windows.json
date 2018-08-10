@@ -5,16 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-<<<<<<< HEAD
-      "x": 477,
-      "y": 465,
-      "width": 1440,
-=======
-      "x": 531,
-      "y": 550,
-      "width": 1614,
->>>>>>> 1d0125d03567d3c9899876199f8f6e67e4fcfeae
-      "height": 828,
+      "x": 873,
+      "y": 35,
+      "width": 1280,
+      "height": 801,
       "layout": {
         "children": [
           {
@@ -24,143 +18,61 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 367,
+                "height": 393,
                 "type": "panel",
-                "width": 208
+                "width": 256
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 367,
+                "height": 233,
                 "type": "panel",
-                "width": 208
+                "width": 256
               }
             ],
-            "height": 737,
+            "height": 629,
             "type": "dock-v",
-            "width": 208
+            "width": 256
           },
           {
+            "active": 0,
             "children": [
-              {
-                "children": [
-                  {
-                    "active": 0,
-                    "children": [
-                      "scene"
-                    ],
-                    "height": 467.984375,
-                    "type": "panel",
-<<<<<<< HEAD
-                    "width": 394
-=======
-                    "width": 599
->>>>>>> 1d0125d03567d3c9899876199f8f6e67e4fcfeae
-                  },
-                  {
-                    "active": 0,
-                    "children": [
-                      "node-library"
-                    ],
-                    "height": 467.984375,
-                    "type": "panel",
-<<<<<<< HEAD
-                    "width": 439.984375
-=======
-                    "width": 350
->>>>>>> 1d0125d03567d3c9899876199f8f6e67e4fcfeae
-                  }
-                ],
-                "height": 467.984375,
-                "type": "dock-h",
-<<<<<<< HEAD
-                "width": 836.984375
-=======
-                "width": 952
->>>>>>> 1d0125d03567d3c9899876199f8f6e67e4fcfeae
-              },
-              {
-                "active": 0,
-                "children": [
-                  "console",
-                  "timeline"
-                ],
-                "height": 266,
-                "type": "panel",
-<<<<<<< HEAD
-                "width": 836.984375
-=======
-                "width": 952
->>>>>>> 1d0125d03567d3c9899876199f8f6e67e4fcfeae
-              }
+              "scene"
             ],
-            "height": 737,
-            "type": "dock-v",
-<<<<<<< HEAD
-            "width": 836.984375
-=======
-            "width": 952
->>>>>>> 1d0125d03567d3c9899876199f8f6e67e4fcfeae
+            "height": 629,
+            "type": "panel",
+            "width": 631
           },
           {
             "active": 0,
             "children": [
               "inspector"
             ],
-            "height": 737,
+            "height": 629,
             "type": "panel",
-<<<<<<< HEAD
-            "width": 387
-=======
-            "width": 442
->>>>>>> 1d0125d03567d3c9899876199f8f6e67e4fcfeae
+            "width": 381
           }
         ],
         "type": "dock-h"
       },
       "panels": [
         "hierarchy",
-        "node-library",
-        "console",
-        "timeline",
         "inspector",
         "assets",
         "scene"
       ]
-<<<<<<< HEAD
-    }
-=======
     },
-    "window-1533806113015": {},
+    "window-1533829331149": {},
     "worker": {}
->>>>>>> 1d0125d03567d3c9899876199f8f6e67e4fcfeae
   },
   "panels": {
     "builder": {
-      "x": 781,
-      "y": 58,
-      "width": 439,
-      "height": 610
-    },
-    "project-settings": {
-      "x": 942,
-      "y": 128,
-      "width": 584,
-      "height": 548
-    },
-    "sprite-editor": {
-      "x": 856,
-      "y": 206,
+      "x": 1198,
+      "y": 23,
       "width": 500,
-      "height": 522
-    },
-    "preferences": {
-      "x": 675,
-      "y": 115,
-      "width": 564,
-      "height": 548
+      "height": 722
     }
   }
 }

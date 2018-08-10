@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "logo 拷贝@3x",
+    "texture": "081bb839-cf1e-4c3c-ac60-5c1bf345ec28",
+    "atlas": "",
+    "rect": [
+      0,
+      2,
+      711,
+      532
+    ],
+    "offset": [
+      0,
+      -1
+    ],
+    "originalSize": [
+      711,
+      534
+    ]
+  }
+}
