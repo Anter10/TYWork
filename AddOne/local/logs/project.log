@@ -2849,3 +2849,148 @@ Node path: "Canvas"
 2018-08-10T06:36:46.004Z - warn: Should not specify class name node for Component which defines in project.
 2018-08-10T06:36:46.007Z - warn: Can not instantiate CCClass 'node' with arguments.
 2018-08-10T06:56:59.374Z - warn: [db-task][sync-changes] Delete unused meta file: db://assets/subone.meta
+2018-08-10T07:01:18.817Z - failed: [db-task][sync-changes] Failed to import asset /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/assets/Scene/gamestart.fire, message: SyntaxError: /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/assets/Scene/gamestart.fire: Unexpected token < in JSON at position 717
+    at JSON.parse (<anonymous>)
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/fire-fs/node_modules/jsonfile/index.js:36:18
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/graceful-fs/graceful-fs.js:78:16
+    at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:439:3)
+2018-08-10T07:01:19.691Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/build",
+  "debug": false,
+  "dest": "/Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/build/wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "f7c31388-ffbc-4518-af26-710e63573c5a",
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "f7c31388-ffbc-4518-af26-710e63573c5a",
+  "template": "link",
+  "title": "addone",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxb3967d06430bf885",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "b552544a-ae1d-4d",
+  "zipCompressJs": true,
+  "project": "/Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne",
+  "projectName": "addone",
+  "debugBuildWorker": false
+}
+2018-08-10T07:01:19.693Z - normal: Building /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne
+2018-08-10T07:01:19.693Z - normal: Destination /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/build/wechatgame
+2018-08-10T07:01:19.696Z - normal: Delete /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/build/wechatgame/**/*
+2018-08-10T07:01:22.661Z - normal: Start building assets
+2018-08-10T07:01:22.662Z - normal: Start spawn build-worker
+2018-08-10T07:01:23.483Z - normal: Finish spawn build-worker
+2018-08-10T07:01:23.483Z - normal: Start init build-worker
+2018-08-10T07:01:27.029Z - normal: Finish init build-worker
+2018-08-10T07:01:27.030Z - normal: Start build-assets in worker
+2018-08-10T07:01:27.139Z - error: ENOENT: no such file or directory, open '/Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/library/imports/f7/f7c31388-ffbc-4518-af26-710e63573c5a.json'
+    at t.build (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/editor/page/build/asset-crawler.js:1:621)
+    at <anonymous>
+2018-08-10T07:01:27.322Z - normal: Finish build-assets in worker
+2018-08-10T07:01:27.325Z - normal: Finish building assets
+2018-08-10T07:01:27.334Z - normal: Start building plugin scripts
+2018-08-10T07:01:27.803Z - normal: Finish building plugin scripts
+2018-08-10T07:01:27.806Z - normal: Generating main.js from /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/static/build-templates/shares/main.js
+2018-08-10T07:01:29.037Z - normal: Built to "/Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/build/wechatgame" successfully
+2018-08-10T07:02:14.029Z - normal: Initializing...
+
+2018-08-10T07:02:14.035Z - normal: idePortFile: /Users/guoyouchao/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-08-10T07:02:14.051Z - normal: IDE server has started, listening on http://127.0.0.1:64391
+initialization finished
+
+2018-08-10T07:02:14.259Z - normal: open IDE success
+
+2018-08-10T07:03:22.245Z - error: Failed to load scene: Error: [AssetLibrary] loading JSON or dependencies failed: undefined
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDirector.js:319:28
+    at CCLoader.<anonymous> (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCAssetLibrary.js:63:25)
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/CCLoader.js:134:46
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/utils.js:48:25
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+2018-08-10T07:03:22.246Z - failed: Task [load-scene-by-uuid] run error, stop running other tasks.
+ Failed to load scene: Error: [AssetLibrary] loading JSON or dependencies failed: undefined
+2018-08-10T07:03:51.274Z - warn: Error: Ipc will not have a callback. message: scene@renderer:204422
+2018-08-10T07:03:51.285Z - warn: Error: Ipc will not have a callback. message: scene@renderer:204423
+2018-08-10T07:03:51.314Z - error: Failed to reset layout: Error: Failed to close panel scene
+    at Object.e._unloadAll (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/editor-framework/lib/renderer/panel.js:1:2087)
+    at r.waterfall.e (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ui/utils/dock-utils.js:1:5916)
+    at fn (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:746:34)
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:1213:16
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:166:37
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:706:43
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:167:37
+    at Object.async.waterfall (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:710:44)
+    at Object.e.reset (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ui/utils/dock-utils.js:1:5899)
+    at EventEmitter.t.ipcRenderer.on (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ui/utils/dock-utils.js:1:8429)
+    at e.reset.e (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ui/utils/dock-utils.js:1:8453)
+    at r.waterfall.e (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ui/utils/dock-utils.js:1:7375)
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:52:16
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:696:30
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:167:37
+    at Immediate.<anonymous> (/Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:1206:34)
+    at runCallback (timers.js:672:20)
+    at tryOnImmediate (timers.js:645:5)
+    at processImmediate [as _immediateCallback] (timers.js:617:5)
+2018-08-10T07:04:56.468Z - failed: [db-task][sync-changes] Failed to import asset /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/assets/Scene/gamestart.fire, message: SyntaxError: /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/assets/Scene/gamestart.fire: Unexpected token < in JSON at position 717
+    at JSON.parse (<anonymous>)
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/fire-fs/node_modules/jsonfile/index.js:36:18
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/graceful-fs/graceful-fs.js:78:16
+    at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:439:3)
+2018-08-10T07:10:42.200Z - failed: [db-task][sync-changes] Failed to import asset /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/assets/Scene/gamestart.fire, message: SyntaxError: /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/assets/Scene/gamestart.fire: Unexpected token = in JSON at position 29716
+    at JSON.parse (<anonymous>)
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/fire-fs/node_modules/jsonfile/index.js:36:18
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/graceful-fs/graceful-fs.js:78:16
+    at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:439:3)
+2018-08-10T07:11:07.830Z - failed: [db-task][sync-changes] Failed to import asset /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/assets/Scene/gamestart.fire, message: SyntaxError: /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/assets/Scene/gamestart.fire: Unexpected token = in JSON at position 29716
+    at JSON.parse (<anonymous>)
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/fire-fs/node_modules/jsonfile/index.js:36:18
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/graceful-fs/graceful-fs.js:78:16
+    at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:439:3)
+2018-08-10T07:12:05.368Z - failed: [db-task][sync-changes] Failed to import asset /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/assets/Scene/gamestart.fire, message: SyntaxError: /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/assets/Scene/gamestart.fire: Unexpected token = in JSON at position 29716
+    at JSON.parse (<anonymous>)
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/fire-fs/node_modules/jsonfile/index.js:36:18
+    at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/graceful-fs/graceful-fs.js:78:16
+    at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:439:3)
