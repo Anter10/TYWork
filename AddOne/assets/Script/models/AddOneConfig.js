@@ -21,7 +21,9 @@ var config = {
 	    // 最少连接多少个可以消除
 	    minCanRemoveNumber:3,
 	    //玩家得分基数
-	    baseScore:10,
+		baseScore:10,
+		// 即将超越对手多少分显示相应图标
+		thanfriendScore:30,
 	    // 连接数在不同的值需要展示特定的效果
 	    lianjiEffects:{
 	    	sgood:3,

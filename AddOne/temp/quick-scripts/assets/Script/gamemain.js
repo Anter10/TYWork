@@ -50,6 +50,10 @@ var gamemain = cc.Class({
             default: null,
             type: cc.Sprite
         },
+        friendIcon: {
+            default: null,
+            type: cc.Sprite
+        },
 
         // 游戏的背景
         bg: cc.Node,
@@ -82,8 +86,9 @@ var gamemain = cc.Class({
         // 玩家当前道具
         allitems: [],
         // 此时距离上次点击屏幕有多长时间
-        curtimeawaypre: 10
-
+        curtimeawaypre: 10,
+        // 控制隐藏好友
+        isShowFIcon: false
     },
 
     /*
@@ -118,7 +123,11 @@ var gamemain = cc.Class({
             var tmp_m = new mask(i, this);
             this.getAllmask().push(tmp_m);
         }
-
+        if (tywx.publicwx) {
+            this.tex = new cc.Texture2D();
+            window.sharedCanvas.width = 650;
+            window.sharedCanvas.height = 560;
+        }
         var self = this;
         // 游戏的点击逻辑
         this.node.on('touchend', function (event) {
@@ -135,6 +144,9 @@ var gamemain = cc.Class({
         effect.x = 140;
         effect.y = 90;
     },
+
+    // 隔多久检查一下当前分数要超越的玩家
+    checkFriendsScore: function checkFriendsScore() {},
 
     /*
         调用: 一段时间没有点击屏幕后调用
@@ -174,7 +186,7 @@ var gamemain = cc.Class({
         思路: 逻辑需要
     */
     showStopView: function showStopView() {
-        this.stopView.node.active = !this.stopView.node.active ? true : false;
+        this.stopView.active = !this.stopView.active ? true : false;
     },
 
     /*
@@ -310,6 +322,9 @@ var gamemain = cc.Class({
                 this.getAllgz()[i].block.tickeffect(dt, this.star, this.star1);
                 this.getAllgz()[i].draw(this.bg.getComponent(cc.Graphics), this.num[i]);
             }
+        }
+        if (this.isShowFIcon) {
+            this._updateSubDomainCanvas();
         }
         switch (this.gamestate) {
             case config.gameState.checkclick:
@@ -780,6 +795,31 @@ var gamemain = cc.Class({
             });
         }
         cc.director.loadScene("gamestart", this.destroyFinish);
+    },
+
+    backCall: function backCall() {
+        this.showMinFriend();
+    },
+
+    showMinFriend: function showMinFriend() {
+        var self = this;
+        this.isShowFIcon = true;
+        wx.postMessage({
+            method: 5,
+            score: self.score
+        });
+    },
+
+    // 刷新子域的纹理
+    _updateSubDomainCanvas: function _updateSubDomainCanvas() {
+        if (!this.tex || !tywx.publicwx) {
+            return;
+        }
+        var openDataContext = wx.getOpenDataContext();
+        var sharedCanvas = openDataContext.canvas;
+        this.tex.initWithElement(sharedCanvas);
+        this.tex.handleLoadedTexture();
+        this.friendIcon.spriteFrame = new cc.SpriteFrame(this.tex);
     },
 
     /*

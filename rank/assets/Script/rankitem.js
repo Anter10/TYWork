@@ -87,14 +87,6 @@ cc.Class({
          }catch (e) {
             
          }
- 
-        // console.log("加载图片2 = "+avatarUrl)
-        // cc.loader.load(avatarUrl, function (err, tex) {
-        //     tsp.spriteFrame = new cc.SpriteFrame(tex);
-        //     console.log("加载图片 = "+err)
-		// });
-        
-		
     },
 
   

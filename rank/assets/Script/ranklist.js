@@ -1,7 +1,7 @@
  /*
     展示微信好友的排行榜
     created by gyc on 2018-08-06.
-    final changed by gyc on 2018-08-06;
+    final changed by gyc on 2018-08-09;
 */
 
 // 当前是否发布微信游戏
@@ -18,6 +18,8 @@ var PTypes={
     userinfo:3,
     // 提交当前的得分
     submitscore:4,
+    // 存储好友数据
+    storefris:5,
 };
 
 cc.Class({
@@ -33,9 +35,28 @@ cc.Class({
         gamerank:cc.Node,
         // scrollview的容器layout
         content:cc.Node,
+        // 超逾玩家的信息
+        friendmsd:cc.Node,
+        // 名字
+        nameLabel:cc.Label,
+        // 分数
+        scoreLabel:cc.Label,
+        // 头像
+        iconSprite:cc.Sprite,
     },
     
-    // 游戏界面开始
+   
+    /*
+        调用: 游戏界面开始
+        功能: 监听主域发送的数据并处理
+        参数: [
+           无
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
     start () {
         let self = this;
         wx.onMessage(data => {
@@ -49,12 +70,24 @@ cc.Class({
                 self.getUserInfoData();
              }else if(data.method == PTypes.submitscore){
                 self.submitScore(data.score);
+             }else if(data.method == PTypes.storefris){
+                self.storeFriends(data.score);
              }
         });
     },
     
      
-    //提交得分
+    /*
+        调用: 游戏结束的时候调用
+        功能: 提交玩家的当前得分
+        参数: [
+           score: 玩家此次游戏的得分数
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
     submitScore: function(score) {
         var self = this;
         if (CC_WECHATGAME) {
@@ -96,7 +129,17 @@ cc.Class({
         }
     },
  
-    // 得到玩家的基本信息
+    /*
+        调用: 想要使用玩家的数据的时候调用
+        功能: 得到玩家的基本信息
+        参数: [
+           store: 是否存储玩家的好友数据
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
     getUserInfoData:function(){
         wx.getUserInfo({
             openIdList: ['selfOpenId'],
@@ -116,22 +159,36 @@ cc.Class({
         });
     },
 
-    // 获得玩家的微信好友的数据
-    getFriendData: function() {
+    /*
+        调用: 获得玩家的微信好友的数据
+        功能: 存储当前好友的数据 方便主域取出使用
+        参数: [
+           tstore: 是否存储玩家的好友数据
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
+    getFriendData: function(tstore, tscore) {
+        let score = tscore;
         var self = this;
+        let store = tstore;
         if (CC_WECHATGAME) {
             wx.getUserInfo({
                 openIdList: ['selfOpenId'],
                 success: (userRes) => {
                     this.showloading.node.active = false;
-                    console.log('success'+userRes.data)
+                  
                     let userData = userRes.data[0];
                     //取出所有好友数据
                     wx.getFriendCloudStorage({
                         keyList: [MAIN_MENU_NUM],
                         success: res => {
                             let data = res.data;
-                            console.log("微信好友的数据 = "+ JSON.stringify(data))
+                            if(store == true){
+                            //    this.setDataToLocalStorage("friends",JSON.stringify(data)); 
+                            }
                             data.sort((a, b) => {
                                 if (a.KVDataList.length == 0 && b.KVDataList.length == 0) {
                                     return 0;
@@ -144,14 +201,41 @@ cc.Class({
                                 }
                                 return b.KVDataList[0].value - a.KVDataList[0].value;
                             });
-                            self.gameranklist.content.removeAllChildren();
-                            for (let i = 0; i < data.length; i++) {
-                                var playerInfo = data[i];
-                                playerInfo.pm = i;
-                                var item = cc.instantiate(this.rankItem);
-                                item.getComponent('rankitem').updateData(playerInfo);
-                                item.setPosition(0, -90 * i - 30);
-                                this.gameranklist.content.addChild(item,122);
+                            if(store == null){
+                                self.gamerank.active = true;
+                                self.friendmsd.active = false;
+                                self.gameranklist.content.removeAllChildren();
+                                for (let i = 0; i < data.length; i++) {
+                                    var playerInfo = data[i];
+                                    playerInfo.pm = i;
+                                    var item = cc.instantiate(this.rankItem);
+                                    item.getComponent('rankitem').updateData(playerInfo);
+                                    item.setPosition(0, -90 * i - 30);
+                                    this.gameranklist.content.addChild(item,122);
+                                }
+                            }else{
+                                // 显示玩家的信息
+                                self.gamerank.active = false;
+                                self.friendmsd.active = false;
+                                // 得出和自己分数最进的好友
+                                var frdata = null;
+                                for (let i = data.length - 1; i >= 0 ; i--) {
+                                    var tdata = data[i];
+                                    var fscore = tdata.KVDataList[0] == null ? 0 : tdata.KVDataList[0].value;
+                                    if(fscore > score){
+                                       frdata = tdata;
+                                       frdata.score = fscore;
+                                       break; 
+                                    }
+                                }
+                                // 如果有玩家的分数大于自己的 则显示
+                                if(frdata){
+                                   self.friendmsd.active = true;
+                                   self.nameLabel.string = frdata.nickname;
+                                   self.scoreLabel.string = frdata.score;
+                                   self.createIcon(self.iconSprite,frdata.avatarUrl);
+                                   console.log("刷新成功");
+                                }
                             }
                         },
                         fail: res => {
@@ -167,10 +251,65 @@ cc.Class({
         }
     },
 
-    // 得到玩家微信群组的数据
+    /*
+        调用: 获得好友数据的时候调用
+        功能: 存储当前好友的数据 方便主域取出使用
+        参数: [
+           keyStr:获得好友数据的KEY type: string
+           ValueStr:好友的数据 type: string
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
+    setDataToLocalStorage: function (keyStr, ValueStr) {
+        try {
+            console.log("wx setStorage = "+wx.setStorage);
+            if(wx && wx.setStorage) {
+                window.wx.setStorage({
+                    key: keyStr,
+                    data: ValueStr + ''
+                });
+                console.log("存储数据成功"+ValueStr);
+            }
+        } catch (e) {
+            // cc.sys.localStorage.setItem(keyStr, ValueStr+"");
+           
+            console.log("存储数据失败", "setItemToLocalStorage fail");
+        }
+    },
+   
+    /*
+        调用: 游戏界面显示即将超越的时候使用
+        功能: 存储玩家好友的数据
+        参数: [
+           score:玩家当前分数
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
+    storeFriends:function(score) {
+        this.getFriendData(true, score)
+    },
+
+   /*
+        调用: 主域手动显示群组排行榜的时候调用
+        功能: 得到玩家微信群组的数据
+        参数: [
+           tshareTicket: 得到群组的ID
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
     getGroupFriendData: function(tshareTicket) {
         var self = this;
         var shareTicket = tshareTicket;
+        self.friendmsd.active = false;
         if (CC_WECHATGAME) {
             wx.getUserInfo({
                 openIdList: ['selfOpenId'],
@@ -221,5 +360,39 @@ cc.Class({
             });
         }
     },
+ /*
+        调用: 显示玩家微信好友排行榜的时候显示
+        功能: 创建玩家的微信头像
+        参数: [
+           avatarUrl: 玩家微信头像的url
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
+   createIcon: function(sprite, avatarUrl) {
+        var self = this;
+        var tsp = sprite;
+        try {
+            var image = wx.createImage();
+            image.src = avatarUrl;
+            image.onload = (event) => {
+            try {
+                let texture = new cc.Texture2D();
+                texture.initWithElement(image);
+                texture.handleLoadedTexture();
+                tsp.spriteFrame = new cc.SpriteFrame(texture);
+                    console.log(avatarUrl + " ni/ "+sprite.node.width + " == "+texture.width +" " + sprite.node.y)
+            } catch (e) {
+                cc.log("图片加载失败");
+            }
+            };
+            
+            
+        }catch (e) {
+        
+        }
+    }
 
 });

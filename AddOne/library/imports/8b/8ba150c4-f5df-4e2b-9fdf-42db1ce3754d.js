@@ -24,9 +24,13 @@ var gamestart = cc.Class((_cc$Class = {
         },
         audioCtr: {
             default: null,
-            type: cc.Button
+            type: cc.Prefab
         },
         gameScore: {
+            default: null,
+            type: cc.Label
+        },
+        historyLabel: {
             default: null,
             type: cc.Label
         },
@@ -50,6 +54,10 @@ var gamestart = cc.Class((_cc$Class = {
             default: null,
             type: cc.Node
         },
+        phbView: {
+            default: null,
+            type: cc.Node
+        },
         icon: cc.Sprite
 
     },
@@ -66,7 +74,6 @@ var gamestart = cc.Class((_cc$Class = {
     },
     start: function start() {
         //是否发布微信版本
-
         if (tywx.publicwx) {
             this.tex = new cc.Texture2D();
             window.sharedCanvas.width = 650;
@@ -78,7 +85,6 @@ var gamestart = cc.Class((_cc$Class = {
     if (!this.tex) {
         return;
     }
-
     var openDataContext = wx.getOpenDataContext();
     var sharedCanvas = openDataContext.canvas;
     this.tex.initWithElement(sharedCanvas);
@@ -90,9 +96,6 @@ var gamestart = cc.Class((_cc$Class = {
     }
 }), _defineProperty(_cc$Class, "onLoad", function onLoad() {
     if (tywx.publicwx) {
-        window.wx.postMessage({
-            method: 3
-        });
         var msg = tywx.ShareInterface.getRandomOnShareAppMessageInfo();
         if (msg) {
             tywx.ShareInterface.setOnShareAppMessageInfo(msg.title, msg.imageUrl, msg.sharePointId, msg.shareSchemeId);
@@ -116,14 +119,12 @@ var gamestart = cc.Class((_cc$Class = {
         var self = this;
         if (groupBtnComponent) {
             groupBtnComponent.setShareGroupCall(function (data) {
-                console.log("群组成功后处理的回调函数 ", data);
-                console.log("群组成功后处理的回调函数 self ", self);
                 if (self.showPhb) {
-                    self.phbSprite.node.active = false;
-                    self.showPhb = false;
+                    self.phbView.node.active = false;
+                    self.phbView = false;
                 } else {
-                    self.phbSprite.node.active = true;
-                    self.showPhb = true;
+                    self.phbView.node.active = true;
+                    self.phbView = true;
                 }
                 window.wx.postMessage({
                     method: 2,
@@ -138,9 +139,18 @@ var gamestart = cc.Class((_cc$Class = {
         }
     }
     var score = tywx.Util.getItemFromLocalStorage("maxscore", 0);
-    if (score) {
-        console.log("score = " + score);
+    if (score != null) {
         this.gameScore.string = score;
+        var length = (score + "").length;
+        // 根据当前的分数来调整显示
+        if (length < 2) {
+            this.historyLabel.node.x = this.historyLabel.node.x + 50;
+            this.gameScore.node.x = this.gameScore.node.x + 50;
+        } else if (length > 5) {
+            var tx = 25 + (length - 6) * 25;
+            this.historyLabel.node.x = this.historyLabel.node.x - tx;
+            this.gameScore.node.x = this.gameScore.node.x - tx;
+        }
     } else {
         console.log("当前分数不存在");
     }
@@ -156,27 +166,27 @@ var gamestart = cc.Class((_cc$Class = {
 }), _defineProperty(_cc$Class, "showPlayMethod", function showPlayMethod() {
     // tywx.AdManager.showAd(cc.p(333,160))
     if (tywx.publicwx) {
-        var image = wx.createImage();
-        var self = this;
-        image.src = "https://wx.qlogo.cn/mmopen/vi_32/U8XaLGeVibpjlibN0cJGiah2TTKarQdEI0QazibrrrsNibhMC2TrmscXQdfGEF4icW0B6A7TjjheTWpQiaD8wNhp3qZQQ/132";
-        image.onload = function (event) {
-            try {
-                var texture = new cc.Texture2D();
-                texture.initWithElement(image);
-                texture.handleLoadedTexture();
-                self.icon.spriteFrame = new cc.SpriteFrame(texture);
-                // console.log(avatarUrl + " ni/ "+sprite.node.width + " == "+texture.width +" " + sprite.node.y)
-            } catch (e) {
-                cc.log("图片加载失败");
-            }
-        };
+        // var image = wx.createImage();
+        // var self = this
+        // image.src = "https://wx.qlogo.cn/mmopen/vi_32/U8XaLGeVibpjlibN0cJGiah2TTKarQdEI0QazibrrrsNibhMC2TrmscXQdfGEF4icW0B6A7TjjheTWpQiaD8wNhp3qZQQ/132";
+        // image.onload = (event) => {
+        // try {
+        //     let texture = new cc.Texture2D();
+        //     texture.initWithElement(image);
+        //     texture.handleLoadedTexture();
+        //     self.icon.spriteFrame = new cc.SpriteFrame(texture);
+        //     // console.log(avatarUrl + " ni/ "+sprite.node.width + " == "+texture.width +" " + sprite.node.y)
+        // } catch (e) {
+        //     cc.log("图片加载失败");
+        // }
+        // };
     }
-}), _defineProperty(_cc$Class, "showPhbView", function showPhbView() {
+}), _defineProperty(_cc$Class, "showFriendPhbView", function showFriendPhbView() {
     if (this.showPhb) {
-        this.phbSprite.node.active = false;
+        this.phbView.active = false;
         this.showPhb = false;
     } else {
-        this.phbSprite.node.active = true;
+        this.phbView.active = true;
         this.showPhb = true;
     }
     if (tywx.publicwx) {

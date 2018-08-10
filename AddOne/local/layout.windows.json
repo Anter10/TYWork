@@ -5,13 +5,8 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-<<<<<<< HEAD
-      "x": 726,
-      "y": 23,
-=======
-      "x": 873,
-      "y": 35,
->>>>>>> parent of 4a53442... 子域功能完善
+      "x": 160,
+      "y": 202,
       "width": 1280,
       "height": 801,
       "layout": {
@@ -23,86 +18,48 @@
                 "children": [
                   "hierarchy"
                 ],
-<<<<<<< HEAD
-                "height": 300,
-=======
-                "height": 393,
->>>>>>> parent of 4a53442... 子域功能完善
+                "height": 254,
                 "type": "panel",
-                "width": 306
+                "width": 204
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-<<<<<<< HEAD
-                "height": 407,
-=======
-                "height": 233,
->>>>>>> parent of 4a53442... 子域功能完善
+                "height": 453,
                 "type": "panel",
-                "width": 306
+                "width": 204
               }
             ],
-            "height": 629,
-            "type": "dock-v",
-            "width": 306
-          },
-          {
-            "children": [
-              {
-                "children": [
-                  {
-                    "active": 0,
-                    "children": [
-                      "scene"
-                    ],
-                    "height": 407,
-                    "type": "panel",
-                    "width": 390.984375
-                  },
-                  {
-                    "active": 0,
-                    "children": [
-                      "node-library"
-                    ],
-                    "height": 407,
-                    "type": "panel",
-                    "width": 264
-                  }
-                ],
-                "height": 407,
-                "type": "dock-h",
-                "width": 658
-              },
-              {
-                "active": 0,
-                "children": [
-                  "console",
-                  "timeline"
-                ],
-                "height": 300,
-                "type": "panel",
-                "width": 658
-              }
-            ],
-<<<<<<< HEAD
             "height": 710,
             "type": "dock-v",
-            "width": 658
-=======
-            "height": 629,
+            "width": 204
+          },
+          {
+            "active": 0,
+            "children": [
+              "scene"
+            ],
+            "height": 710,
             "type": "panel",
-            "width": 631
->>>>>>> parent of 4a53442... 子域功能完善
+            "width": 493
+          },
+          {
+            "active": 0,
+            "children": [
+              "node-library"
+            ],
+            "height": 710,
+            "type": "panel",
+            "width": 264
           },
           {
             "active": 0,
             "children": [
               "inspector"
             ],
-            "height": 629,
+            "height": 710,
             "type": "panel",
             "width": 304
           }
@@ -112,24 +69,26 @@
       "panels": [
         "hierarchy",
         "node-library",
-        "console",
-        "timeline",
         "inspector",
         "assets",
         "scene"
       ]
-    }
+    },
+    "window-1533893143033": {},
+    "worker": {}
   },
   "panels": {
     "builder": {
-<<<<<<< HEAD
-      "x": 645,
-=======
-      "x": 1198,
->>>>>>> parent of 4a53442... 子域功能完善
-      "y": 23,
+      "x": 1000,
+      "y": 78,
       "width": 500,
       "height": 722
+    },
+    "project-settings": {
+      "x": 388,
+      "y": 40,
+      "width": 584,
+      "height": 548
     }
   }
 }
