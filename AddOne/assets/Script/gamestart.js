@@ -4,7 +4,7 @@
    final changed time by gyc on  2018-08-03
 */
 var config = require("AddOneConfig")
-tywx.publicwx = true;
+tywx.publicwx = false;
 var gamestart = cc.Class({
     extends: cc.Component,
     properties:{
@@ -17,6 +17,10 @@ var gamestart = cc.Class({
             type: cc.Button,
         },
         gameScore:{
+            default: null,
+            type: cc.Label,
+        },
+        historyLabel:{
             default: null,
             type: cc.Label,
         },
@@ -40,6 +44,10 @@ var gamestart = cc.Class({
             default: null,
             type:cc.Node,
         },
+        phbView:{
+            default: null,
+            type:cc.Node,
+        },
         icon:cc.Sprite,
        
     },
@@ -56,7 +64,6 @@ var gamestart = cc.Class({
     },
     start () {
         //是否发布微信版本
-       
         if(tywx.publicwx){
             this.tex = new cc.Texture2D();
             window.sharedCanvas.width = 650;
@@ -139,14 +146,12 @@ var gamestart = cc.Class({
              var self = this;
              if(groupBtnComponent){
                 groupBtnComponent.setShareGroupCall(function(data){
-                    console.log("群组成功后处理的回调函数 ",data);
-                     console.log("群组成功后处理的回调函数 self ",self);
                      if(self.showPhb){
-                        self.phbSprite.node.active = false;
-                        self.showPhb = false;
+                        self.phbView.node.active = false;
+                        self.phbView = false;
                     }else{
-                        self.phbSprite.node.active = true;
-                        self.showPhb = true;
+                        self.phbView.node.active = true;
+                        self.phbView = true;
                     }
                      window.wx.postMessage({
                             method: 2,
@@ -164,9 +169,18 @@ var gamestart = cc.Class({
 
        }
        var score = tywx.Util.getItemFromLocalStorage("maxscore",0); 
-       if(score){
-            console.log("score = "+score)
+       if(score != null){
             this.gameScore.string = score;
+            let length = (score+"").length;
+            // 根据当前的分数来调整显示
+            if(score < 10){
+               this.historyLabel.node.x = this.historyLabel.node.x + 50;
+               this.gameScore.node.x    = this.gameScore.node.x + 50;
+            }else if(length > 5){
+               var tx = 25 + (length - 6) * 25;
+               this.historyLabel.node.x = this.historyLabel.node.x - tx;
+               this.gameScore.node.x    = this.gameScore.node.x - tx;
+            }
         }else{
             console.log("当前分数不存在")
         }
@@ -199,20 +213,20 @@ var gamestart = cc.Class({
     showPlayMethod:function(){
         // tywx.AdManager.showAd(cc.p(333,160))
         if(tywx.publicwx){
-            var image = wx.createImage();
-            var self = this
-            image.src = "https://wx.qlogo.cn/mmopen/vi_32/U8XaLGeVibpjlibN0cJGiah2TTKarQdEI0QazibrrrsNibhMC2TrmscXQdfGEF4icW0B6A7TjjheTWpQiaD8wNhp3qZQQ/132";
-            image.onload = (event) => {
-            try {
-                let texture = new cc.Texture2D();
-                texture.initWithElement(image);
-                texture.handleLoadedTexture();
-                self.icon.spriteFrame = new cc.SpriteFrame(texture);
-                // console.log(avatarUrl + " ni/ "+sprite.node.width + " == "+texture.width +" " + sprite.node.y)
-            } catch (e) {
-                cc.log("图片加载失败");
-            }
-            };
+            // var image = wx.createImage();
+            // var self = this
+            // image.src = "https://wx.qlogo.cn/mmopen/vi_32/U8XaLGeVibpjlibN0cJGiah2TTKarQdEI0QazibrrrsNibhMC2TrmscXQdfGEF4icW0B6A7TjjheTWpQiaD8wNhp3qZQQ/132";
+            // image.onload = (event) => {
+            // try {
+            //     let texture = new cc.Texture2D();
+            //     texture.initWithElement(image);
+            //     texture.handleLoadedTexture();
+            //     self.icon.spriteFrame = new cc.SpriteFrame(texture);
+            //     // console.log(avatarUrl + " ni/ "+sprite.node.width + " == "+texture.width +" " + sprite.node.y)
+            // } catch (e) {
+            //     cc.log("图片加载失败");
+            // }
+            // };
          }
     },
 
@@ -227,12 +241,12 @@ var gamestart = cc.Class({
         ]
         思路: 游戏需要
     */
-    showPhbView: function(){
+    showFriendPhbView: function(){
         if(this.showPhb){
-            this.phbSprite.node.active = false;
+            this.phbView.node.active = false;
             this.showPhb = false;
         }else{
-            this.phbSprite.node.active = true;
+            this.phbView.node.active = true;
             this.showPhb = true;
         }
         if(tywx.publicwx){

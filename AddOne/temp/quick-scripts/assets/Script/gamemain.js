@@ -174,7 +174,7 @@ var gamemain = cc.Class({
         思路: 逻辑需要
     */
     showStopView: function showStopView() {
-        this.stopView.node.active = !this.stopView.node.active ? true : false;
+        this.stopView.active = !this.stopView.active ? true : false;
     },
 
     /*

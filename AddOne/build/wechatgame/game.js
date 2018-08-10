@@ -2,13 +2,13 @@ require('libs/weapp-adapter/index');
 var Parser = require('libs/xmldom/dom-parser');
 window.DOMParser = Parser.DOMParser;
 require('libs/wx-downloader.js');
-require('src/settings.22deb');
+require('src/settings.75deb');
 var settings = window._CCSettings;
-require('main.84c75');
+require('main.affdb');
 require(settings.debug ? 'cocos2d-js.js' : 'cocos2d-js-min.4d772.js');
 require('./libs/weapp-adapter/engine/index.js');
 
-wxDownloader.REMOTE_SERVER_ROOT = "http://172.16.15.198:8080/addserver/";
+wxDownloader.REMOTE_SERVER_ROOT = "";
 wxDownloader.SUBCONTEXT_ROOT = "";
 var pipeBeforeDownloader = cc.loader.md5Pipe || cc.loader.assetLoader;
 cc.loader.insertPipeAfter(pipeBeforeDownloader, wxDownloader);

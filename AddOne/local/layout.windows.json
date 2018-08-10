@@ -5,8 +5,8 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 873,
-      "y": 35,
+      "x": 147,
+      "y": 326,
       "width": 1280,
       "height": 801,
       "layout": {
@@ -18,7 +18,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 393,
+                "height": 481,
                 "type": "panel",
                 "width": 256
               },
@@ -27,12 +27,12 @@
                 "children": [
                   "assets"
                 ],
-                "height": 233,
+                "height": 226,
                 "type": "panel",
                 "width": 256
               }
             ],
-            "height": 629,
+            "height": 710,
             "type": "dock-v",
             "width": 256
           },
@@ -41,7 +41,7 @@
             "children": [
               "scene"
             ],
-            "height": 629,
+            "height": 710,
             "type": "panel",
             "width": 631
           },
@@ -50,7 +50,7 @@
             "children": [
               "inspector"
             ],
-            "height": 629,
+            "height": 710,
             "type": "panel",
             "width": 381
           }
@@ -69,7 +69,7 @@
   },
   "panels": {
     "builder": {
-      "x": 1198,
+      "x": 770,
       "y": 23,
       "width": 500,
       "height": 722

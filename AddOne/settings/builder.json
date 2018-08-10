@@ -29,7 +29,7 @@
   "title": "addone",
   "webOrientation": "auto",
   "wechatgame": {
-    "REMOTE_SERVER_ROOT": "http://172.16.15.198:8080/addserver/",
+    "REMOTE_SERVER_ROOT": "",
     "appid": "wxb3967d06430bf885",
     "isSubdomain": false,
     "orientation": "portrait",
