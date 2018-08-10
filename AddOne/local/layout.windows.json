@@ -5,10 +5,22 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
+<<<<<<< HEAD
       "x": 147,
       "y": 326,
+=======
+<<<<<<< HEAD
+      "x": 264,
+      "y": 549,
+      "width": 1614,
+      "height": 828,
+=======
+      "x": 873,
+      "y": 35,
+>>>>>>> 0da5cf222369871b5ab1e61068252846580b7edb
       "width": 1280,
       "height": 801,
+>>>>>>> d283c6845a47c268e60e7deb041adafc92625f0c
       "layout": {
         "children": [
           {
@@ -64,8 +76,12 @@
         "scene"
       ]
     },
+<<<<<<< HEAD
+    "window-1533806113015": {}
+=======
     "window-1533829331149": {},
     "worker": {}
+>>>>>>> d283c6845a47c268e60e7deb041adafc92625f0c
   },
   "panels": {
     "builder": {
