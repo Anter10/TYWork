@@ -2848,6 +2848,7 @@ Node path: "Canvas"
 2018-08-10T06:24:51.514Z - normal: Built to "/Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/build/wechatgame" successfully
 2018-08-10T06:36:46.004Z - warn: Should not specify class name node for Component which defines in project.
 2018-08-10T06:36:46.007Z - warn: Can not instantiate CCClass 'node' with arguments.
+<<<<<<< HEAD
 2018-08-10T06:56:59.374Z - warn: [db-task][sync-changes] Delete unused meta file: db://assets/subone.meta
 2018-08-10T07:01:18.817Z - failed: [db-task][sync-changes] Failed to import asset /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/assets/Scene/gamestart.fire, message: SyntaxError: /Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/assets/Scene/gamestart.fire: Unexpected token < in JSON at position 717
     at JSON.parse (<anonymous>)
@@ -2994,3 +2995,5 @@ initialization finished
     at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/fire-fs/node_modules/jsonfile/index.js:36:18
     at /Applications/CocosCreator 上午9.42.03.app/Contents/Resources/app.asar/node_modules/graceful-fs/graceful-fs.js:78:16
     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:439:3)
+=======
+>>>>>>> parent of a13caa3... 功能更新
