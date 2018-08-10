@@ -534,54 +534,24 @@
     "meta": 1533885750375,
     "relativePath": "Texture/组 359236@3x.png"
   },
-  "f7c31388-ffbc-4518-af26-710e63573c5a": {
-    "asset": 1533885726119,
-    "meta": 1533884696454,
-    "relativePath": "Scene/gamestart.fire"
-  },
-  "522d7ccd-f8ae-47b3-a06a-d5d37cc4e2e5": {
-    "asset": 1533885726111,
-    "meta": 1533885750381,
-    "relativePath": "Texture/圆角矩形 140@3x.png.meta~HEAD"
-  },
-  "3d8c8214-0234-4354-a0e5-c05a0224e823": {
-    "asset": 1533885726111,
-    "meta": 1533885750383,
-    "relativePath": "Texture/圆角矩形 140@3x.png.meta~parent of 4a53442... 子域功能完善"
-  },
   "e8fc225c-750b-4245-9888-a7b7d800796e": {
     "asset": 1533885726110,
     "meta": 1533885750385,
     "relativePath": "Texture/开始游戏.png.meta~HEAD"
-  },
-  "5e0ca0e0-bf4f-47f5-94be-1db0eb993dcf": {
-    "asset": 1533885726110,
-    "meta": 1533885750388,
-    "relativePath": "Texture/开始游戏.png.meta~parent of 4a53442... 子域功能完善"
-  },
-  "1058371c-826b-4668-9c41-53640702b3d3": {
-    "asset": 1533885726111,
-    "meta": 1533885750390,
-    "relativePath": "Texture/椭圆 18 拷贝@3x.png.meta~HEAD"
-  },
-  "9808e670-5ef4-4e1e-88d1-645d287bb0ca": {
-    "asset": 1533885726112,
-    "meta": 1533885750393,
-    "relativePath": "Texture/椭圆 18 拷贝@3x.png.meta~parent of 4a53442... 子域功能完善"
   },
   "7d22c5a7-d79a-4975-8d78-7b061a214eb3": {
     "asset": 1533885726109,
     "meta": 1533885750395,
     "relativePath": "Texture/组 359236@3x.png.meta~HEAD"
   },
-  "1811dce3-d633-47a3-9773-aa6d75973fd9": {
-    "asset": 1533885726109,
-    "meta": 1533885750399,
-    "relativePath": "Texture/组 359236@3x.png.meta~parent of 4a53442... 子域功能完善"
-  },
   "6f2e912f-0568-456d-b5ee-5c812639d0cd": {
     "asset": 1533885642932,
     "meta": 1533885750418,
     "relativePath": "Texture/开始游戏@3x.png"
+  },
+  "f7c31388-ffbc-4518-af26-710e63573c5a": {
+    "asset": 1533886220615,
+    "meta": 1533884696454,
+    "relativePath": "Scene/gamestart.fire"
   }
 }
