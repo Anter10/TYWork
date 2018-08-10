@@ -249,6 +249,49 @@
     "meta": 1533692647914,
     "relativePath": "audio"
   },
+<<<<<<< HEAD
+  "29f52784-2fca-467b-92e7-8fd9ef8c57b7": {
+    "asset": 1533827715165,
+    "meta": 1533652181754,
+    "relativePath": "Scene"
+  },
+  "3e0befc6-ec69-48b4-962b-13dec257519a": {
+    "asset": 1533652181755,
+    "meta": 1533827779185,
+    "relativePath": "Scene/audio.prefab"
+  },
+  "5976894f-82af-4073-91bf-25012cff81dc": {
+    "asset": 1533827715161,
+    "meta": 1533827779187,
+    "relativePath": "Scene/djitem.prefab"
+  },
+  "f0117848-9909-42ab-98b8-556e69a75bdc": {
+    "asset": 1533652181755,
+    "meta": 1533827779189,
+    "relativePath": "Scene/effect.prefab"
+  },
+  "2d2f792f-a40c-49bb-a189-ed176a246e49": {
+    "asset": 1533883105192,
+    "meta": 1533883105202,
+    "relativePath": "Scene/gamemain.fire"
+  },
+  "f7c31388-ffbc-4518-af26-710e63573c5a": {
+    "asset": 1533877503080,
+    "meta": 1533877503089,
+    "relativePath": "Scene/gamestart.fire"
+  },
+  "5f67ee51-10ec-4d8a-8c17-ccf9c5f2c71a": {
+    "asset": 1533715745586,
+    "meta": 1533827779201,
+    "relativePath": "Scene/sharebuttton.prefab"
+  },
+  "8949adb7-1a30-4514-a1ba-c3936d26d16f": {
+    "asset": 1533827715165,
+    "meta": 1533827779203,
+    "relativePath": "Scene/stopshow.prefab"
+  },
+=======
+>>>>>>> 0da5cf222369871b5ab1e61068252846580b7edb
   "fccbdb12-b0ee-453e-8159-76d94eb2e2c5": {
     "asset": 1533692647924,
     "meta": 1533692776426,
@@ -329,6 +372,14 @@
     "meta": 1533692647903,
     "relativePath": "Script/models"
   },
+<<<<<<< HEAD
+  "7c2db254-7626-4b98-8cda-a93f8f06287f": {
+    "asset": 1533827715184,
+    "meta": 1533827780788,
+    "relativePath": "Script/models/AddOneConfig.js"
+  },
+=======
+>>>>>>> 0da5cf222369871b5ab1e61068252846580b7edb
   "204428a1-51f9-4529-a409-c4e5c6197cc8": {
     "asset": 1533692647903,
     "meta": 1533692779308,
@@ -389,6 +440,12 @@
     "meta": 1533692779535,
     "relativePath": "Texture/switch-mask.png"
   },
+<<<<<<< HEAD
+  "0aec0c7b-82f2-4d19-83e7-84718fc9d0f3": {
+    "asset": 1533828455008,
+    "meta": 1533828455114,
+    "relativePath": "Texture/圆角矩形 2@3x.png"
+=======
   "3e0befc6-ec69-48b4-962b-13dec257519a": {
     "asset": 1533692647883,
     "meta": 1533694789944,
@@ -498,12 +555,15 @@
     "asset": 1533866650107,
     "meta": 1533866651569,
     "relativePath": "Texture/帮助@2x.png"
+>>>>>>> 0da5cf222369871b5ab1e61068252846580b7edb
   },
   "ccb3ad51-9275-48b8-8039-964914e0433c": {
     "asset": 1533866650107,
     "meta": 1533866651591,
     "relativePath": "Texture/帮助@3x.png"
   },
+<<<<<<< HEAD
+=======
   "0aec0c7b-82f2-4d19-83e7-84718fc9d0f3": {
     "asset": 1533866650106,
     "meta": 1533866651642,
@@ -514,6 +574,7 @@
     "meta": 1533866651654,
     "relativePath": "Texture/开始游戏.png"
   },
+>>>>>>> 0da5cf222369871b5ab1e61068252846580b7edb
   "79fcf846-790c-4406-8c14-7aec36d85fb8": {
     "asset": 1533866650109,
     "meta": 1533866651681,
@@ -529,6 +590,72 @@
     "meta": 1533866651708,
     "relativePath": "Texture/椭圆 21 拷贝@2x.png"
   },
+<<<<<<< HEAD
+  "56a7561e-f436-4382-97cc-542e28533136": {
+    "asset": 1533829982464,
+    "meta": 1533829982525,
+    "relativePath": "Texture/帮助@2x.png"
+  },
+  "85c8e03e-c9f6-4551-a026-890ca64c6ba7": {
+    "asset": 1533831704326,
+    "meta": 1533831704388,
+    "relativePath": "Texture/组 1 拷贝@2x.png"
+  },
+  "ecb70f81-078b-4c2e-8df4-2abd6ae10b1c": {
+    "asset": 1533867009788,
+    "meta": 1533867009891,
+    "relativePath": "Texture/bj.png"
+  },
+  "0ff4644e-251b-44b3-9d16-6269c96e7bc9": {
+    "asset": 1533867213173,
+    "meta": 1533867213217,
+    "relativePath": "Texture/分享.png"
+  },
+  "85cdbda0-e15e-41d6-a0d4-0f0669bf0a13": {
+    "asset": 1533867213172,
+    "meta": 1533867213219,
+    "relativePath": "Texture/帮助.png"
+  },
+  "f6837c9e-0944-4cbd-8404-567452f0cacc": {
+    "asset": 1533867213173,
+    "meta": 1533867213233,
+    "relativePath": "Texture/排行榜.png"
+  },
+  "e3040e63-54a2-445b-b933-ae687c4427f8": {
+    "asset": 1533867521938,
+    "meta": 1533867521997,
+    "relativePath": "Texture/组 359236@2x.png"
+  },
+  "609f1df5-ed4e-4577-ad56-5095769833aa": {
+    "asset": 1533867672295,
+    "meta": 1533867672332,
+    "relativePath": "Texture/开始游戏@2x.png"
+  },
+  "8291f1fb-6571-4777-83db-60e74095f154": {
+    "asset": 1533867846505,
+    "meta": 1533867846568,
+    "relativePath": "Texture/logo 拷贝@2x.png"
+  },
+  "c088e938-55e5-45f0-bae4-ffdc668e1aae": {
+    "asset": 1533872685902,
+    "meta": 1533872685955,
+    "relativePath": "Texture/圆角矩形 140@2x.png"
+  },
+  "c5145f59-62a5-4535-bfc2-e3158771f1f0": {
+    "asset": 1533872857924,
+    "meta": 1533872857964,
+    "relativePath": "Texture/暂时@2x.png"
+  },
+  "8ba150c4-f5df-4e2b-9fdf-42db1ce3754d": {
+    "asset": 1533877274126,
+    "meta": 1533877370931,
+    "relativePath": "Script/gamestart.js"
+  },
+  "280c3aec-6492-4a9d-9f51-a9b00b570b4a": {
+    "asset": 1533882999342,
+    "meta": 1533883005431,
+    "relativePath": "Script/gamemain.js"
+=======
   "5f1055f8-a56f-4149-8c65-cbbab3de0dcf": {
     "asset": 1533866650110,
     "meta": 1533866651710,
@@ -548,5 +675,6 @@
     "asset": 1533866650112,
     "meta": 1533866651741,
     "relativePath": "Texture/组 359236@3x.png"
+>>>>>>> 0da5cf222369871b5ab1e61068252846580b7edb
   }
 }

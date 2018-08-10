@@ -6,6 +6,10 @@
       "url": "app://editor/index.html",
       "windowType": "dockable",
 <<<<<<< HEAD
+      "x": 147,
+      "y": 326,
+=======
+<<<<<<< HEAD
       "x": 264,
       "y": 549,
       "width": 1614,
@@ -13,6 +17,7 @@
 =======
       "x": 873,
       "y": 35,
+>>>>>>> 0da5cf222369871b5ab1e61068252846580b7edb
       "width": 1280,
       "height": 801,
 >>>>>>> d283c6845a47c268e60e7deb041adafc92625f0c
@@ -25,7 +30,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 393,
+                "height": 481,
                 "type": "panel",
                 "width": 256
               },
@@ -34,12 +39,12 @@
                 "children": [
                   "assets"
                 ],
-                "height": 233,
+                "height": 226,
                 "type": "panel",
                 "width": 256
               }
             ],
-            "height": 629,
+            "height": 710,
             "type": "dock-v",
             "width": 256
           },
@@ -48,7 +53,7 @@
             "children": [
               "scene"
             ],
-            "height": 629,
+            "height": 710,
             "type": "panel",
             "width": 631
           },
@@ -57,7 +62,7 @@
             "children": [
               "inspector"
             ],
-            "height": 629,
+            "height": 710,
             "type": "panel",
             "width": 381
           }
@@ -80,7 +85,7 @@
   },
   "panels": {
     "builder": {
-      "x": 1198,
+      "x": 770,
       "y": 23,
       "width": 500,
       "height": 722
