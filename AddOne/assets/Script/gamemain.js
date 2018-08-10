@@ -176,8 +176,8 @@ var gamemain = cc.Class({
         思路: 逻辑需要
     */
    showStopView:function(){
-       this.stopView.active = !this.stopView.active ? true : false;
-    },
+       this.stopView.node.active = !this.stopView.node.active ? true : false;
+   },
 
     /*
         调用: 道具变化和游戏初始化的时候调用

@@ -1,7 +1,7 @@
  /*
     展示微信好友的排行榜
     created by gyc on 2018-08-06.
-    final changed by gyc on 2018-08-09;
+    final changed by gyc on 2018-08-06;
 */
 
 // 当前是否发布微信游戏
@@ -18,8 +18,6 @@ var PTypes={
     userinfo:3,
     // 提交当前的得分
     submitscore:4,
-    // 存储好友数据
-    storefris:5,
 };
 
 cc.Class({
@@ -37,18 +35,7 @@ cc.Class({
         content:cc.Node,
     },
     
-   
-    /*
-        调用: 游戏界面开始
-        功能: 监听主域发送的数据并处理
-        参数: [
-           无
-        ]
-        返回值:[
-           无
-        ]
-        思路: 游戏逻辑需要
-    */
+    // 游戏界面开始
     start () {
         let self = this;
         wx.onMessage(data => {
@@ -62,24 +49,12 @@ cc.Class({
                 self.getUserInfoData();
              }else if(data.method == PTypes.submitscore){
                 self.submitScore(data.score);
-             }else if(data.method == PTypes.storefris){
-                self.storeFriends(data.score);
              }
         });
     },
     
      
-    /*
-        调用: 游戏结束的时候调用
-        功能: 提交玩家的当前得分
-        参数: [
-           score: 玩家此次游戏的得分数
-        ]
-        返回值:[
-           无
-        ]
-        思路: 游戏逻辑需要
-    */
+    //提交得分
     submitScore: function(score) {
         var self = this;
         if (CC_WECHATGAME) {
@@ -121,17 +96,7 @@ cc.Class({
         }
     },
  
-    /*
-        调用: 想要使用玩家的数据的时候调用
-        功能: 得到玩家的基本信息
-        参数: [
-           store: 是否存储玩家的好友数据
-        ]
-        返回值:[
-           无
-        ]
-        思路: 游戏逻辑需要
-    */
+    // 得到玩家的基本信息
     getUserInfoData:function(){
         wx.getUserInfo({
             openIdList: ['selfOpenId'],
@@ -151,20 +116,9 @@ cc.Class({
         });
     },
 
-    /*
-        调用: 获得玩家的微信好友的数据
-        功能: 存储当前好友的数据 方便主域取出使用
-        参数: [
-           tstore: 是否存储玩家的好友数据
-        ]
-        返回值:[
-           无
-        ]
-        思路: 游戏逻辑需要
-    */
-    getFriendData: function(tstore) {
+    // 获得玩家的微信好友的数据
+    getFriendData: function() {
         var self = this;
-        var store = tstore;
         if (CC_WECHATGAME) {
             wx.getUserInfo({
                 openIdList: ['selfOpenId'],
@@ -177,9 +131,7 @@ cc.Class({
                         keyList: [MAIN_MENU_NUM],
                         success: res => {
                             let data = res.data;
-                            if(store == true){
-                                this.setDataToLocalStorage("friends",JSON.parse(data)); 
-                            }
+                            console.log("微信好友的数据 = "+ JSON.stringify(data))
                             data.sort((a, b) => {
                                 if (a.KVDataList.length == 0 && b.KVDataList.length == 0) {
                                     return 0;
@@ -215,59 +167,7 @@ cc.Class({
         }
     },
 
-    /*
-        调用: 获得好友数据的时候调用
-        功能: 存储当前好友的数据 方便主域取出使用
-        参数: [
-           keyStr:获得好友数据的KEY type: string
-           ValueStr:好友的数据 type: string
-        ]
-        返回值:[
-           无
-        ]
-        思路: 游戏逻辑需要
-    */
-    setDataToLocalStorage: function (keyStr, ValueStr) {
-        try {
-            if(wx && wx.getStorageSync) {
-                wx.setStorage({
-                    key: keyStr,
-                    data: ValueStr + ''
-                });
-            } else {
-                cc.sys.localStorage.setItem(keyStr, ValueStr+"");
-            }
-        } catch (e) {
-            tywx.LOGE("tywx.Util", "setItemToLocalStorage fail");
-        }
-    },
-   
-    /*
-        调用: 游戏界面显示即将超越的时候使用
-        功能: 存储玩家好友的数据
-        参数: [
-           无
-        ]
-        返回值:[
-           无
-        ]
-        思路: 游戏逻辑需要
-    */
-    storeFriends:function() {
-        this.getFriendData(true)
-    },
-
-   /*
-        调用: 主域手动显示群组排行榜的时候调用
-        功能: 得到玩家微信群组的数据
-        参数: [
-           tshareTicket: 得到群组的ID
-        ]
-        返回值:[
-           无
-        ]
-        思路: 游戏逻辑需要
-    */
+    // 得到玩家微信群组的数据
     getGroupFriendData: function(tshareTicket) {
         var self = this;
         var shareTicket = tshareTicket;
