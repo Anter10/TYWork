@@ -2848,3 +2848,4 @@ Node path: "Canvas"
 2018-08-10T06:24:51.514Z - normal: Built to "/Users/guoyouchao/Desktop/work/Ty/TYWork/AddOne/build/wechatgame" successfully
 2018-08-10T06:36:46.004Z - warn: Should not specify class name node for Component which defines in project.
 2018-08-10T06:36:46.007Z - warn: Can not instantiate CCClass 'node' with arguments.
+2018-08-10T06:56:59.374Z - warn: [db-task][sync-changes] Delete unused meta file: db://assets/subone.meta
