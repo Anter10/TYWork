@@ -28,6 +28,10 @@ var config = {
 	minCanRemoveNumber: 3,
 	//玩家得分基数
 	baseScore: 10,
+	// 最大复活次数
+	maxrnum: 2,
+	//格子距离底部多远
+	marginbottom: 270,
 	// 即将超越对手多少分显示相应图标
 	thanfriendScore: 30,
 	// 连接数在不同的值需要展示特定的效果

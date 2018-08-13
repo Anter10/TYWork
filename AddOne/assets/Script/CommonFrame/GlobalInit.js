@@ -37,7 +37,7 @@ tywx.UserInfo = {
     userPic: '',
     authorCode: '',
     systemType: 0, //1:苹果非iPhone X  2:iPhone X 3、安卓
-    wechatType: "6.6.1",//微信版本号
+    wechatType: "6.6.7",//微信版本号
     model: "未知设备",
     system: "iOS 10.0.1",
     loc: '',

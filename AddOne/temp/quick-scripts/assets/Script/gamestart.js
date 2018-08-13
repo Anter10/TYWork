@@ -6,6 +6,8 @@ cc._RF.push(module, '8ba15DE9d9OK5/fQtsc43VN', 'gamestart', __filename);
 
 var _cc$Class;
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /*
@@ -15,10 +17,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 */
 var config = require("AddOneConfig");
 tywx.publicwx = true;
+
+var curscene = null;
 var gamestart = cc.Class((_cc$Class = {
     extends: cc.Component,
     properties: {
         startButton: {
+            default: null,
+            type: cc.Button
+        },
+        backButton: {
             default: null,
             type: cc.Button
         },
@@ -37,6 +45,18 @@ var gamestart = cc.Class((_cc$Class = {
         phb: {
             default: null,
             type: cc.Button
+        },
+        phbback: {
+            default: null,
+            type: cc.Sprite
+        },
+        helpback: {
+            default: null,
+            type: cc.Sprite
+        },
+        giftback: {
+            default: null,
+            type: cc.Sprite
         },
         method: {
             default: null,
@@ -58,6 +78,17 @@ var gamestart = cc.Class((_cc$Class = {
             default: null,
             type: cc.Node
         },
+
+        helpview: {
+            default: null,
+            type: cc.Node
+        },
+
+        giftview: {
+            default: null,
+            type: cc.Node
+        },
+
         icon: cc.Sprite
 
     },
@@ -76,8 +107,8 @@ var gamestart = cc.Class((_cc$Class = {
         //是否发布微信版本
         if (tywx.publicwx) {
             this.tex = new cc.Texture2D();
-            window.sharedCanvas.width = 650;
-            window.sharedCanvas.height = 560;
+            // window.sharedCanvas.width = 635;
+            // window.sharedCanvas.height = 796;
         }
         this.showPhb = false;
     }
@@ -120,11 +151,11 @@ var gamestart = cc.Class((_cc$Class = {
         if (groupBtnComponent) {
             groupBtnComponent.setShareGroupCall(function (data) {
                 if (self.showPhb) {
-                    self.phbView.node.active = false;
-                    self.phbView = false;
+                    self.phbView.active = false;
+                    self.showPhb = false;
                 } else {
-                    self.phbView.node.active = true;
-                    self.phbView = true;
+                    self.phbView.active = true;
+                    self.showPhb = true;
                 }
                 window.wx.postMessage({
                     method: 2,
@@ -163,25 +194,25 @@ var gamestart = cc.Class((_cc$Class = {
     //     console.log("下载分包成功");
     // });
 
+
+    //   // 游戏的点击逻辑
+    this.phbback.node.on('touchstart', function (event) {
+        return true;
+    });
+    this.helpback.node.on('touchstart', function (event) {
+        return true;
+    });
+    this.giftback.node.on('touchstart', function (event) {
+        return true;
+    });
+    curscene = this;
+    // this.backButton.node.on("click",this.returnView, this);
 }), _defineProperty(_cc$Class, "showPlayMethod", function showPlayMethod() {
-    // tywx.AdManager.showAd(cc.p(333,160))
-    if (tywx.publicwx) {
-        // var image = wx.createImage();
-        // var self = this
-        // image.src = "https://wx.qlogo.cn/mmopen/vi_32/U8XaLGeVibpjlibN0cJGiah2TTKarQdEI0QazibrrrsNibhMC2TrmscXQdfGEF4icW0B6A7TjjheTWpQiaD8wNhp3qZQQ/132";
-        // image.onload = (event) => {
-        // try {
-        //     let texture = new cc.Texture2D();
-        //     texture.initWithElement(image);
-        //     texture.handleLoadedTexture();
-        //     self.icon.spriteFrame = new cc.SpriteFrame(texture);
-        //     // console.log(avatarUrl + " ni/ "+sprite.node.width + " == "+texture.width +" " + sprite.node.y)
-        // } catch (e) {
-        //     cc.log("图片加载失败");
-        // }
-        // };
-    }
+    this.helpview.active = !this.helpview.active ? true : false;
+}), _defineProperty(_cc$Class, "showGiftView", function showGiftView() {
+    this.giftview.active = !this.giftview.active ? true : false;
 }), _defineProperty(_cc$Class, "showFriendPhbView", function showFriendPhbView() {
+    console.log("Hellocd");
     if (this.showPhb) {
         this.phbView.active = false;
         this.showPhb = false;
@@ -190,10 +221,20 @@ var gamestart = cc.Class((_cc$Class = {
         this.showPhb = true;
     }
     if (tywx.publicwx) {
+        console.log("Hellocd");
         wx.postMessage({
             method: 1,
             MAIN_MENU_NUM: "x1"
         });
+    }
+}), _defineProperty(_cc$Class, "hidePhbView", function hidePhbView() {
+    console.log("çç.showPhb = " + _typeof(curscene.phbView));
+    if (curscene.showPhb) {
+        curscene.phbView.active = false;
+        curscene.showPhb = false;
+    } else {
+        curscene.phbView.active = true;
+        curscene.showPhb = true;
     }
 }), _defineProperty(_cc$Class, "loadFinishCallBack", function loadFinishCallBack() {
     if (this.node) {
@@ -204,6 +245,7 @@ var gamestart = cc.Class((_cc$Class = {
         this.gameScore.string = Math.abs(score);
     }
 }), _defineProperty(_cc$Class, "startGame", function startGame() {
+
     cc.director.loadScene("gamemain", this.loadFinishCallBack);
 }), _defineProperty(_cc$Class, "shareApp", function shareApp() {
     if (tywx.IsWechatPlatform()) {

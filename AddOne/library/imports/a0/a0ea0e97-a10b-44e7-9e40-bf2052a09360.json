@@ -1,7 +1,7 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "1@2x",
+    "name": "cell1",
     "texture": "b28e37c7-0556-4ad4-91c5-0d86f4df3c5d",
     "atlas": "",
     "rect": [

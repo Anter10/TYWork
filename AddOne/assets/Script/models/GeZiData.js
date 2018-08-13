@@ -206,8 +206,8 @@ module.exports = (function(parent){
         if(this.effectid >= 0 && this.effecttime > 0){
             if(this.effectid == 0){
                 spr0.node.x = this.posx + config.gezi_size / 2;
-                spr0.node.y = this.posy + config.gezi_size / 2;
-                spr0.node.setRotation(this.effecttime * 720) ;
+                spr0.node.y = this.posy + config.gezi_size / 2 + 2;
+                // spr0.node.setRotation(this.effecttime * 720) ;
                 if(spr0.node.active == false)
                     spr0.node.active = true;
             }

@@ -22,9 +22,25 @@ var gamemain = cc.Class({
             default: null,
             type: cc.Label
         },
+        showalertmsg: {
+            default: null,
+            type: cc.Label
+        },
         num: {
             default: [],
             type: cc.Label
+        },
+        allpngs: {
+            default: [],
+            type: cc.Prefab
+        },
+        celltile: {
+            default: null,
+            type: cc.Prefab
+        },
+        stars: {
+            default: [],
+            type: cc.Sprite
         },
         stopView: {
             default: null,
@@ -34,7 +50,31 @@ var gamemain = cc.Class({
             default: null,
             type: cc.Node
         },
+        pjlView: {
+            default: null,
+            type: cc.Node
+        },
+        loseScoreLabel: {
+            default: null,
+            type: cc.Label
+        },
         GameOver: {
+            default: null,
+            type: cc.Label
+        },
+        loseShareButtton: {
+            default: null,
+            type: cc.Node
+        },
+        pjlShareButtton: {
+            default: null,
+            type: cc.Node
+        },
+        musicBtn: {
+            default: null,
+            type: cc.Node
+        },
+        pjlScoreLabel: {
             default: null,
             type: cc.Label
         },
@@ -51,6 +91,10 @@ var gamemain = cc.Class({
             type: cc.Sprite
         },
         friendIcon: {
+            default: null,
+            type: cc.Sprite
+        },
+        stopViewBack: {
             default: null,
             type: cc.Sprite
         },
@@ -88,7 +132,11 @@ var gamemain = cc.Class({
         // 此时距离上次点击屏幕有多长时间
         curtimeawaypre: 10,
         // 控制隐藏好友
-        isShowFIcon: false
+        isShowFIcon: false,
+        // 此局复活次数
+        recoverNumber: 0,
+        // 此局是否展示过破纪录
+        hadShowPjl: false
     },
 
     /*
@@ -109,6 +157,12 @@ var gamemain = cc.Class({
         // 循环生成初始游戏
         for (var i = 0; i < config.geziNumber; i++) {
             var node = new cc.Node("node");
+
+            var cellt = cc.instantiate(this.celltile);
+            this.allpngs.push(cellt);
+            cellt.parent = this.node;
+            cellt.position = cc.p(0, 0);
+
             var label = node.addComponent(cc.Label);
             label.string = "";
             label.fontSize = 64;
@@ -118,6 +172,7 @@ var gamemain = cc.Class({
             node.color = color;
             node.parent = this.node;
             this.num.push(label);
+
             var tmp_g = new gezi(i, this);
             this.getAllgz().push(tmp_g);
             var tmp_m = new mask(i, this);
@@ -125,24 +180,34 @@ var gamemain = cc.Class({
         }
         if (tywx.publicwx) {
             this.tex = new cc.Texture2D();
-            window.sharedCanvas.width = 650;
-            window.sharedCanvas.height = 560;
+            // window.sharedCanvas.width = 311;
+            // window.sharedCanvas.height = 110;
         }
         var self = this;
         // 游戏的点击逻辑
         this.node.on('touchend', function (event) {
-            var mpos = event.touch.getLocation();
-            self.touchEndCallback(mpos.x, mpos.y);
+            if (self.stopView.active == false) {
+                var mpos = event.touch.getLocation();
+                self.touchEndCallback(mpos.x, mpos.y);
+            }
         });
         // 前一个产生的随机数
         this.prerandomnumber = 0;
         // 初始游戏
         this.initgame();
-
+        //   // 游戏的点击逻辑
+        this.stopViewBack.node.on('touchstart', function (event) {
+            return true;
+        });
         var effect = cc.instantiate(this.effect);
         this.node.parent.addChild(effect);
         effect.x = 140;
         effect.y = 90;
+    },
+
+    // 添加复活次数
+    addRecoverNumber: function addRecoverNumber() {
+        this.recoverNumber = this.recoverNumber + 1;
     },
 
     // 隔多久检查一下当前分数要超越的玩家
@@ -160,6 +225,27 @@ var gamemain = cc.Class({
         思路: 逻辑需要
     */
     showTouchEveryTime: function showTouchEveryTime() {},
+
+    showAlert: function showAlert(msg) {
+
+        if (msg != null) {
+            var self = this;
+            this.showalertmsg.node.active = true;
+            this.showalertmsg.string = msg;
+            var rc = function rc() {
+                self.showalertmsg.node.active = false;
+                self.showalertmsg.node.x = 360;
+                self.showalertmsg.node.y = 739;
+                // 通过 tag 停止一个动作
+                self.showalertmsg.node.stopAllActions();
+            };
+            var move = cc.moveBy(2, cc.p(0, 260));
+
+            var call = cc.callFunc(rc);
+            var seq = cc.sequence(move, call);
+            this.showalertmsg.node.runAction(seq);
+        }
+    },
 
     /*
         调用: 点击的时候调用
@@ -203,22 +289,6 @@ var gamemain = cc.Class({
     dealAllItems: function dealAllItems() {
         var allitems = JSON.parse(ywx.Util.getItemFromLocalStorage("allitems", "[]"));
         tywx.LOGD("道具数据 = ", allitems);
-    },
-
-    /*
-        调用: 使用满血道具 或者分享游戏的时候调用
-        功能: 复活游戏
-        参数: [
-            无
-        ]
-        返回值:[
-            无
-        ]
-        思路: 逻辑需要
-    */
-    recorverGame: function recorverGame() {
-        this.point = config.maxphy_value;
-        this.gamestate = config.gameState.waitclick;
     },
 
     /*
@@ -294,6 +364,7 @@ var gamemain = cc.Class({
                     this.g_clickid = i;
                     this.gamestate = config.gameState.checkclick;
                     // 在方块上产生点击特效
+                    var mpos = {};
                     this.showTouchEffect(mpos);
                     // 终止此次点击的循环处理
                     break;
@@ -315,12 +386,13 @@ var gamemain = cc.Class({
     */
     update: function update(dt) {
         this.label.string = this.score;
+
         this.drawPhyPoint();
         if (this.getAllgz().length == config.geziNumber) {
             for (var i = 0; i < config.geziNumber; i++) {
                 this.getAllgz()[i].block.tickmove(dt);
                 this.getAllgz()[i].block.tickeffect(dt, this.star, this.star1);
-                this.getAllgz()[i].draw(this.bg.getComponent(cc.Graphics), this.num[i]);
+                this.getAllgz()[i].draw(this.bg.getComponent(cc.Graphics), this.num[i], this.allpngs[i]);
             }
         }
         if (this.isShowFIcon) {
@@ -353,6 +425,9 @@ var gamemain = cc.Class({
                         // 判断游戏是否结束
                         if (this.point <= 0) {
                             this.gameOverCallBack();
+                        }
+                        if (this.hadShowPjl == false) {
+                            this.pjlCallBack();
                         }
                     }
                     break;
@@ -513,15 +588,22 @@ var gamemain = cc.Class({
     drawPhyPoint: function drawPhyPoint() {
         var ctx = this.bg.getComponent(cc.Graphics);
         ctx.clear();
-        for (var i = 0; i < this.point; i++) {
-            var color = config.showphy_pros.colors[i];
-            ctx.fillColor = cc.color(color[0], color[1], color[2]);
-            var x = (config.swidth - (config.showphy_pros.phy_num - (config.maxphy_value - this.point)) * config.gezi_pitch) / 2 + (config.showphy_pros.width + 10) * i;
-            var y = 980;
-            var w = config.showphy_pros.width;
-            var h = config.showphy_pros.height;
-            ctx.roundRect(x, y, w, h, config.showphy_pros.radius);
-            ctx.fill();
+        // for(var i = 0;i< this.point; i++){
+        //     let color = config.showphy_pros.colors[i];
+        //     ctx.fillColor = cc.color(color[0],color[1],color[2]);
+        //     var x = (config.swidth - ((config.showphy_pros.phy_num - (config.maxphy_value - this.point)) * config.gezi_pitch)) / 2 + (config.showphy_pros.width + 10) * i;
+        //     var y = 980;
+        //     var w = config.showphy_pros.width;
+        //     var h = config.showphy_pros.height;
+        //     ctx.roundRect(x,y,w,h,config.showphy_pros.radius);
+        //     ctx.fill();
+        // }
+        for (var starIndex = 0; starIndex < 5; starIndex++) {
+            if (this.point >= starIndex + 1) {
+                this.stars[starIndex].node.active = true;
+            } else {
+                this.stars[starIndex].node.active = false;
+            }
         }
     },
 
@@ -537,8 +619,6 @@ var gamemain = cc.Class({
         思路: 游戏逻辑需要
     */
     visibleControllButton: function visibleControllButton(vis) {
-        this.restart.node.active = vis;
-        this.GameOver.node.active = vis;
         this.gameOut.node.active = vis;
     },
 
@@ -554,8 +634,34 @@ var gamemain = cc.Class({
         思路: 游戏逻辑需要
     */
     gameOverCallBack: function gameOverCallBack() {
+        // 判断此次得分是否创纪录
         this.gamestate = config.gameState.gameover;
         this.visibleControllButton(true);
+        // 刷新当前的显示得分
+        this.loseScoreLabel.string = this.score;
+    },
+
+    /*
+        调用: 1: 刷新当前得分的时候
+        功能: 展示破纪录界面
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 游戏逻辑需要
+    */
+    pjlCallBack: function pjlCallBack() {
+        // 判断此次得分是否创纪录
+        if (this.score > tywx.Util.getItemFromLocalStorage("maxscore", 0)) {
+            this.hadShowPjl = true;
+            this.visibleControllButton(false);
+            this.stopView.active = true;
+            this.pjlView.active = true;
+            // 刷新破纪录的显示
+            this.pjlScoreLabel.string = this.score;
+        }
     },
 
     /*
@@ -716,6 +822,28 @@ var gamemain = cc.Class({
         // }
         return num;
     },
+    /*
+    调用: 使用满血道具 或者分享游戏的时候调用
+    功能: 复活游戏
+    参数: [
+        无
+    ]
+    返回值:[
+        无
+    ]
+    思路: 逻辑需要
+    */
+    recoverGame: function recoverGame() {
+        if (this.recoverNumber < config.maxrnum) {
+            this.point = config.maxphy_value;
+            this.gamestate = config.gameState.waitclick;
+            this.addRecoverNumber();
+            this.visibleControllButton(false);
+        } else {
+            this.showAlert("复活次数已达" + config.maxrnum + "次，不能继续复活。");
+            this.initgame();
+        }
+    },
 
     /*
         调用: 游戏处于移动状态的时候调用
@@ -798,7 +926,8 @@ var gamemain = cc.Class({
     },
 
     backCall: function backCall() {
-        this.showMinFriend();
+        //    this.showMinFriend();
+        this.showAlert("Helloc");
     },
 
     showMinFriend: function showMinFriend() {

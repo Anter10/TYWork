@@ -2,10 +2,10 @@ require('libs/weapp-adapter/index');
 var Parser = require('libs/xmldom/dom-parser');
 window.DOMParser = Parser.DOMParser;
 require('libs/wx-downloader.js');
-require('src/settings');
+require('src/settings.4ae0d');
 var settings = window._CCSettings;
-require('main');
-require(settings.debug ? 'cocos2d-js.js' : 'cocos2d-js-min.js');
+require('main.d5596');
+require(settings.debug ? 'cocos2d-js.js' : 'cocos2d-js-min.170dd.js');
 require('./libs/weapp-adapter/engine/index.js');
 
 wxDownloader.REMOTE_SERVER_ROOT = "";

@@ -9,7 +9,7 @@
   "inlineSpriteFrames": true,
   "inlineSpriteFrames_native": true,
   "jailbreakPlatform": false,
-  "md5Cache": true,
+  "md5Cache": false,
   "mergeStartScene": false,
   "oauthLoginServer": "",
   "optimizeHotUpdate": false,
@@ -30,10 +30,10 @@
   "webOrientation": "auto",
   "wechatgame": {
     "REMOTE_SERVER_ROOT": "",
-    "appid": "wxb3967d06430bf885",
+    "appid": "wxd9dac6412c7dab7b",
     "isSubdomain": false,
     "orientation": "portrait",
-    "subContext": "rank"
+    "subContext": "HappyAdd1rank"
   },
   "xxteaKey": "b552544a-ae1d-4d",
   "zipCompressJs": true
