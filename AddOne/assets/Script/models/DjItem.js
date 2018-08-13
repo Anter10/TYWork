@@ -113,6 +113,7 @@ cc.Class({
         思路: 逻辑需要
     */
     clickCall:function(){
+        console.log("当前点击的数据 = "+JSON.stringify(this.data))
         if(this.clickcallBack){
            this.clickcallBack()
         }
@@ -145,7 +146,7 @@ cc.Class({
         思路: 系统自带
     */
     onLoad () {
-        this.data = {};
+        // this.data = {};
     },
 
 
@@ -161,7 +162,7 @@ cc.Class({
         思路: 逻辑需要
     */
     flushNumber:function(){
-        this.djNumber.string = self.data.name;
+        this.djNumber.string = this.data.num;
     },
 
    /*
@@ -176,7 +177,7 @@ cc.Class({
         思路: 逻辑需要
     */
     flushName:function(){
-        this.djName.string = self.data.name;
+        this.djName.string = this.data.name;
     },
 
     /*
@@ -191,7 +192,7 @@ cc.Class({
         思路: 逻辑需要
     */
     flushIcon:function(){
-        this.djName.string = self.data.name;
+        this.djName.string = this.data.name;
     },
   
  

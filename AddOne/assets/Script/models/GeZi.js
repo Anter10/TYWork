@@ -152,6 +152,8 @@ module.exports = function(id,parent){
            pngnum = pngnum % 10;
         }
         tilescript.visByNum(pngnum);
+        let colors = config.celltilenumColors[pngnum -1];
+        tilescript.setColor(new cc.color(colors[0],colors[1],colors[2],255));
         cell.getComponent(cc.Sprite).node.x = this.block.posx-360+config.gezi_size/2;
         cell.getComponent(cc.Sprite).node.y = this.block.posy-640+config.gezi_size/2;
     }

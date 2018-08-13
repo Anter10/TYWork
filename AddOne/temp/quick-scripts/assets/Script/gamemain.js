@@ -62,6 +62,10 @@ var gamemain = cc.Class({
             default: null,
             type: cc.Node
         },
+        itemview: {
+            default: null,
+            type: cc.Node
+        },
         loseScoreLabel: {
             default: null,
             type: cc.Label
@@ -144,7 +148,9 @@ var gamemain = cc.Class({
         // 此局复活次数
         recoverNumber: 0,
         // 此局是否展示过破纪录
-        hadShowPjl: false
+        hadShowPjl: false,
+        // 此局是否展示过破纪录
+        allItems: []
     },
 
     /*
@@ -197,10 +203,24 @@ var gamemain = cc.Class({
         this.stopViewBack.node.on('touchstart', function (event) {
             return true;
         });
-        var effect = cc.instantiate(this.effect);
-        this.node.parent.addChild(effect);
-        effect.x = 140;
-        effect.y = 90;
+        // var effect = cc.instantiate(this.effect);
+        // this.node.parent.addChild(effect);
+        // effect.x = 140;
+        // effect.y = 90;
+        this.showItem();
+    },
+
+    // 显示当前的道具
+    showItem: function showItem() {
+        console.log("当局 = ");
+        for (var itemIndex = 0; itemIndex < config.allitem.length; itemIndex++) {
+            var item = cc.instantiate(this.djitem);
+            item.getComponent("DjItem").setData(config.allitem[itemIndex]);
+            item.parent = this.itemview;
+            item.x = 45 + itemIndex * 75;
+            item.y = -30;
+            this.allItems.push(item);
+        }
     },
 
     // 添加复活次数
