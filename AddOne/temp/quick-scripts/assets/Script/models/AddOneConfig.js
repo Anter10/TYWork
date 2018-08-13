@@ -69,7 +69,8 @@ var config = {
 		domove: 2, // 格子移动状态
 		dodrop: 3, // 各自处于掉落状态
 		waitclick: 4, // 等待点击状态
-		gameover: 5 // 游戏结束状态
+		gameover: 5, // 游戏结束状态
+		usingitem: 6
 	},
 
 	// 游戏中用到的道具
@@ -78,19 +79,19 @@ var config = {
 		name: "-1",
 		png: "",
 		num: 0,
-		value: "-1"
+		value: -1
 	}, {
 		id: "2",
 		name: "+2",
 		png: "",
 		num: 0,
-		value: "2"
+		value: 2
 	}, {
 		id: "3",
 		name: "-2",
 		png: "",
 		num: 0,
-		value: "-2"
+		value: -2
 	}],
 	celltilenumColors: [[205, 69, 40], // 砖红色
 	[194, 52, 82], // 浅砖红色

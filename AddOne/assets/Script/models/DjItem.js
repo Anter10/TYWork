@@ -18,6 +18,7 @@ cc.Class({
             default:null,
             type:cc.Sprite,
         },
+        preParent: null,
         
     },
    
@@ -35,6 +36,21 @@ cc.Class({
     setData:function(data){
         this.data = data;
         this.flushView();
+    },
+
+      /*
+        调用: 道具数据变化时
+        功能: 设置道具的数据
+        参数: [
+            data: 道具的当前数据 type:{}
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
+    setPreParent:function(preparent){
+        this.preParent = preparent;
     },
 
     /*
@@ -114,8 +130,8 @@ cc.Class({
     */
     clickCall:function(){
         console.log("当前点击的数据 = "+JSON.stringify(this.data))
-        if(this.clickcallBack){
-           this.clickcallBack()
+        if(this.preParent){
+           this.preParent.getAllPathByitemValue(this.data)
         }
     },
    
@@ -131,7 +147,7 @@ cc.Class({
         思路: 逻辑需要
     */
     setClickCall:function(clickcall){
-      this.clickcallBack = clickcalll;
+      this.clickcallBack = clickcall;
     },
     
     /*

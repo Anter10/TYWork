@@ -215,8 +215,11 @@ var gamemain = cc.Class({
         console.log("当局 = ");
         for (var itemIndex = 0; itemIndex < config.allitem.length; itemIndex++) {
             var item = cc.instantiate(this.djitem);
-            item.getComponent("DjItem").setData(config.allitem[itemIndex]);
+            var itemsceipt = item.getComponent("DjItem");
+            itemsceipt.setData(config.allitem[itemIndex]);
             item.parent = this.itemview;
+            itemsceipt.setPreParent(this);
+            itemsceipt.setClickCall(this.getAllPathByitemValue);
             item.x = 45 + itemIndex * 75;
             item.y = -30;
             this.allItems.push(item);
@@ -371,6 +374,45 @@ var gamemain = cc.Class({
     */
     getAllmask: function getAllmask() {
         return this.g_mask;
+    },
+
+    // 给定一个值 根据这个值在格子中的数字进行和值运算 找出每个格子加上这个值是否可以连接
+    /*
+     
+    */
+
+    getAllPathByitemValue: function getAllPathByitemValue(data) {
+        if (this.gamestate == config.gameState.waitclick) {
+            this.gamestate = config.gameState.usingitem;
+            // 得出当前可连的所有路径
+            var allcellids = [];
+            for (var i = 0; i < config.geziNumber; i++) {
+                this.resetAllMask();
+                this.getAllmask()[i].num = this.getAllmask()[i].num + data.value;
+                this.checkmaskbyid(i, 0);
+                if (this.g_mask_samecnt >= config.minCanRemoveNumber) {
+                    allcellids[allcellids.length] = i;
+                }
+            }
+            this.resetAllMask();
+            //  console.log("当前值可消除的mask"+JSON.stringify(allcellids));
+            if (allcellids.length > 0) {
+                var _i = allcellids[0];
+                var num = this.getAllgz()[_i].num + data.value;
+                this.getAllgz()[_i].setnum(num);
+                this.getAllgz()[_i].settoblock();
+                this.getAllgz()[_i].block.effectid = 0;
+                this.getAllgz()[_i].block.effecttime = 0.5;
+                if (num > this.maxnum) {
+                    this.maxnum = num;
+                }
+                this.g_clickid = allcellids[0];
+                this.gamestate = config.gameState.checkclick;
+            } else {
+                this.gamestate = config.gameState.checkclick;
+                this.showAlert("当前道具用了也没用,请还其他道具");
+            }
+        }
     },
 
     /*
@@ -592,9 +634,15 @@ var gamemain = cc.Class({
         思路: 多元化游戏元素
     */
     dealLianJiNumber: function dealLianJiNumber() {
-        if (this.lianjiNumber > config.lianjiEffects.sgood && this.lianjiNumber < config.lianjiEffects.cgood) {} else if (this.lianjiNumber > config.lianjiEffects.cgood && this.lianjiNumber < config.lianjiEffects.hhgood) {} else if (this.lianjiNumber > config.lianjiEffects.hhgood && this.lianjiNumber < config.lianjiEffects.maxgood) {}
+        if (this.lianjiNumber > config.lianjiEffects.sgood && this.lianjiNumber < config.lianjiEffects.cgood) {
+            this.showBox();
+        } else if (this.lianjiNumber > config.lianjiEffects.cgood && this.lianjiNumber < config.lianjiEffects.hhgood) {
+            this.showBox();
+        } else if (this.lianjiNumber > config.lianjiEffects.hhgood && this.lianjiNumber < config.lianjiEffects.maxgood) {
+            this.showBox();
+        }
         // 展示游戏宝箱
-        //    this.showBox();
+        //    
     },
 
     /*
@@ -984,7 +1032,8 @@ var gamemain = cc.Class({
 
     backCall: function backCall() {
         //    this.showMinFriend();
-        this.showAlert("Helloc");
+        this.showAlert("测试提示信息");
+        // this.getAllPathByitemValue({value:2});
     },
 
     showMinFriend: function showMinFriend() {
@@ -1056,6 +1105,11 @@ var gamemain = cc.Class({
     showBox: function showBox() {
         this.showStopView();
         this.openboxview.active = true;
+    },
+
+    restartGame: function restartGame() {
+        this.initgame();
+        this.showSubStopView();
     }
 
 });
