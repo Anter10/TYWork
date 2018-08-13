@@ -1,9 +1,3 @@
-"use strict";
-cc._RF.push(module, '03e43B72wFB+b7QdTdRGE6w', 'celltile');
-// Script/celltile.js
-
-"use strict";
-
 // Learn cc.Class:
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
@@ -18,30 +12,35 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        cells: {
+        cells:{
             default: [],
             type: cc.Sprite
+        },
+        number:{
+            default: null,
+            type: cc.Label
         }
-    },
 
-    visByNum: function visByNum(num) {
-        for (var i = 0; i < this.cells.length; i++) {
-            if (i == num - 1) {
+    },
+    
+    visByNum:function(num){
+        for(var i = 0; i < this.cells.length; i++){
+            if(i == num - 1){
                 this.cells[i].node.active = true;
-            } else {
+            }else{
                 this.cells[i].node.active = false;
             }
-        }
+        }  
+        this.number.string = num;
     },
-
+    
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
 
-    start: function start() {}
-}
+    start () {
 
-// update (dt) {},
-);
+    },
 
-cc._RF.pop();
+    // update (dt) {},
+});

@@ -3,6 +3,7 @@
    声音文件在不同的预设里面设置
    created by gyc on 2018-08-02.
 */
+var curAudioState = 1; // 1: 默认状态可以播放音乐
 
 cc.Class({
     extends: cc.Component,
@@ -11,10 +12,13 @@ cc.Class({
             type: cc.AudioSource,
             default: null
         },
-        audioState:1, // 1: 默认状态可以播放音乐
+        audioRes:{
+            default:[],
+            type:cc.Sprite,
+        }
     },
 
-     /*
+    /*
         调用: 节点加载完成后的回调
         功能: 节点加载完成后的一些UI逻辑处理
         参数: [
@@ -28,7 +32,7 @@ cc.Class({
     onLoad: function () {
          cc.audioEngine.setMaxWebAudioSize(1024*10);
     },
-    
+
    /*
         调用: 点击按钮的时候调用
         功能: 控制声音的开关和显示
@@ -41,13 +45,15 @@ cc.Class({
         思路: 逻辑需要
     */
     controlAudio: function(){
-       if(this.audioState == 1){
+       if(curAudioState == 1){
           this.pause();
-          this.audioState = 0;
-       }else if(this.audioState == 0){
+          curAudioState = 0;
+       }else if(curAudioState == 0){
           this.play();
-          this.audioState = 1;
+          curAudioState = 1;
        }
+       // 控制显示
+       this.changeButtonTexture();
     },
   
     /*
@@ -124,10 +130,13 @@ cc.Class({
         思路: 逻辑需要
     */
     changeButtonTexture: function(){
-        if(this.audioState == 0){
-
-        }else if(this.audioState == 1){
-
+        console.log(this.audioRes[0]);
+        if(curAudioState == 0){
+           this.audioRes[0].node.active = false;
+           this.audioRes[1].node.active = true;
+        }else if(curAudioState == 1){
+           this.audioRes[0].node.active = true;
+           this.audioRes[1].node.active = false;
         }else{
             console.log("状态不对");
         }

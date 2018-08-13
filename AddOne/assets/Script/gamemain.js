@@ -41,11 +41,19 @@ var gamemain = cc.Class({
             default: null,
             type: cc.Node
         },
+        stopV: {
+            default: null,
+            type: cc.Node
+        },
         stopButton: {
             default: null,
             type: cc.Node
         },
         pjlView: {
+            default: null,
+            type: cc.Node
+        },
+        openboxview: {
             default: null,
             type: cc.Node
         },
@@ -153,24 +161,12 @@ var gamemain = cc.Class({
         for(var i=0;i<config.geziNumber;i++)
         {
             var node     = new cc.Node("node");
-
             var cellt = cc.instantiate(this.celltile);
             this.allpngs.push(cellt);
             cellt.parent = this.node;
             cellt.position = cc.p(0,0);
-
-            var label    = node.addComponent(cc.Label);
-            label.string = "";
-            label.fontSize   = 64;
-            label.lineHeight = 64;
-            var color     = new cc.color(255,255,255,255);
             node.position = cc.p(0,0);
-            node.color    = color;
             node.parent   = this.node;
-            this.num.push(label);
-
-            
-
             var tmp_g = new gezi(i,this);
             this.getAllgz().push(tmp_g);
             var tmp_m = new mask(i, this);
@@ -279,8 +275,30 @@ var gamemain = cc.Class({
     */
     showStopView:function(){
        this.stopView.active = !this.stopView.active ? true : false;
+       if(this.stopView.active == false){
+          this.stopV.active = false;
+          this.pjlView.active = false;
+          this.openboxview.active = false;
+       }
     },
 
+    /*
+        调用: 点击停止按钮的时候调用
+        功能: 显示停止按钮控制的菜单
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
+   showSubStopView:function(){
+       this.stopView.active = !this.stopView.active ? true : false;
+       this.stopV.active = !this.stopV.active ? true : false;
+   },
+
+    
     /*
         调用: 道具变化和游戏初始化的时候调用
         功能: 刷新道具显示
@@ -406,7 +424,7 @@ var gamemain = cc.Class({
             for (var i = 0; i < config.geziNumber; i++) {
                 this.getAllgz()[i].block.tickmove(dt);
                 this.getAllgz()[i].block.tickeffect(dt,this.star,this.star1);
-                this.getAllgz()[i].draw(this.bg.getComponent(cc.Graphics),this.num[i],this.allpngs[i]);
+                this.getAllgz()[i].draw(this.bg.getComponent(cc.Graphics),this.allpngs[i]);
             }
         }
         if(this.isShowFIcon){
@@ -573,7 +591,9 @@ var gamemain = cc.Class({
            }else if(this.lianjiNumber > config.lianjiEffects.hhgood && this.lianjiNumber < config.lianjiEffects.maxgood ) {
                  
            } 
-           this.storeAllItem();
+           // 展示游戏宝箱
+           //    this.showBox();
+           
     },
 
     /*
@@ -684,6 +704,23 @@ var gamemain = cc.Class({
         }
     },
 
+
+    /*
+        调用: 点击展示破纪录画面时候的关闭按钮调用
+        功能: 关闭破纪录界面
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 游戏逻辑需要
+    */
+    closePjlView:function(){
+        // 判断此次得分是否创纪录
+        this.showStopView();
+        this.pjlView.active = false;
+    },
 
     /*
         调用: 1: 游戏开始的时候调用 2: 游戏重新开始的时候调用
@@ -992,6 +1029,40 @@ var gamemain = cc.Class({
            this.node.destroy();
         }
     },
+
+    /*
+        调用: 点击免费领取宝箱的时候调用
+        功能: 领取道具
+        参数: [
+           无
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
+    lingQuBox:function(){
+        this.storeAllItem();
+        this.openboxview.active = false;
+        this.showStopView();
+    },
+
+    /*
+        调用: 当条件达到某个值的时候显示领取宝箱
+        功能: 领取道具
+        参数: [
+           无
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
+    showBox:function(){
+        this.showStopView();
+        this.openboxview.active = true;
+    },
+
 });
 
 

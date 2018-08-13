@@ -1,6 +1,6 @@
-(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/Script/celltile.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
-cc._RF.push(module, '03e43B72wFB+b7QdTdRGE6w', 'celltile', __filename);
-// Script/celltile.js
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/Script/models/celltile.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'e0904HU0H5Gw6cmRkovCza+', 'celltile', __filename);
+// Script/models/celltile.js
 
 "use strict";
 
@@ -21,7 +21,12 @@ cc.Class({
         cells: {
             default: [],
             type: cc.Sprite
+        },
+        number: {
+            default: null,
+            type: cc.Label
         }
+
     },
 
     visByNum: function visByNum(num) {
@@ -32,6 +37,7 @@ cc.Class({
                 this.cells[i].node.active = false;
             }
         }
+        this.number.string = num;
     },
 
     // LIFE-CYCLE CALLBACKS:

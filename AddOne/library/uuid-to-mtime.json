@@ -94,16 +94,6 @@
     "meta": 1533652181767,
     "relativePath": "Script/models"
   },
-  "204428a1-51f9-4529-a409-c4e5c6197cc8": {
-    "asset": 1533652181767,
-    "meta": 1533827780803,
-    "relativePath": "Script/models/Audio.js"
-  },
-  "02574d5a-41a5-4cea-b8b7-fef509add7f8": {
-    "asset": 1533827715184,
-    "meta": 1533827780815,
-    "relativePath": "Script/models/DjItem.js"
-  },
   "5ac62415-aa6b-4b11-a337-cff44039bd52": {
     "asset": 1533652181768,
     "meta": 1533827780834,
@@ -155,14 +145,9 @@
     "relativePath": "Texture/star1.png"
   },
   "3e0befc6-ec69-48b4-962b-13dec257519a": {
-    "asset": 1533652181755,
-    "meta": 1533884696462,
+    "asset": 1534141005850,
+    "meta": 1534141005856,
     "relativePath": "Scene/audio.prefab"
-  },
-  "5976894f-82af-4073-91bf-25012cff81dc": {
-    "asset": 1533827715161,
-    "meta": 1533884696462,
-    "relativePath": "Scene/djitem.prefab"
   },
   "f0117848-9909-42ab-98b8-556e69a75bdc": {
     "asset": 1533652181755,
@@ -174,195 +159,10 @@
     "meta": 1533884696470,
     "relativePath": "Scene/sharebuttton.prefab"
   },
-  "8949adb7-1a30-4514-a1ba-c3936d26d16f": {
-    "asset": 1533827715165,
-    "meta": 1533884696471,
-    "relativePath": "Scene/stopshow.prefab"
-  },
   "adf3f933-74d1-4e20-818a-571c934d4635": {
     "asset": 1534073278898,
     "meta": 1533888803018,
     "relativePath": "Texture/img"
-  },
-  "b28e37c7-0556-4ad4-91c5-0d86f4df3c5d": {
-    "asset": 1533888803006,
-    "meta": 1534130777712,
-    "relativePath": "Texture/img/cell1.png"
-  },
-  "094f7dc9-b9fe-474c-a236-1acb2c5fe5c3": {
-    "asset": 1533888803006,
-    "meta": 1534130777736,
-    "relativePath": "Texture/img/cell10.png"
-  },
-  "f7db2f4d-b281-4f52-bdf3-f2d5bb9a4027": {
-    "asset": 1533888803006,
-    "meta": 1534130777760,
-    "relativePath": "Texture/img/cell2.png"
-  },
-  "b4bf8c38-0f31-4b1c-9026-671f9a4418d1": {
-    "asset": 1533888803007,
-    "meta": 1534130777789,
-    "relativePath": "Texture/img/cell3.png"
-  },
-  "044c62db-78a4-4cd1-9690-f9b00c66adfa": {
-    "asset": 1533888803007,
-    "meta": 1534130777818,
-    "relativePath": "Texture/img/cell4.png"
-  },
-  "dc877001-811c-44f4-9539-4e3d2fb2e0e1": {
-    "asset": 1533888803007,
-    "meta": 1534130777831,
-    "relativePath": "Texture/img/cell5.png"
-  },
-  "f166e3bc-7ac8-46ad-a931-754a4fe9ddde": {
-    "asset": 1533888803007,
-    "meta": 1534130777837,
-    "relativePath": "Texture/img/cell6.png"
-  },
-  "2b0bcd63-63ad-46b8-83e1-e3fb8d6bc370": {
-    "asset": 1533888803007,
-    "meta": 1534130777864,
-    "relativePath": "Texture/img/cell7.png"
-  },
-  "f284c1a9-0a9e-4cdb-aa77-3afeac08b589": {
-    "asset": 1533888803007,
-    "meta": 1534130777871,
-    "relativePath": "Texture/img/cell8.png"
-  },
-  "b5323c0c-dfcc-4482-95a8-56c25b19e97c": {
-    "asset": 1533888803007,
-    "meta": 1534130777894,
-    "relativePath": "Texture/img/cell9.png"
-  },
-  "8abd43e6-1bb1-4f1f-a2c6-5109663172bb": {
-    "asset": 1533888803011,
-    "meta": 1534130777934,
-    "relativePath": "Texture/img/logo 拷贝@2x.png"
-  },
-  "e56ece0d-95d9-48b7-89c4-419dab1f6982": {
-    "asset": 1533888803008,
-    "meta": 1534130777961,
-    "relativePath": "Texture/img/分享.png"
-  },
-  "f8e919df-810c-457e-b0f8-a7cd866c2382": {
-    "asset": 1533888803008,
-    "meta": 1534130777987,
-    "relativePath": "Texture/img/圆角矩形 140@2x.png"
-  },
-  "b78217c4-4309-458f-a01a-86cd084a1998": {
-    "asset": 1533888803011,
-    "meta": 1534130777797,
-    "relativePath": "Texture/img/bj.png"
-  },
-  "7aa8b8cf-cfda-4ae2-a712-b2d3b8e71b5c": {
-    "asset": 1533888803008,
-    "meta": 1534130778011,
-    "relativePath": "Texture/img/帮助.png"
-  },
-  "843ee977-2848-49aa-8a77-380962a94f8c": {
-    "asset": 1533888803008,
-    "meta": 1534130778056,
-    "relativePath": "Texture/img/圆角矩形 2@2x.png"
-  },
-  "0d60942d-bf5b-4404-ad5f-5e8dd3e534d0": {
-    "asset": 1533888803008,
-    "meta": 1534130778051,
-    "relativePath": "Texture/img/开始游戏@2x.png"
-  },
-  "16dbf522-3e2d-42ae-b30e-f01cd05cd49b": {
-    "asset": 1533888803008,
-    "meta": 1534130778077,
-    "relativePath": "Texture/img/形状 1 拷贝 3@2x.png"
-  },
-  "253bd1a8-bb09-4515-b9b5-28ec2b153cbf": {
-    "asset": 1533888803008,
-    "meta": 1534130778086,
-    "relativePath": "Texture/img/形状 1 拷贝 5@2x.png"
-  },
-  "61739aff-3abe-4ecd-b829-95ccb820b42c": {
-    "asset": 1533888803008,
-    "meta": 1534130778104,
-    "relativePath": "Texture/img/排行榜.png"
-  },
-  "52adea8b-dc7f-461d-96d5-4032c39bfa95": {
-    "asset": 1533888803008,
-    "meta": 1534130778114,
-    "relativePath": "Texture/img/暂时@2x.png"
-  },
-  "c34f9a4a-8b64-4a24-8ccf-8d01f6406b79": {
-    "asset": 1533888803008,
-    "meta": 1534130778132,
-    "relativePath": "Texture/img/椭圆 18 拷贝@2x.png"
-  },
-  "dec16b5b-498d-4a64-8e92-ee3d10366e09": {
-    "asset": 1533888803009,
-    "meta": 1534130778144,
-    "relativePath": "Texture/img/椭圆 21 拷贝@2x.png"
-  },
-  "7d7f6791-f934-470f-b25c-1762aee553d7": {
-    "asset": 1533888803009,
-    "meta": 1534130778163,
-    "relativePath": "Texture/img/椭圆 22@2x.png"
-  },
-  "a4595639-6b9c-40d4-9397-2b44198be956": {
-    "asset": 1533888803009,
-    "meta": 1534130778178,
-    "relativePath": "Texture/img/组 1 拷贝@2x.png"
-  },
-  "6ac70699-ad0c-41f6-96f3-58594b5214e8": {
-    "asset": 1533888803009,
-    "meta": 1534130778191,
-    "relativePath": "Texture/img/组 359236@2x.png"
-  },
-  "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1534132878576,
-    "meta": 1534132878584,
-    "relativePath": "Scene/gamemain.fire"
-  },
-  "905a3099-7e1d-43d9-afae-7f04c3eda863": {
-    "asset": 1534068158688,
-    "meta": 1534068158770,
-    "relativePath": "Scene/gamestart.fire"
-  },
-  "2fadaffc-7cf0-4745-9cc3-eae5a6600724": {
-    "asset": 1533905773925,
-    "meta": 1533905921446,
-    "relativePath": "Script/models/ShareButton.js"
-  },
-  "9c4d9088-c4cc-41ae-a631-923111ea1b85": {
-    "asset": 1533969829455,
-    "meta": 1534130778203,
-    "relativePath": "Texture/img/返回.png"
-  },
-  "4526133b-f22e-4c38-8090-b4ffd8368391": {
-    "asset": 1533973845098,
-    "meta": 1533973845104,
-    "relativePath": "Scene/phbview.fire"
-  },
-  "a97d421a-f1a2-4e73-a4e3-44540dd7ee6a": {
-    "asset": 1533974475618,
-    "meta": 1533974518876,
-    "relativePath": "Script/phbview.js"
-  },
-  "12b5f3d7-1181-4b54-a8f6-91850ec4e76f": {
-    "asset": 1533980483863,
-    "meta": 1533980979332,
-    "relativePath": "Script/CommonFrame/GlobalInit.js"
-  },
-  "b3ad2787-d5ca-4c48-bdde-3e86cc37ccde": {
-    "asset": 1533996874775,
-    "meta": 1534130777988,
-    "relativePath": "Texture/img/gamebj.png"
-  },
-  "7c2db254-7626-4b98-8cda-a93f8f06287f": {
-    "asset": 1534007958471,
-    "meta": 1534007960732,
-    "relativePath": "Script/models/AddOneConfig.js"
-  },
-  "8ba150c4-f5df-4e2b-9fdf-42db1ce3754d": {
-    "asset": 1534047948629,
-    "meta": 1534048026649,
-    "relativePath": "Script/gamestart.js"
   },
   "f8e6b000-5643-4b86-9080-aa680ce1f599": {
     "asset": 1533268280000,
@@ -609,34 +409,234 @@
     "meta": 1534063129997,
     "relativePath": "prefab/tiledtile.prefab"
   },
+  "5976894f-82af-4073-91bf-25012cff81dc": {
+    "asset": 1534133421320,
+    "meta": 1534138789444,
+    "relativePath": "Scene/djitem.prefab"
+  },
   "07f912b9-720b-4b5b-95f4-b488b94a5e86": {
-    "asset": 1534071828528,
-    "meta": 1534071828539,
+    "asset": 1534146578957,
+    "meta": 1534146578963,
     "relativePath": "Scene/celltile.prefab"
   },
-  "03e4307b-db01-41f9-bed0-753751184eb0": {
-    "asset": 1534071534221,
-    "meta": 1534071674118,
-    "relativePath": "Script/celltile.js"
+  "2d2f792f-a40c-49bb-a189-ed176a246e49": {
+    "asset": 1534146306879,
+    "meta": 1534146306887,
+    "relativePath": "Scene/gamemain.fire"
   },
-  "8eb2ac5f-7184-457f-adee-e84359861cb2": {
-    "asset": 1534073278891,
-    "meta": 1534130777895,
-    "relativePath": "Texture/img/effect.png"
+  "905a3099-7e1d-43d9-afae-7f04c3eda863": {
+    "asset": 1534133421322,
+    "meta": 1534138789453,
+    "relativePath": "Scene/gamestart.fire"
   },
-  "0cdea808-32fb-4ba9-8d89-efff78d132a6": {
-    "asset": 1534073299447,
-    "meta": 1534073321593,
-    "relativePath": "Script/models/GeZi.js"
+  "8949adb7-1a30-4514-a1ba-c3936d26d16f": {
+    "asset": 1534133421322,
+    "meta": 1534138789456,
+    "relativePath": "Scene/stopshow.prefab"
+  },
+  "4526133b-f22e-4c38-8090-b4ffd8368391": {
+    "asset": 1534133421322,
+    "meta": 1534138789507,
+    "relativePath": "Scene/phbview.fire"
+  },
+  "12b5f3d7-1181-4b54-a8f6-91850ec4e76f": {
+    "asset": 1534133421330,
+    "meta": 1534138789534,
+    "relativePath": "Script/CommonFrame/GlobalInit.js"
+  },
+  "8ba150c4-f5df-4e2b-9fdf-42db1ce3754d": {
+    "asset": 1534133421331,
+    "meta": 1534138789972,
+    "relativePath": "Script/gamestart.js"
+  },
+  "7c2db254-7626-4b98-8cda-a93f8f06287f": {
+    "asset": 1534133421336,
+    "meta": 1534138790000,
+    "relativePath": "Script/models/AddOneConfig.js"
+  },
+  "02574d5a-41a5-4cea-b8b7-fef509add7f8": {
+    "asset": 1534133421336,
+    "meta": 1534138790056,
+    "relativePath": "Script/models/DjItem.js"
   },
   "3d097560-f0af-4811-8f5d-24ae844849dd": {
-    "asset": 1534073831707,
-    "meta": 1534073832844,
+    "asset": 1534133421337,
+    "meta": 1534138790127,
     "relativePath": "Script/models/GeZiData.js"
   },
+  "2fadaffc-7cf0-4745-9cc3-eae5a6600724": {
+    "asset": 1534133421338,
+    "meta": 1534138790150,
+    "relativePath": "Script/models/ShareButton.js"
+  },
+  "b28e37c7-0556-4ad4-91c5-0d86f4df3c5d": {
+    "asset": 1534133421344,
+    "meta": 1534138790199,
+    "relativePath": "Texture/img/cell1.png"
+  },
+  "094f7dc9-b9fe-474c-a236-1acb2c5fe5c3": {
+    "asset": 1534133421344,
+    "meta": 1534138790226,
+    "relativePath": "Texture/img/cell10.png"
+  },
+  "f7db2f4d-b281-4f52-bdf3-f2d5bb9a4027": {
+    "asset": 1534133421344,
+    "meta": 1534138790247,
+    "relativePath": "Texture/img/cell2.png"
+  },
+  "b4bf8c38-0f31-4b1c-9026-671f9a4418d1": {
+    "asset": 1534133421345,
+    "meta": 1534138790277,
+    "relativePath": "Texture/img/cell3.png"
+  },
+  "b78217c4-4309-458f-a01a-86cd084a1998": {
+    "asset": 1534133421344,
+    "meta": 1534138790289,
+    "relativePath": "Texture/img/bj.png"
+  },
+  "044c62db-78a4-4cd1-9690-f9b00c66adfa": {
+    "asset": 1534133421345,
+    "meta": 1534138790297,
+    "relativePath": "Texture/img/cell4.png"
+  },
+  "dc877001-811c-44f4-9539-4e3d2fb2e0e1": {
+    "asset": 1534133421345,
+    "meta": 1534138790315,
+    "relativePath": "Texture/img/cell5.png"
+  },
+  "f166e3bc-7ac8-46ad-a931-754a4fe9ddde": {
+    "asset": 1534133421345,
+    "meta": 1534138790335,
+    "relativePath": "Texture/img/cell6.png"
+  },
+  "2b0bcd63-63ad-46b8-83e1-e3fb8d6bc370": {
+    "asset": 1534133421345,
+    "meta": 1534138790349,
+    "relativePath": "Texture/img/cell7.png"
+  },
+  "f284c1a9-0a9e-4cdb-aa77-3afeac08b589": {
+    "asset": 1534133421346,
+    "meta": 1534138790364,
+    "relativePath": "Texture/img/cell8.png"
+  },
+  "b5323c0c-dfcc-4482-95a8-56c25b19e97c": {
+    "asset": 1534133421346,
+    "meta": 1534138790389,
+    "relativePath": "Texture/img/cell9.png"
+  },
+  "8eb2ac5f-7184-457f-adee-e84359861cb2": {
+    "asset": 1534133421346,
+    "meta": 1534138790399,
+    "relativePath": "Texture/img/effect.png"
+  },
+  "8abd43e6-1bb1-4f1f-a2c6-5109663172bb": {
+    "asset": 1534133421347,
+    "meta": 1534138790447,
+    "relativePath": "Texture/img/logo 拷贝@2x.png"
+  },
+  "e56ece0d-95d9-48b7-89c4-419dab1f6982": {
+    "asset": 1534133421347,
+    "meta": 1534138790469,
+    "relativePath": "Texture/img/分享.png"
+  },
+  "b3ad2787-d5ca-4c48-bdde-3e86cc37ccde": {
+    "asset": 1534133421346,
+    "meta": 1534138790499,
+    "relativePath": "Texture/img/gamebj.png"
+  },
+  "f8e919df-810c-457e-b0f8-a7cd866c2382": {
+    "asset": 1534133421347,
+    "meta": 1534138790500,
+    "relativePath": "Texture/img/圆角矩形 140@2x.png"
+  },
+  "7aa8b8cf-cfda-4ae2-a712-b2d3b8e71b5c": {
+    "asset": 1534133421348,
+    "meta": 1534138790525,
+    "relativePath": "Texture/img/帮助.png"
+  },
+  "843ee977-2848-49aa-8a77-380962a94f8c": {
+    "asset": 1534133421348,
+    "meta": 1534138790566,
+    "relativePath": "Texture/img/圆角矩形 2@2x.png"
+  },
+  "0d60942d-bf5b-4404-ad5f-5e8dd3e534d0": {
+    "asset": 1534133421348,
+    "meta": 1534138790586,
+    "relativePath": "Texture/img/开始游戏@2x.png"
+  },
+  "16dbf522-3e2d-42ae-b30e-f01cd05cd49b": {
+    "asset": 1534133421349,
+    "meta": 1534138790603,
+    "relativePath": "Texture/img/形状 1 拷贝 3@2x.png"
+  },
+  "253bd1a8-bb09-4515-b9b5-28ec2b153cbf": {
+    "asset": 1534133421349,
+    "meta": 1534138790624,
+    "relativePath": "Texture/img/形状 1 拷贝 5@2x.png"
+  },
+  "61739aff-3abe-4ecd-b829-95ccb820b42c": {
+    "asset": 1534133421349,
+    "meta": 1534138790639,
+    "relativePath": "Texture/img/排行榜.png"
+  },
+  "52adea8b-dc7f-461d-96d5-4032c39bfa95": {
+    "asset": 1534133421350,
+    "meta": 1534138790650,
+    "relativePath": "Texture/img/暂时@2x.png"
+  },
+  "c34f9a4a-8b64-4a24-8ccf-8d01f6406b79": {
+    "asset": 1534133421350,
+    "meta": 1534138790666,
+    "relativePath": "Texture/img/椭圆 18 拷贝@2x.png"
+  },
+  "dec16b5b-498d-4a64-8e92-ee3d10366e09": {
+    "asset": 1534133421350,
+    "meta": 1534138790678,
+    "relativePath": "Texture/img/椭圆 21 拷贝@2x.png"
+  },
+  "7d7f6791-f934-470f-b25c-1762aee553d7": {
+    "asset": 1534133421350,
+    "meta": 1534138790688,
+    "relativePath": "Texture/img/椭圆 22@2x.png"
+  },
+  "a4595639-6b9c-40d4-9397-2b44198be956": {
+    "asset": 1534133421351,
+    "meta": 1534138790705,
+    "relativePath": "Texture/img/组 1 拷贝@2x.png"
+  },
+  "6ac70699-ad0c-41f6-96f3-58594b5214e8": {
+    "asset": 1534133421351,
+    "meta": 1534138790713,
+    "relativePath": "Texture/img/组 359236@2x.png"
+  },
+  "9c4d9088-c4cc-41ae-a631-923111ea1b85": {
+    "asset": 1534133421351,
+    "meta": 1534138790732,
+    "relativePath": "Texture/img/返回.png"
+  },
+  "204428a1-51f9-4529-a409-c4e5c6197cc8": {
+    "asset": 1534141867458,
+    "meta": 1534143181920,
+    "relativePath": "Script/models/Audio.js"
+  },
+  "0cdea808-32fb-4ba9-8d89-efff78d132a6": {
+    "asset": 1534143748340,
+    "meta": 1534143754049,
+    "relativePath": "Script/models/GeZi.js"
+  },
+  "a97d421a-f1a2-4e73-a4e3-44540dd7ee6a": {
+    "asset": 1534144340471,
+    "meta": 1534144350094,
+    "relativePath": "Script/phbview.js"
+  },
   "280c3aec-6492-4a9d-9f51-a9b00b570b4a": {
-    "asset": 1534132859688,
-    "meta": 1534132861060,
+    "asset": 1534146401690,
+    "meta": 1534146437606,
     "relativePath": "Script/gamemain.js"
+  },
+  "e09041d4-d07e-46c3-a726-464a2f0b36be": {
+    "asset": 1534146429794,
+    "meta": 1534146437606,
+    "relativePath": "Script/models/celltile.js"
   }
 }
