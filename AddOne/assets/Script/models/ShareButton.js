@@ -132,8 +132,10 @@ cc.Class({
                                self.shareGroupCallBack(res);
                             }
                         }
-                        if(self.successCallBack){
-                            self.successCallBack(res);
+                        if(res.shareTickets == undefined){
+                            if(self.successCallBack){
+                               self.successCallBack(res);
+                            }
                         }
                     },null,
                     function(data){

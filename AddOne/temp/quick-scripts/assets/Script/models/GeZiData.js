@@ -207,35 +207,30 @@ module.exports = function (parent) {
        思路: 逻辑需要
     */
     this.tickeffect = function (dt, spr0, spr1) {
-        if (this.effectid >= 0 && this.effecttime > 0) {
-            if (this.effectid == 0) {
-                spr0.node.x = this.posx + config.gezi_size / 2;
-                spr0.node.y = this.posy + config.gezi_size / 2 + 2;
-                // spr0.node.setRotation(this.effecttime * 720) ;
-                if (spr0.node.active == false) spr0.node.active = true;
-            } else if (this.effectid == 1) {
-                spr1.node.x = this.posx + config.gezi_size / 2;
-                spr1.node.y = this.posy + config.gezi_size / 2;
+        // if(this.effectid >= 0 && this.effecttime > 0){
+        //    if(this.effectid==1){
+        //         spr1.node.x = this.posx + config.gezi_size / 2;
+        //         spr1.node.y = this.posy + config.gezi_size / 2;
 
-                spr1.node.setScale(1 - this.effecttime);
-                if (spr1.node.active == false) {
-                    spr1.node.active = true;
-                }
-            }
+        //         spr1.node.setScale(1 - this.effecttime);
+        //         if(spr1.node.active == false){
+        //            spr1.node.active = true;
+        //         }
+        //     }
 
-            this.effecttime -= dt;
+        //     this.effecttime -= dt;
 
-            if (this.effecttime <= 0) {
-                this.effecttime = 0;
-                if (spr0.node.active == true && this.effectid == 0) {
-                    spr0.node.active = false;
-                }
-                if (spr1.node.active == true && this.effectid == 1) {
-                    spr1.node.active = false;
-                }
-                this.effectid = -1;
-            }
-        }
+        //     if(this.effecttime <= 0){
+        //         this.effecttime = 0;
+        //         if(spr0.node.active == true && this.effectid==0){
+        //             spr0.node.active = false;
+        //         }
+        //         if(spr1.node.active == true && this.effectid==1){
+        //             spr1.node.active = false;
+        //         }
+        //         this.effectid = -1;
+        //     }
+        // }
     };
 };
 

@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 197,
-      "y": 661,
-      "width": 1093,
-      "height": 877,
+      "x": 21,
+      "y": 486,
+      "width": 1181,
+      "height": 688,
       "layout": {
         "children": [
           {
@@ -18,41 +18,41 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 470,
+                "height": 457,
                 "type": "panel",
-                "width": 353
+                "width": 246
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 313,
+                "height": 371,
                 "type": "panel",
-                "width": 353
+                "width": 246
               }
             ],
-            "height": 786,
+            "height": 831,
             "type": "dock-v",
-            "width": 353
+            "width": 246
           },
           {
             "active": 0,
             "children": [
               "scene"
             ],
-            "height": 786,
+            "height": 831,
             "type": "panel",
-            "width": 424
+            "width": 816
           },
           {
             "active": 0,
             "children": [
               "inspector"
             ],
-            "height": 786,
+            "height": 831,
             "type": "panel",
-            "width": 304
+            "width": 366
           }
         ],
         "type": "dock-h"
@@ -63,24 +63,26 @@
         "assets",
         "scene"
       ]
-    }
+    },
+    "window-1534267498906": {},
+    "worker": {}
   },
   "panels": {
     "builder": {
-      "x": 521,
-      "y": 23,
-      "width": 424,
-      "height": 611
+      "x": 765,
+      "y": 24,
+      "width": 459,
+      "height": 461
     },
     "project-settings": {
-      "x": 680,
-      "y": 417,
+      "x": 260,
+      "y": 77,
       "width": 584,
       "height": 548
     },
     "sprite-editor": {
-      "x": 451,
-      "y": 48,
+      "x": 418,
+      "y": 23,
       "width": 620,
       "height": 678
     }

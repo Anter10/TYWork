@@ -77,7 +77,11 @@ var gamestart = cc.Class({
             type:cc.Node,
         },
 
-        
+        helpViewPre:{
+            default: null,
+            type:cc.Prefab,
+        },
+
         icon:cc.Sprite,
        
     },
@@ -219,7 +223,7 @@ var gamestart = cc.Class({
         // });
         
         
-        //   // 游戏的点击逻辑
+        //  游戏的点击逻辑
         this.phbback.node.on('touchstart', function ( event ) {
            return true;
         });
@@ -247,6 +251,19 @@ var gamestart = cc.Class({
     */
 
      showPlayMethod:function(){
+         if(this.helpviewpre != null){
+            this.helpviewpre.destroy();
+            this.helpviewpre = null;
+         }
+          // 添加帮助
+         this.helpviewpre = cc.instantiate(this.helpViewPre);
+         this.helpviewpre.x = -360;
+         this.helpviewpre.y = -640;
+         this.helpviewscript = this.helpviewpre.getComponent("helpview");
+         this.helpviewscript.setCloseCall(function(){
+            curscene.showPlayMethod();
+         });
+         this.helpviewpre.parent = this.helpview;
          this.helpview.active = !this.helpview.active ? true : false;
      },
 
@@ -364,7 +381,6 @@ var gamestart = cc.Class({
         思路: 游戏需要
     */
     startGame:function(){
-    
        cc.director.loadScene("gamemain", this.loadFinishCallBack);
     },
 

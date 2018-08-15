@@ -75,23 +75,29 @@ var config = {
 
 	// 游戏中用到的道具
 	allitem: [{
-		id: "1",
+		id: 1,
 		name: "-1",
 		png: "",
 		num: 0,
 		value: -1
 	}, {
-		id: "2",
+		id: 2,
 		name: "+2",
 		png: "",
 		num: 0,
 		value: 2
 	}, {
-		id: "3",
+		id: 3,
 		name: "-2",
 		png: "",
 		num: 0,
 		value: -2
+	}, {
+		id: 4,
+		name: "满血",
+		png: "",
+		num: 0,
+		value: 0
 	}],
 	celltilenumColors: [[205, 69, 40], // 砖红色
 	[194, 52, 82], // 浅砖红色

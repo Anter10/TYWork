@@ -129,8 +129,10 @@ cc.Class({
                             self.shareGroupCallBack(res);
                         }
                     }
-                    if (self.successCallBack) {
-                        self.successCallBack(res);
+                    if (res.shareTickets == undefined) {
+                        if (self.successCallBack) {
+                            self.successCallBack(res);
+                        }
                     }
                 }, null, function (data) {
                     console.log("分享成功后的数2据" + JSON.stringify(data));

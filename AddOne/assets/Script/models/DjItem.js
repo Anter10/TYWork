@@ -130,8 +130,8 @@ cc.Class({
     */
     clickCall:function(){
         console.log("当前点击的数据 = "+JSON.stringify(this.data))
-        if(this.preParent){
-           this.preParent.getAllPathByitemValue(this.data)
+        if(this.clickcallBack){
+            this.clickcallBack(this.data)
         }
     },
    

@@ -13,7 +13,15 @@
   ],
   "design-resolution-height": 1280,
   "design-resolution-width": 720,
-  "excluded-modules": [],
+  "excluded-modules": [
+    "TiledMap",
+    "Spine Skeleton",
+    "DragonBones",
+    "VideoPlayer",
+    "WebView",
+    "Collider",
+    "Physics"
+  ],
   "fit-height": true,
   "fit-width": true,
   "group-list": [

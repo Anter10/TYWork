@@ -89,6 +89,11 @@ var gamestart = cc.Class((_cc$Class = {
             type: cc.Node
         },
 
+        helpViewPre: {
+            default: null,
+            type: cc.Prefab
+        },
+
         icon: cc.Sprite
 
     },
@@ -195,7 +200,7 @@ var gamestart = cc.Class((_cc$Class = {
     // });
 
 
-    //   // 游戏的点击逻辑
+    //  游戏的点击逻辑
     this.phbback.node.on('touchstart', function (event) {
         return true;
     });
@@ -208,6 +213,19 @@ var gamestart = cc.Class((_cc$Class = {
     curscene = this;
     // this.backButton.node.on("click",this.returnView, this);
 }), _defineProperty(_cc$Class, "showPlayMethod", function showPlayMethod() {
+    if (this.helpviewpre != null) {
+        this.helpviewpre.destroy();
+        this.helpviewpre = null;
+    }
+    // 添加帮助
+    this.helpviewpre = cc.instantiate(this.helpViewPre);
+    this.helpviewpre.x = -360;
+    this.helpviewpre.y = -640;
+    this.helpviewscript = this.helpviewpre.getComponent("helpview");
+    this.helpviewscript.setCloseCall(function () {
+        curscene.showPlayMethod();
+    });
+    this.helpviewpre.parent = this.helpview;
     this.helpview.active = !this.helpview.active ? true : false;
 }), _defineProperty(_cc$Class, "showGiftView", function showGiftView() {
     this.giftview.active = !this.giftview.active ? true : false;
@@ -245,7 +263,6 @@ var gamestart = cc.Class((_cc$Class = {
         this.gameScore.string = Math.abs(score);
     }
 }), _defineProperty(_cc$Class, "startGame", function startGame() {
-
     cc.director.loadScene("gamemain", this.loadFinishCallBack);
 }), _defineProperty(_cc$Class, "shareApp", function shareApp() {
     if (tywx.IsWechatPlatform()) {

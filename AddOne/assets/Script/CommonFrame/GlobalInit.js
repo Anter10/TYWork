@@ -53,13 +53,13 @@ tywx.UserInfo = {
 tywx.LOGD = function(tag, msg) {
     tag = tag || "tywx";
     var logStr = tag + ' : ' + msg;
-    console.log(logStr);
+    // console.log(logStr);
 };
 
 tywx.LOGE = function(tag, msg) {
     tag = tag || "tywx";
     var logStr = tag + ' : ' + msg;
-    console.error(logStr);
+    // console.error(logStr);
 };
 
 tywx.IsWechatPlatform = function() {

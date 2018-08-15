@@ -41,6 +41,10 @@ var gamemain = cc.Class({
             default: null,
             type: cc.Node
         },
+        fuHuo: {
+            default: null,
+            type: cc.Node
+        },
         stopV: {
             default: null,
             type: cc.Node
@@ -81,6 +85,10 @@ var gamemain = cc.Class({
             default: null,
             type: cc.Node
         },
+        helpview:{
+            default: null,
+            type: cc.Node
+        },
         pjlScoreLabel: {
             default: null,
             type: cc.Label
@@ -105,7 +113,10 @@ var gamemain = cc.Class({
             default:null,
             type:cc.Sprite,
         },
-       
+        helpViewPre:{
+            default: null,
+            type:cc.Prefab,
+        },
         // 游戏的背景
         bg:cc.Node, 
         // 点击+1的动画sprite        
@@ -145,7 +156,10 @@ var gamemain = cc.Class({
         // 此局是否展示过破纪录
         hadShowPjl:false,
         // 此局是否展示过破纪录
-        allItems:[],
+        allOpenItems:[],
+        // 此次连接产生的道具
+        produceItem:null,
+   
     },
 
     /*
@@ -199,11 +213,78 @@ var gamemain = cc.Class({
         this.stopViewBack.node.on('touchstart', function ( event ) {
             return true;
         });
+
+        this.gameOut.node.on('touchstart', function ( event ) {
+            return true;
+        });
+
+
+        
         // var effect = cc.instantiate(this.effect);
         // this.node.parent.addChild(effect);
         // effect.x = 140;
         // effect.y = 90;
         this.showItem();
+        // 设置复活按钮的点击回调
+        let fhbut = this.fuHuo.getComponent("ShareButton");
+        if (fhbut){
+            var fhcall = function(){
+                self.recoverGame();
+            } 
+            var hycall = function(){
+                self.fhsbCallBack();
+            } 
+
+            var errorcall = function(){
+                self.fhsbCallBack();
+            } 
+            // 设置分享到组的成功回调
+            fhbut.setShareGroupCall(fhcall);
+            // 设置分享到好友的回调
+            fhbut.setSuccessCall(hycall);
+            // 设置分享失败后的回调
+            fhbut.setErrorCall(hycall);
+        }
+       
+    },
+
+
+      /*
+        调用: 点击游戏帮助的时候调用
+        功能: 展示游戏玩法
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 游戏需要
+    */
+
+    showPlayMethod:function(){
+         if(this.helpviewpre != null){
+            this.helpviewpre.destroy();
+            this.helpviewpre = null;
+         }
+         // 添加帮助界面
+         this.helpviewpre = cc.instantiate(this.helpViewPre);
+         this.helpviewpre.x = -360;
+         this.helpviewpre.y = -640;
+         this.helpviewscript = this.helpviewpre.getComponent("helpview");
+         var self = this;
+         this.helpviewscript.setCloseCall(function(){
+             self.showSubStopView();
+             self.showPlayMethod();
+         });
+         this.helpviewpre.parent = this.helpview;
+         this.helpview.active = !this.helpview.active ? true : false;
+    },
+
+    // 复活调用
+    fhsbCallBack:function(){
+        this.showAlert("复活失败");
+        this.visibleControllButton(false);
+        this.initgame();
     },
 
     // 显示当前的道具
@@ -214,15 +295,50 @@ var gamemain = cc.Class({
             let itemsceipt = item.getComponent("DjItem");
             itemsceipt.setData(config.allitem[itemIndex]);
             item.parent = this.itemview;
-            itemsceipt.setPreParent(this);
-            itemsceipt.setClickCall(this.getAllPathByitemValue);
+            var self = this;
+            itemsceipt.setClickCall(function(data){
+                // 判断道具数量足不足
+                if(data.num > 0){
+                     if(data.id == 4){
+                        self.recoverGame();
+                     }else{
+                        self.getAllPathByitemValue(data);
+                     }
+                     // 刷新道具显示数据
+                     data.num = data.num - 1;
+                     if(data.num < 0){
+                        data.num = 0;
+                     }
+                     self.updateItemByData(data);
+                }else{
+                    self.showAlert("道具数量不足！");
+                }
+            });
             item.x = 45 + (itemIndex * 75);
             item.y = -30;
-            this.allItems.push(item);
-           
+            this.allOpenItems.push(item);
         }
+        // 刷新道具显示
+        this.dealAllItems();
     },
     
+
+    // 更新某个道具
+    updateItemByData:function(data){
+        if(data != null){
+          console.log("当前更新的数据 = "+JSON.stringify(data));
+          for(var itmindex = 0; itmindex < this.allitems.length; itmindex ++){
+              var tdata = this.allitems[itmindex];
+              if(tdata.id == data.id){
+                 tdata.num = data.num;
+                 this.allitems[itmindex] = tdata;
+                 this.storeAllItem();
+                 this.dealAllItems(this.allitems)
+                 break;
+              }
+          }
+        }
+    },
     // 添加复活次数
     addRecoverNumber: function(){
         this.recoverNumber = this.recoverNumber + 1;
@@ -250,7 +366,8 @@ var gamemain = cc.Class({
     
     showAlert: function(msg){
         
-        if(msg != null ){
+        if(msg != null && this.showalertmsg.node.getNumberOfRunningActions() == 0){
+           this.showalertmsg.node.stopAllActions(); 
            var self = this;
            this.showalertmsg.node.active = true; 
            this.showalertmsg.string = msg;
@@ -326,6 +443,51 @@ var gamemain = cc.Class({
         调用: 道具变化和游戏初始化的时候调用
         功能: 刷新道具显示
         参数: [
+            allitem: 给定的显示道具数据
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
+    dealAllItems:function(allitem){
+        // tywx.Util.setItemToLocalStorage("allitems",JSON.stringify([{id:1, num:2}])); 
+        var items = tywx.Util.getItemFromLocalStorage("allitems", [])
+        console.log("处理的道具数据 = "+items) 
+       
+      
+        // 刷新道具显示
+         if(items != null && items != undefined && items != []){
+           try{
+              if(allitem){
+                this.allitems = allitem;
+              }else{
+                this.allitems = JSON.parse(items);
+              }
+              
+           }catch(e){
+              this.allitems = this.allitems; 
+           }
+           for(var titemIndex = 0; titemIndex < this.allitems.length; titemIndex++){
+                 var storitem = this.allitems[titemIndex];
+                 console.log(titemIndex + "道具数据 = "+JSON.stringify(items)) 
+                 for(var openitemIndex = 0; openitemIndex < this.allOpenItems.length; openitemIndex ++){
+                    var topenitem = this.allOpenItems[openitemIndex].getComponent("DjItem");
+                    var tdata = topenitem.getData();
+                    if(tdata.id == storitem.id){
+                        tdata.num = storitem.num;
+                        topenitem.setData(tdata);
+                        break;
+                    }
+                  }
+             }  
+         }
+    },
+
+    /*
+        调用: 道具变化和游戏初始化的时候调用
+        功能: 刷新道具显示
+        参数: [
             无
         ]
         返回值:[
@@ -333,9 +495,31 @@ var gamemain = cc.Class({
         ]
         思路: 逻辑需要
     */
-    dealAllItems:function(){
-        let allitems = JSON.parse(ywx.Util.getItemFromLocalStorage("allitems", "[]"));
-        tywx.LOGD("道具数据 = ",allitems);
+    produceItems:function(maxnum){
+       // 随机道具的ID
+       var itemid = this.randomFrom(1, config.allitem.length);
+       // 随机道具的数量
+       var itemnum =  this.randomFrom(1, maxnum);
+       this.produceItem = {id:itemid, num:itemnum};
+       console.log("当前产生的道具 "+JSON.stringify(this.produceItem))
+       
+    },
+    
+    /*
+        调用: 产生随机数的地方调用
+        功能: 产生指定范围的随机数
+        参数: [
+            lowerValue: 范围的最小值
+            upperValue: 范围的最大值
+        ]
+        返回值:[
+            无
+        ]
+        思路: 通用方法
+    */
+    randomFrom:function(lowerValue,upperValue)
+    {
+        return Math.floor(Math.random() * (upperValue - lowerValue + 1) + lowerValue);
     },
 
  
@@ -514,11 +698,13 @@ var gamemain = cc.Class({
                         }
                     }
                 }else{
-                    this.gamestate = config.gameState.waitclick;
+                   
                     this.point --;
                     // 判断游戏是否结束
                     if(this.point <= 0) {
                        this.gameOverCallBack()
+                    }else{
+                       this.gamestate = config.gameState.waitclick;
                     }
                     if(this.hadShowPjl == false){
                        this.pjlCallBack();
@@ -570,6 +756,10 @@ var gamemain = cc.Class({
              this.maxnum = num;
              this.maxScoreShow();
          }
+         if(this.allpngs[this.g_clickid]){
+            this.allpngs[this.g_clickid].getComponent("celltile").playZhEff();
+         }
+         console.log("Hellocd");
          this.refreshbymask();
     },
 
@@ -647,16 +837,18 @@ var gamemain = cc.Class({
         思路: 多元化游戏元素
     */
     dealLianJiNumber: function(){
-           if(this.lianjiNumber > config.lianjiEffects.sgood && this.lianjiNumber < config.lianjiEffects.cgood ) {
-              this.showBox();  
-           }else if(this.lianjiNumber > config.lianjiEffects.cgood && this.lianjiNumber < config.lianjiEffects.hhgood ) {
-              this.showBox(); 
-           }else if(this.lianjiNumber > config.lianjiEffects.hhgood && this.lianjiNumber < config.lianjiEffects.maxgood ) {
-              this.showBox();  
-           } 
-           // 展示游戏宝箱
-           //    
-           
+           if(this.lianjiNumber > config.lianjiEffects.sgood && this.lianjiNumber <= config.lianjiEffects.cgood ) {
+              this.showBox(1);  
+           }else if(this.lianjiNumber > config.lianjiEffects.cgood && this.lianjiNumber <= config.lianjiEffects.hhgood ) {
+              this.showBox(2); 
+           }else if(this.lianjiNumber > config.lianjiEffects.hhgood && this.lianjiNumber <= config.lianjiEffects.maxgood ) {
+              this.showBox(3);  
+           }else if(this.lianjiNumber > config.lianjiEffects.maxgood) {
+              this.showBox(5);  
+           }
+        //    else if(this.lianjiNumber > 1) {
+        //       this.showBox(1);  
+        //    }
     },
 
     /*
@@ -671,8 +863,9 @@ var gamemain = cc.Class({
             思路: 游戏需求
      */
      storeAllItem: function(){
+        console.log("当前存储的数据 = "+JSON.stringify(this.allitems))
         if(this.allitems){
-            tywx.Util.setItemToLocalStorage("allitems",this.allitems);
+           tywx.Util.setItemToLocalStorage("allitems",JSON.stringify(this.allitems));
         }
      },
 
@@ -800,7 +993,8 @@ var gamemain = cc.Class({
         this.score  = 0;
         this.point  = config.maxphy_value;
         this.maxnum = config.maxphy_value;
- 
+        this.recoverNumber = 0;
+
         for (var i = 0; i < config.geziNumber; i++) {
             var num = this.getrandomnum();
             this.getAllgz()[i].setnum(num);
@@ -1106,7 +1300,34 @@ var gamemain = cc.Class({
         思路: 游戏逻辑需要
     */
     lingQuBox:function(){
+          
+       // 查看当前ID的道具玩家是否存在
+       if(this.produceItem != null){
+            if(this.allitems.length == 0){
+               this.allitems[0] = this.produceItem; 
+            }else{
+                // console.log("领取时玩家的道具数据 = "+JSON.stringify(this.allitems))
+                var findata = false;
+                for(var itemIndex= 0; itemIndex < this.allitems.length; itemIndex ++){
+                    var itemdata = this.allitems[itemIndex];
+                    // console.log("领取时玩家的道具数据 = "+JSON.stringify(this.allitems))
+                    if(itemdata.id == this.produceItem.id){
+                       itemdata.num = itemdata.num + this.produceItem.num;
+                       findata = true;
+                       this.allitems[itemIndex] = itemdata; 
+                       break;
+                    }
+                }
+                if(findata == false){
+                   this.allitems[this.allitems.length] = this.produceItem; 
+                }
+            }
+            this.showAlert("领取成功");
+            this.produceItem = null;
+       }
+      
         this.storeAllItem();
+        this.dealAllItems(this.allitems);
         this.openboxview.active = false;
         this.showStopView();
     },
@@ -1115,15 +1336,16 @@ var gamemain = cc.Class({
         调用: 当条件达到某个值的时候显示领取宝箱
         功能: 领取道具
         参数: [
-           无
+           maxnum: 此次可以领取的道具的最大数量。
         ]
         返回值:[
            无
         ]
         思路: 游戏逻辑需要
     */
-    showBox:function(){
+    showBox:function(maxnum){
         this.showStopView();
+        this.produceItems(maxnum)
         this.openboxview.active = true;
     },
 
