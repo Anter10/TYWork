@@ -1340,10 +1340,20 @@ var gamemain = cc.Class({
 
     restartGame: function restartGame() {
         this.initgame();
-
         this.showSubStopView();
     },
 
+    /*
+        调用: 点击失败界面上的关闭按钮调用
+        功能: 领取道具
+        参数: [
+           无
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
     startNewGame: function startNewGame() {
         this.visibleControllButton(false);
         this.initgame();

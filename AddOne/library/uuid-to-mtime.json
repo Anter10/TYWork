@@ -180,8 +180,8 @@
     "relativePath": "Scene/celltile.prefab"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1534329581757,
-    "meta": 1534329581769,
+    "asset": 1534337890255,
+    "meta": 1534337890271,
     "relativePath": "Scene/gamemain.fire"
   },
   "905a3099-7e1d-43d9-afae-7f04c3eda863": {
@@ -539,11 +539,6 @@
     "meta": 1534215138296,
     "relativePath": "Script/models/ShareButton.js"
   },
-  "0cdea808-32fb-4ba9-8d89-efff78d132a6": {
-    "asset": 1534227401547,
-    "meta": 1534227454569,
-    "relativePath": "Script/models/GeZi.js"
-  },
   "2e242f96-080c-482c-ad62-73edb2bc2521": {
     "asset": 1534297972025,
     "meta": 1534297972030,
@@ -894,14 +889,19 @@
     "meta": 1534326117381,
     "relativePath": "Script/CommonFrame/Timer.js"
   },
+  "280c3aec-6492-4a9d-9f51-a9b00b570b4a": {
+    "asset": 1534338009155,
+    "meta": 1534338035706,
+    "relativePath": "Script/gamemain.js"
+  },
   "7c2db254-7626-4b98-8cda-a93f8f06287f": {
-    "asset": 1534327421155,
-    "meta": 1534327533725,
+    "asset": 1534338268717,
+    "meta": 1534338321491,
     "relativePath": "Script/models/AddOneConfig.js"
   },
-  "280c3aec-6492-4a9d-9f51-a9b00b570b4a": {
-    "asset": 1534329323530,
-    "meta": 1534329324337,
-    "relativePath": "Script/gamemain.js"
+  "0cdea808-32fb-4ba9-8d89-efff78d132a6": {
+    "asset": 1534338320025,
+    "meta": 1534338321492,
+    "relativePath": "Script/models/GeZi.js"
   }
 }

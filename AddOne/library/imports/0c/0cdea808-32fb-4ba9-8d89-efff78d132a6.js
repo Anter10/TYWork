@@ -23,7 +23,7 @@ module.exports = function (id, parent) {
     // 格子的容器
     this.parent = parent;
     // 格子的x坐标
-    this.posx = (config.swidth - 5 * config.gezi_pitch) / 2 + id % 5 * config.gezi_pitch;
+    this.posx = (config.swidth - 5 * config.gezi_pitch) / 2 + id % 5 * config.gezi_pitch + 2;
     // 格子的Y坐标
     this.posy = config.marginbottom + parseInt(id / 5) * config.gezi_pitch;
     // 格子的数据层

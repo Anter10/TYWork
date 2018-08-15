@@ -610,7 +610,7 @@ var gamemain = cc.Class({
                 this.getAllgz()[i].block.effectid   = 0;
                 this.getAllgz()[i].block.effecttime = 0.5;
                 if(num > this.maxnum){
-                this.maxnum = num;
+                    this.setMaxNumber(num);
                 }
                 this.g_clickid =  allcellids[0];
                 this.gamestate = config.gameState.checkclick;
@@ -647,7 +647,8 @@ var gamemain = cc.Class({
                     this.getAllgz()[i].block.effectid   = 0;
                     this.getAllgz()[i].block.effecttime = 0.5;
                     if(num > this.maxnum){
-                       this.maxnum = num;
+                       this.setMaxNumber(num);
+                       // 
                     }
                     // 记录下当前点击的格子 和切换当前的游戏状态为检查点击状态
                     this.g_clickid  = i;
@@ -660,6 +661,12 @@ var gamemain = cc.Class({
                 }
             }
         }
+    },
+
+    // 设置最大值
+    setMaxNumber:function(num) {
+        this.maxnum = num;
+        this.maxScoreShow();
     },
  
     /*
@@ -763,8 +770,7 @@ var gamemain = cc.Class({
          this.getAllgz()[this.g_clickid].block.effectid = 1;
          this.getAllgz()[this.g_clickid].block.effecttime = 0.5;
          if(num > this.maxnum){
-             this.maxnum = num;
-             this.maxScoreShow();
+             this.setMaxNumber(num);
          }
          if(this.allpngs[this.g_clickid]){
             this.allpngs[this.g_clickid].getComponent("celltile").playZhEff();
@@ -1373,10 +1379,20 @@ var gamemain = cc.Class({
 
     restartGame:function(){
         this.initgame();
-        
         this.showSubStopView();
     },
-
+    
+    /*
+        调用: 点击失败界面上的关闭按钮调用
+        功能: 领取道具
+        参数: [
+           无
+        ]
+        返回值:[
+           无
+        ]
+        思路: 游戏逻辑需要
+    */
     startNewGame:function(){
         this.visibleControllButton(false)
         this.initgame();
