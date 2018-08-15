@@ -194,8 +194,8 @@ var gamemain = cc.Class({
         }
         if(tywx.publicwx){
             this.tex = new cc.Texture2D();
-            // window.sharedCanvas.width = 311;
-            // window.sharedCanvas.height = 110;
+            window.sharedCanvas.width = 720;
+            window.sharedCanvas.height = 1280;
         }
         var self = this;
         // 游戏的点击逻辑
@@ -245,6 +245,16 @@ var gamemain = cc.Class({
             // 设置分享失败后的回调
             fhbut.setErrorCall(hycall);
         }
+        // 开启一个进程循环显示即将超逾的玩家
+        tywx.Timer.setTimer(self, function(){
+            self.showMinFriend();
+        }, 20, cc.macro.REPEAT_FOREVER, 10);
+
+        // // 开启一个进程循环显示即将超逾的玩家
+        tywx.Timer.setTimer(self, function(){
+            self.hideMinFriend();
+        }, 20, cc.macro.REPEAT_FOREVER, 15);
+
        
     },
 
@@ -744,7 +754,7 @@ var gamemain = cc.Class({
         思路: 游戏和玩家的交互的表现
     */
     dealDoMove(){
-         this.star.node.active = false;
+        //  this.star.node.active = false;
          this.gamestate        = config.gameState.dodrop;
          this.gamestatetime    = config.move_time;
          var num = this.getAllgz()[this.g_clickid].num + 1;
@@ -759,7 +769,7 @@ var gamemain = cc.Class({
          if(this.allpngs[this.g_clickid]){
             this.allpngs[this.g_clickid].getComponent("celltile").playZhEff();
          }
-         console.log("Hellocd");
+        //  console.log("Hellocd");
          this.refreshbymask();
     },
 
@@ -977,6 +987,10 @@ var gamemain = cc.Class({
         this.showStopView();
         this.pjlView.active = false;
     },
+   
+
+
+
 
     /*
         调用: 1: 游戏开始的时候调用 2: 游戏重新开始的时候调用
@@ -1252,11 +1266,18 @@ var gamemain = cc.Class({
 
     showMinFriend:function(){
         var self = this;
+        this.friendIcon.node.active = true;
         this.isShowFIcon = true;
         wx.postMessage({
             method: 5,
             score:self.score,
         });
+    },
+
+    hideMinFriend:function(){
+        var self = this;
+        this.isShowFIcon = false;
+        self.friendIcon.node.active = false;
     },
 
     // 刷新子域的纹理
@@ -1352,9 +1373,18 @@ var gamemain = cc.Class({
 
     restartGame:function(){
         this.initgame();
+        
         this.showSubStopView();
-       
+    },
+
+    startNewGame:function(){
+        this.visibleControllButton(false)
+        this.initgame();
     }
+
+
+
+
 
 });
 

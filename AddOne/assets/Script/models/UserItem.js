@@ -37,7 +37,26 @@ cc.Class({
  
     onLoad () {
           // 设置邀请好友的回调
-          
+          var shareScript = this.yqBtn.getComponent("ShareButton");
+          if (shareScript){
+            var curitem = this;
+            var fhcall = function(){
+                // curitem.recoverGame();
+            } 
+            var hycall = function(){
+                // curitem.fhsbCallBack();
+            } 
+
+            var errorcall = function(){
+                // curitem.fhsbCallBack();
+            } 
+            // 设置分享到组的成功回调
+            shareScript.setShareGroupCall(fhcall);
+            // 设置分享到好友的回调
+            shareScript.setSuccessCall(hycall);
+            // 设置分享失败后的回调
+            shareScript.setErrorCall(hycall);
+        }
     },
     
     start () {

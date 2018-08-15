@@ -27,7 +27,7 @@ var config = {
 		//格子距离底部多远
 		marginbottom: 270,
 		// 即将超越对手多少分显示相应图标
-		thanfriendScore:30,
+		thanfriendScore:300,
 	    // 连接数在不同的值需要展示特定的效果
 	    lianjiEffects:{
 	    	sgood:3,

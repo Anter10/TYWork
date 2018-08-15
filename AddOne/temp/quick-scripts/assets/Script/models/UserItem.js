@@ -15,43 +15,66 @@ cc._RF.push(module, 'cc3acBdhIdH26KlcZPJvpBS', 'UserItem', __filename);
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
 cc.Class({
-   extends: cc.Component,
+    extends: cc.Component,
 
-   properties: {
-      icon: {
-         default: null,
-         type: cc.Sprite
-      },
-      numberLabel: {
-         default: null,
-         type: cc.Label
-      },
-      itemIcon: {
-         default: null,
-         type: cc.Sprite
-      },
-      yqBtn: {
-         default: null,
-         type: cc.Node
-      },
-      ylqBtn: {
-         default: null,
-         type: cc.Sprite
-      }
-   },
+    properties: {
+        icon: {
+            default: null,
+            type: cc.Sprite
+        },
+        numberLabel: {
+            default: null,
+            type: cc.Label
+        },
+        itemIcon: {
+            default: null,
+            type: cc.Sprite
+        },
+        yqBtn: {
+            default: null,
+            type: cc.Node
+        },
+        ylqBtn: {
+            default: null,
+            type: cc.Sprite
+        }
 
-   onLoad: function onLoad() {},
-   start: function start() {},
+    },
+
+    onLoad: function onLoad() {
+        // 设置邀请好友的回调
+        var shareScript = this.yqBtn.getComponent("ShareButton");
+        if (shareScript) {
+            var curitem = this;
+            var fhcall = function fhcall() {
+                // curitem.recoverGame();
+            };
+            var hycall = function hycall() {
+                // curitem.fhsbCallBack();
+            };
+
+            var errorcall = function errorcall() {}
+            // curitem.fhsbCallBack();
+
+            // 设置分享到组的成功回调
+            ;shareScript.setShareGroupCall(fhcall);
+            // 设置分享到好友的回调
+            shareScript.setSuccessCall(hycall);
+            // 设置分享失败后的回调
+            shareScript.setErrorCall(hycall);
+        }
+    },
+    start: function start() {},
 
 
-   // 设置用户的数据并且刷新显示视图
-   setData: function setData(data) {
-      this.data = data;
-      this.flushView();
-   },
+    // 设置用户的数据并且刷新显示视图
+    setData: function setData(data) {
+        this.data = data;
+        this.flushView();
+    },
 
-   // 刷新视图
-   flushView: function flushView() {}
+    // 刷新视图
+    flushView: function flushView() {}
 
 });
 

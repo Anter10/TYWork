@@ -7,7 +7,9 @@
 // 当前是否发布微信游戏
 var CC_WECHATGAME = true;
 var MAIN_MENU_NUM = "x1";
- 
+// 一个玩家只显示一次
+var prePersonIconUrl = ""; 
+
 //  玩家发送给子域的数据类型
 var PTypes={
     // 得到微信好友的信息
@@ -185,6 +187,7 @@ cc.Class({
                     this.showloading.node.active = false;
                   
                     let userData = userRes.data[0];
+                    // console.log("当前所有好友的数据userData = "+JSON.stringify(userData))
                     //取出所有好友数据
                     wx.getFriendCloudStorage({
                         keyList: [MAIN_MENU_NUM],
@@ -208,7 +211,7 @@ cc.Class({
                             if(store == null){
                                 self.gamerank.active = true;
                                 self.friendmsd.active = false;
-                                console.log("self.gameranklist.content = "+typeof(self.gameranklist.content));
+                                
                                 self.gameranklist.content.removeAllChildren();
                                 var pto  = 20;
                                 for (let i = 0; i < data.length; i++) {
@@ -237,13 +240,15 @@ cc.Class({
                                 for (let i = data.length - 1; i >= 0 ; i--) {
                                     var tdata = data[i];
                                     var fscore = tdata.KVDataList[0] == null ? 0 : tdata.KVDataList[0].value;
-                                    if(fscore > score){
+                                    var chazhi = fscore - score;
+                                    if(prePersonIconUrl != tdata.avatarUrl && chazhi > 0 && chazhi <= 1000 && userData.avatarUrl != tdata.avatarUrl){
                                        frdata = tdata;
+                                       prePersonIconUrl = tdata.avatarUrl;
                                        frdata.score = fscore;
                                        break; 
                                     }
                                 }
-                                
+                               
                                 // 如果有玩家的分数大于自己的 则显示
                                 if(frdata){
                                    self.friendmsd.active = true;
