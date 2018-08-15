@@ -1,6 +1,7 @@
 /*
     每个格子的单元数据:
     created by gyc on 2018-08-014.
+    final changed by gyc on 2018-08-15.
 */
 var config = require("AddOneConfig")
 cc.Class({
@@ -40,6 +41,17 @@ cc.Class({
         curGuidefinish:false,
     },
 
+    /*
+        调用: 节点加载完成后回调
+        功能: 初始化部分逻辑
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 系统自带
+    */
     onLoad(){
          // 设置成屏蔽层
          this.node.on('touchstart', function ( event ) {
@@ -81,7 +93,19 @@ cc.Class({
            
          }
     },
-    // 更新格子
+ 
+    /*
+        调用: 更新格子数字的时候调用
+        功能: 更新格子
+        参数: [
+            script:格子节点的脚本文件 type: JavaScript
+            addnum:格子数字的附加数值 type: Number
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
     updateAddGz:function(script,addnum){
         var curnumber = script.getReNumber();
         curnumber = curnumber + 1 + addnum;
@@ -91,7 +115,17 @@ cc.Class({
         script.setColor(new cc.color(colors[0],colors[1],colors[2],255));
     },
 
-    // 设置点击产生的新手引导
+    /*
+        调用: 点击引导的时候调用
+        功能: 设置点击产生的新手引导
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
     newPlayerGuideCall:function(){
         console.log("当前的引导步数 = "+this.curHelpNumber);
         var self = this;
@@ -167,7 +201,17 @@ cc.Class({
          }
     },
 
-    // 关闭
+    /*
+        调用: 点击关闭按钮的时候调用
+        功能: 关闭当前的界面
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
     close:function(){
         if(this.closeCall){
            this.closeCall();
@@ -177,17 +221,47 @@ cc.Class({
         }
     },
 
-    // 关闭
+    /*
+        调用: 格子数字变化的时候调用
+        功能: 设置关闭的回调函数
+        参数: [
+            cc: 回调函数 type: Function
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
     setCloseCall:function(cc){
         this.closeCall = cc;
     },
 
-    // 关闭
+    /*
+        调用: 逻辑调用
+        功能: 设置是否是在游戏内展示引导
+        参数: [
+            isgame: 是否在游戏内 type: Number
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
     setIsGame:function(isgame){
         this.isgame = isgame;
     },
 
-    // 开始游戏
+    /*
+        调用: 点击开始游戏按钮的时候调用
+        功能: 开始游戏
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 逻辑需要
+    */
     startGame:function(){
         if(this.isgame == 1){
            this.node.active = false;
