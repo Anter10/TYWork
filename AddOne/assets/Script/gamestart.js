@@ -22,6 +22,10 @@ var gamestart = cc.Class({
             default:null,
             type: cc.Prefab,
         },
+        userItem:{
+            default:null,
+            type: cc.Prefab,
+        },
         gameScore:{
             default: null,
             type: cc.Label,
@@ -394,6 +398,8 @@ var gamestart = cc.Class({
                 imageUrl:"https://gss0.bdstatic.com/7Ls0a8Sm1A5BphGlnYG/sys/portrait/item/d68bced2b5c4b7dcb6b73838383d02.jpg?20180808115403",
             });
        }
-    }
+    },
+
+
 
 });

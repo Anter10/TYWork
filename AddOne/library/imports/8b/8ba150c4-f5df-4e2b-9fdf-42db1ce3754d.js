@@ -34,6 +34,10 @@ var gamestart = cc.Class((_cc$Class = {
             default: null,
             type: cc.Prefab
         },
+        userItem: {
+            default: null,
+            type: cc.Prefab
+        },
         gameScore: {
             default: null,
             type: cc.Label

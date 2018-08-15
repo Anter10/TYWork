@@ -7,7 +7,9 @@ cc._RF.push(module, 'e0904HU0H5Gw6cmRkovCza+', 'celltile');
 /*
    游戏中的道具class
    created by gyc on 2018-08-12.
+   final changed by gyc on 2018-08-15.
 */
+
 cc.Class({
     extends: cc.Component,
 
@@ -27,26 +29,29 @@ cc.Class({
             default: null,
             type: cc.Label
         },
+        // 点击开始的按钮
         touchEft: {
             default: null,
             type: cc.Sprite
         },
-
+        // 点击结束的动画
         touchEndEft: {
             default: null,
             type: cc.Node
         },
-
+        // 合成的动画
         hcEft: {
             default: null,
             type: cc.Node
         },
+        // 新手引导的动画
         newPlayerEf: {
             default: null,
             type: cc.Node
         },
-
+        // 当前显示的数字
         renumber: 0,
+        // 点击回调函数
         clickcall: null
     },
 
@@ -73,10 +78,7 @@ cc.Class({
         this.number.string = renum;
         this.renumber = renum;
         this.hide.string = renum;
-        // 设置字体的颜色
     },
-    start: function start() {},
-
 
     /*
         调用: 格子数字变化的时候调用
@@ -95,10 +97,10 @@ cc.Class({
     },
 
     /*
-         调用: 格子数字变化的时候调用
-         功能: 刷新格子显示的数字颜色
+         调用: 设置格子点击的回调函数
+         功能: 设置格子点击的回调函数
          参数: [
-             color: 当前显示数字的颜色
+             clickcall: 回调函数 type: Function
          ]
          返回值:[
              无
@@ -109,10 +111,32 @@ cc.Class({
         this.clickcall = clickcall;
     },
 
+    /*
+       调用: 逻辑调用
+       功能: 得到当前格子显示的数字
+       参数: [
+           无
+       ]
+       返回值:[
+           无
+       ]
+       思路: 系统自带
+    */
     getReNumber: function getReNumber() {
         return this.renumber;
     },
 
+    /*
+        调用: 节点加载完成后回调
+        功能: 初始化部分逻辑
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 系统自带
+    */
     onLoad: function onLoad() {
         // 设置成屏蔽层
         var self = this;
@@ -136,20 +160,50 @@ cc.Class({
     },
 
 
-    // 播放触摸结束后的动画
+    /*
+        调用: 点击格子结束
+        功能: 播放点击时候的动画
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 系统自带
+    */
     playTouchEndEff: function playTouchEndEff() {
         var anim = this.touchEndEft.getComponent(cc.Animation);
         anim.play("yuan_dh");
     },
 
-    // 播放触摸结束后的动画
+    /*
+        调用: 数字加一组合后
+        功能: 播放组合的动画
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 系统自带
+    */
     playZhEff: function playZhEff() {
         console.log("播放合成动画了吗");
         var anim = this.hcEft.getComponent(cc.Animation);
         anim.play("yindao_hebing");
     },
 
-    // 播放触摸结束后的动画
+    /*
+        调用: 新手引导的时候的调用
+        功能: 播放新手引导的圆圈动画
+        参数: [
+            无
+        ]
+        返回值:[
+            无
+        ]
+        思路: 系统自带
+    */
     playNewPlayerEff: function playNewPlayerEff() {
         console.log("播放合成动画了吗");
         this.newPlayerEf.active = true;

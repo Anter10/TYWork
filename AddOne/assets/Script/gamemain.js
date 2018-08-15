@@ -841,7 +841,7 @@ var gamemain = cc.Class({
               this.showBox(1);  
            }else if(this.lianjiNumber > config.lianjiEffects.cgood && this.lianjiNumber <= config.lianjiEffects.hhgood ) {
               this.showBox(2); 
-           }else if(this.lianjiNumber > config.lianjiEffects.hhgood && this.lianjiNumber <= config.lianjiEffects.maxgood ) {
+           }else if(this.lianjiNumber > config.lianjiEffects.hhgood && this.lianjiNumber <= config.lianjiEffects.maxgood) {
               this.showBox(3);  
            }else if(this.lianjiNumber > config.lianjiEffects.maxgood) {
               this.showBox(5);  
